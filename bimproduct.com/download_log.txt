@@ -1,0 +1,51 @@
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-07-25 - 12:54:18
+
+ - 0400-79-000 : Empty Folder
+ - 0400-79-001 : Empty Folder
+Item Number Total: 0
+ - 0 Double
+ - 2 Empty
+ - 0 Zips
+ - 0 Other
+ - 0 State Changed
+ - 0 Cr Deleted
+
+0400-79-000 --> 
+0400-79-001 --> 
+Avarage File Size: 0.0
+Max File Size: 0
+Min File Size: 0
+---------------------------------------------------------------------------------
+
+Download Log 2023-07-25 - 12:54:49
+
+ - 0400-79-000 : Empty Folder
+ - 0400-79-001 : Empty Folder
+Item Number Total: 0
+ - 0 Double
+ - 2 Empty
+ - 0 Zips
+ - 0 Other
+ - 0 State Changed
+ - 0 Cr Deleted
+
+0400-79-000 --> 
+0400-79-001 --> 
+Avarage File Size: 0.0
+Max File Size: 0
+Min File Size: 00400-79-000 deleted.
+0400-79-001 deleted.
+Hard Clear Ran
+
+Download Log 2023-07-25 - 12:55:07
+
+Item Number Total: 0
+ - 0 Double
+ - 0 Empty
+ - 0 Zips
+ - 0 Other
+ - 0 State Changed
+ - 0 Cr Deleted
