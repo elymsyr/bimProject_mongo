@@ -1,24 +1,21 @@
 import scrapy
-from pandas import read_csv
-from csv import writer
 from bimProduct.items import NewProduct
-from re import sub
-from mongo_connection import MongoConnection
+from random import randint
+from docs.mongo_connection import MongoConnection
 
-MAIN_DATAS = 'product_data.txt'
+MAIN_DATAS = 'docs/product_data.txt'
 
 class ProductparseSpider(scrapy.Spider):
     name = "productParse"
     allowed_domains = ["bimobject.com"]
     start_urls = ["https://bimobject.com"]
-    id_adding_number = 0
+    id_adding_number = randint(0, 999)
     id = 0
     merge_url = []
     crawled = []
     used_ids = []
     connection = MongoConnection()
     results = connection.find_all()
-    connection.delete_all()
     url_data = results[0]
     id_data = results[1]
     for id in id_data:
@@ -61,6 +58,7 @@ class ProductparseSpider(scrapy.Spider):
         for url in self.start_urls:
             if url[8:] in self.crawled:
                 print(f"Already crawledd.")
+                self.id_adding_number += 1
             else:
                 yield scrapy.Request(url, self.parse_item)
                 
@@ -79,11 +77,6 @@ class ProductparseSpider(scrapy.Spider):
         data = data.replace('\n', ' ')
         return data
 
-    def clear_text(self, string):
-        clean = [sub('<[^>]*>', '', string)]
-        clean_text = sub(r"(\w)([A-Z])", r"\1 \2", str(clean))
-        return clean_text[2:-2]
-
     def parse_item(self,response):
         new_product = NewProduct()
 
@@ -95,37 +88,27 @@ class ProductparseSpider(scrapy.Spider):
 
         subcategory = response.css('div.breadcrumb-section.uk-container-xlarge > app-breadcrumb > ul > li:nth-child(4) > a::text').extract_first()
         new_product['subcategory'] = self.clear_data(subcategory)
-
-        new_product['url'] = self.clear_data(response.url)
         
-        direct_link = response.css('div.content > a.ng-star-inserted::text').extract_first()
-        new_product['direct_link'] = self.clear_data(direct_link)
+        new_product['url'] = response.url
+        
+        new_product['images'] = response.xpath("//app-image-slider//img/@src").extract_first()
+
+        new_product['direct_link'] = response.xpath("//app-detailed-info[contains(@data-test, 'links-section')]//text()").getall()
 
         brand = response.css('span.secondary-heading::text').extract_first()
         new_product['brand'] = self.clear_data(brand)
 
-        spec = response.css('li.specification-list-item > div > span::text').getall()
-        spec = (' '.join(spec)).replace('\n', ' ')
-        new_product['spec'] = self.clear_data(spec)
+        new_product['spec'] = response.xpath("//app-detailed-info[contains(@data-test, 'specification-section')]//text()").getall()
 
-        desc = response.css('span.description-text::text').getall()
-        desc = (' '.join(desc)).replace('\n', ' ')
-        new_product['desc'] = self.clear_data(desc)
+        new_product['desc'] = response.xpath("//div[contains(@data-test, 'description-text-container')]//text()").getall()
 
-        tech_spec = response.xpath('/html/body/app-root/div[1]/div/app-product-page/div/div[2]/div[2]/div[3]/div/app-detailed-info[2]/div/div/ul').getall()
-        tech_spec = (' '.join(tech_spec)).replace('\n', ' ') 
-        tech_spec = str(self.clear_text(tech_spec))
-        new_product['tech_spec'] = self.clear_data(tech_spec)
+        new_product['tech_spec'] = response.xpath("//app-detailed-info[contains(@data-test, 'technical-specification-section')]//text()").getall()
 
-        classification = response.xpath('/html/body/app-root/div[1]/div/app-product-page/div/div[2]/div[2]/div[3]/div/app-detailed-info[5]/div[1]/div/ul').getall()
-        classification = (' '.join(classification)).replace('\n', ' ') 
-        classification = str(self.clear_text(classification))
-        new_product['classification'] = self.clear_data(classification)
+        new_product['classification'] = response.xpath("//app-detailed-info[contains(@data-test, 'classification-section')]//text()").getall()
 
-        related = response.xpath('/html/body/app-root/div[1]/div/app-product-page/div/div[2]/div[2]/div[3]/div/app-detailed-info[4]/div[1]/div/ul').getall()
-        related = (' '.join(related)).replace('\n', ' ') 
-        related = str(self.clear_text(related))
-        new_product['related'] = self.clear_data(related)
+        new_product['related'] = response.xpath("//app-detailed-info[contains(@data-test, 'related-section')]//text()").getall()
+        
+        new_product['properties'] = response.xpath("//app-detailed-info[contains(@data-test, 'properties-section')]//text()").getall()
 
         new_product['votes'] = response.css('span.votes::text').extract_first()
         if new_product['votes'] == None or new_product['votes'].strip() == '':
@@ -135,13 +118,16 @@ class ProductparseSpider(scrapy.Spider):
             new_product['rating'] = 'No Rating'
 
         id = self.id_assign(new_product['category'], new_product['subcategory'], new_product['name'])
-        data = [id, 0, new_product['name'], new_product['category'],new_product['subcategory'],new_product['url'],new_product['direct_link'],new_product['brand'],new_product['votes'], new_product['rating'], new_product['tech_spec'], new_product['spec'], new_product['desc'], new_product['related'],new_product['classification']]
+        data = [id, 0, new_product['name'], new_product['category'],new_product['subcategory'],new_product['url'],new_product['images'],new_product['direct_link'][2:],new_product['brand'],new_product['votes'], new_product['rating'], new_product['tech_spec'], new_product['spec'], new_product['desc'], new_product['related'],new_product['classification'],new_product['properties']]
         for item in range(len(data)):
             if item == 1:
                 pass
             else:
-                if data[item] == None or data[item] == 'None':
-                    self.keep_log(f'None found: {data[0]} - {data[5]}\n')
+                if data[item] == None:
+                    self.keep_log(f'None found: {data[0]} | ')
+                    data[item] = 'None'
+                if isinstance(data[item], list) and len(data[item]) == 0:
+                    self.keep_log(f'None found: {data[0]} | ')
                     data[item] = 'None'
         self.write_data(data)
     
@@ -189,8 +175,7 @@ class ProductparseSpider(scrapy.Spider):
     def write_data(self, data):
         try:
             self.connection.insert(data)
-        except:
-            self.keep_log(f'Not written: {data[0]} - {data[5]}')
-            
+        except Exception as e:
+            self.keep_log(f'\nNot written: {data[0]} - {data[5]} --> Error: {e}')
 
 # scrapy crawl productParse

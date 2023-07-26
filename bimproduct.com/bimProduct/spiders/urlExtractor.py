@@ -5,8 +5,8 @@
 # from requests import get
 # from re import compile, IGNORECASE
 
-# MAIN_DATAS = 'product_data.txt'
-# SECOND_DATAS = 'new_data_storage.txt'
+# MAIN_DATAS = 'docs/main_data_storage.txt'
+# SECOND_DATAS = 'docs/new_data_storage.txt'
 
 # # scrapy crawl urlExtract
 

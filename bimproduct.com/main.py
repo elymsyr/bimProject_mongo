@@ -2,15 +2,15 @@ from scrapy.crawler import CrawlerProcess
 from random import randint
 from scrapy.utils.project import get_project_settings
 import argparse
-from check_functions import check_all
+from docs.check_functions import check_hunted
 from pandas import DataFrame
 from os import system
-from mongo_connection import MongoConnection
+from docs.mongo_connection import MongoConnection
 
-MAIN_DATAS = 'product_data.txt'
+MAIN_DATAS = 'docs/product_data.txt'
 LIST_SCOPE = [0,10]
 DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
-DOWNLOAD_LOG = 'download_log.txt'
+DOWNLOAD_LOG = 'docs/download_log.txt'
 
 # def urlExtract():
 #     process = CrawlerProcess(get_project_settings())
@@ -31,7 +31,7 @@ def export():
     with open('exported.csv', 'w', encoding='utf-8') as f:
         f.write('')
     connection = MongoConnection()
-    cursor = connection.collection.find({})  
+    cursor = connection.connection.find({})  
     df =  DataFrame(list(cursor))
     if '_id' in df:
         del df['_id']       
@@ -54,15 +54,12 @@ if __name__ == '__main__':
     clear_key = config['l']
     export_key = config['e']
     if check_key:
-        check_all()
+        check_hunted()
     elif hunter_key:
         productParse()
     elif download_key:
         system('py download_product.py')    
     elif clear_key:
-        choice = int(input("sure?: "))
-        if choice:
-            clear()
-            print('cleared')
+        clear()
     elif export_key:
         export()
