@@ -4,6 +4,7 @@ from random import randint
 from docs.mongo_connection import MongoConnection
 
 MAIN_DATAS = 'docs/product_data.txt'
+LOG = 'docs/mongo_log.txt'
 
 class ProductparseSpider(scrapy.Spider):
     name = "productParse"
@@ -63,7 +64,7 @@ class ProductparseSpider(scrapy.Spider):
                 yield scrapy.Request(url, self.parse_item)
                 
     def keep_log(self, string):
-        with open('mongo_log.txt', 'a', encoding='utf-8') as f:
+        with open(LOG, 'a', encoding='utf-8') as f:
             f.write(f"{string}")                
                 
     def clear_data(self, data):

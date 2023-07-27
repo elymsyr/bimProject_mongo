@@ -1,5 +1,4 @@
 from scrapy.crawler import CrawlerProcess
-from random import randint
 from scrapy.utils.project import get_project_settings
 import argparse
 from docs.check_functions import check_hunted
@@ -28,14 +27,14 @@ def clear():
     connection.delete_all()
         
 def export():
-    with open('exported.csv', 'w', encoding='utf-8') as f:
+    with open('docs/exported.csv', 'w', encoding='utf-8') as f:
         f.write('')
     connection = MongoConnection()
     cursor = connection.connection.find({})  
     df =  DataFrame(list(cursor))
     if '_id' in df:
         del df['_id']       
-    df.to_csv('exported.csv', index=False)
+    df.to_csv('docs/exported.csv', index=False)
  
 
 if __name__ == '__main__':
@@ -46,6 +45,7 @@ if __name__ == '__main__':
     parser.add_argument('-d', action='store_true', help='start downloading')
     parser.add_argument('-l', action='store_true', help='clear database')
     parser.add_argument('-e', action='store_true', help='export database')
+    parser.add_argument('-s', action='store_true', help='open search gui')
     args = parser.parse_args()
     config = vars(args)
     check_key = config['c']
@@ -53,10 +53,13 @@ if __name__ == '__main__':
     download_key = config['d']
     clear_key = config['l']
     export_key = config['e']
+    search_key = config['s']
     if check_key:
         check_hunted()
     elif hunter_key:
         productParse()
+    elif search_key:
+        system('py gui.py')  
     elif download_key:
         system('py download_product.py')    
     elif clear_key:

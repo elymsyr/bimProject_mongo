@@ -6,8 +6,8 @@ from os import makedirs, listdir, startfile
 from os.path import exists, realpath
 from multiprocessing import Process
 from shutil import rmtree
-from check_functions import fix_state, check_all
-from mongo_connection import MongoConnection
+from docs.check_functions import fix_state, check_all
+from docs.mongo_connection import MongoConnection
 
 DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
 DOWNLOAD_LOG = 'docs/download_log.txt'
@@ -105,7 +105,7 @@ def create_process(directory, url, id):
    return Process(target=download, args=(directory, url, id))  
 
 def download(directory, url, id):
-    if not exists(f"{directory}"):
+    if not exists(directory):
         makedirs(f"{directory}")
     try:
         before = listdir(f"{directory}")
@@ -144,7 +144,7 @@ def download(directory, url, id):
         print(f"Not Downloaded: {id}")
 
 def start_download(folder, state = '0'):
-    if state.isdigit() and int(state) == 0:
+    if state.isdigit() and int(state.replace('-', '')) == 0:
         connection = MongoConnection()
         result = connection.find_all()
         state_data = result[2] 
@@ -179,7 +179,7 @@ def start_download(folder, state = '0'):
         find = connection.connection.find_one({'p_id': f'{state}'})
         if find != None:
             directory = f"{DOWNLOAD_FOLDER}\\{state}"
-            if not exists(f"{directory}"):
+            if not exists(directory):
                 pass
             else:
                 in_dir = listdir(directory)
@@ -196,9 +196,9 @@ def start_download(folder, state = '0'):
                 chrome_options.add_experimental_option('prefs', prefs)
                 chrome_options.add_argument('--headless=new')
                 driver = Chrome(options=chrome_options)
-                state = login(driver)
+                login_state = login(driver)
                 before = listdir(f"{directory}")
-                if state == 1:
+                if login_state == 1:
                     test_item = DownloadItem(url, state, driver)
                     download_state = test_item.download_item()
                     if download_state == 1:
