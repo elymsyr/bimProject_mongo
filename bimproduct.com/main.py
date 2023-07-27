@@ -1,5 +1,4 @@
 from scrapy.crawler import CrawlerProcess
-from random import randint
 from scrapy.utils.project import get_project_settings
 import argparse
 from docs.check_functions import check_hunted
@@ -35,7 +34,7 @@ def export():
     df =  DataFrame(list(cursor))
     if '_id' in df:
         del df['_id']       
-    df.to_csv('exported.csv', index=False)
+    df.to_csv('docs/exported.csv', index=False)
  
 
 if __name__ == '__main__':
