@@ -1,9 +1,7 @@
 import tkinter as tk
 from codecs import open
 from docs.download_product import start_download, DOWNLOAD_FOLDER
-from docs.mongo_connection import MongoConnection
-
-SELECTORS = ['p_id', 'download_state', 'name', 'category', 'subcategory', 'url', 'images', 'direct_link', 'brand', 'votes', 'rating', 'tech-spec', 'specification', 'description', 'related', 'classification','properties']
+from docs.mongo_connection import MongoConnection, SELECTORS
 
 check = ''
 
@@ -25,7 +23,10 @@ def openNewWindow():
     return data_entry
 
 def save(csv_data):
-    with open('search_result.csv', "w+", "utf-8") as f:
+    with open('docs/search_result.csv', "w+", "utf-8") as f:
+        for s in SELECTORS:
+            f.write(f"{s}, ")
+    with open('docs/search_result.csv', "a", "utf-8") as f:
         f.write(csv_data)
 
 def clear():
@@ -54,7 +55,7 @@ def search():
             results = con.connection.find({'name': {'$regex': f'{searching.capitalize()}'}})
     elif searching != '' and check != '':
         control = 1
-        results = con.connection.find({{'category': {'$regex': f'{check}'}}, {'name': {'$regex': f'{searching}'}}})
+        results = con.connection.find({'category': {'$regex': f'{check}'}, 'name': {'$regex': f'{searching}'}})
     else:
         control = 0
         print(f"\nPlease fill in the blanks.\n")
