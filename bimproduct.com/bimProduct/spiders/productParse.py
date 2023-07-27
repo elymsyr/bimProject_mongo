@@ -1,7 +1,11 @@
-import scrapy
+import scrapy, re
 from bimProduct.items import NewProduct
 from random import randint
 from docs.mongo_connection import MongoConnection
+from time import sleep
+from selenium.webdriver import Chrome
+from selenium.webdriver import ChromeOptions
+from selenium.webdriver.common.by import By
 
 MAIN_DATAS = 'docs/product_data.txt'
 LOG = 'docs/mongo_log.txt'
@@ -15,6 +19,10 @@ class ProductparseSpider(scrapy.Spider):
     merge_url = []
     crawled = []
     used_ids = []
+    chrome_options = ChromeOptions()
+    chrome_options.add_argument('--headless=new')
+    driver = Chrome(options=chrome_options)
+    driver.implicitly_wait(2)
     connection = MongoConnection()
     results = connection.find_all()
     url_data = results[0]
@@ -92,7 +100,7 @@ class ProductparseSpider(scrapy.Spider):
         
         new_product['url'] = response.url
         
-        new_product['images'] = response.xpath("//app-image-slider//img/@src").extract_first()
+        image = response.xpath("//app-image-slider//img/@src").extract_first()
 
         new_product['direct_link'] = response.xpath("//app-detailed-info[contains(@data-test, 'links-section')]//text()").getall()
 
@@ -117,6 +125,11 @@ class ProductparseSpider(scrapy.Spider):
         new_product['rating'] = response.css('span.rating::text').extract_first()
         if new_product['rating'] == None or new_product['rating'].strip() == '':
             new_product['rating'] = 'No Rating'
+
+        result = self.var_selenium(self.driver, response.url, image)
+
+        new_product['images'] = result[1]
+        new_product['properties'] = result[0]
 
         id = self.id_assign(new_product['category'], new_product['subcategory'], new_product['name'])
         data = [id, 0, new_product['name'], new_product['category'],new_product['subcategory'],new_product['url'],new_product['images'],new_product['direct_link'][2:],new_product['brand'],new_product['votes'], new_product['rating'], new_product['tech_spec'], new_product['spec'], new_product['desc'], new_product['related'],new_product['classification'],new_product['properties']]
@@ -178,5 +191,43 @@ class ProductparseSpider(scrapy.Spider):
             self.connection.insert(data)
         except Exception as e:
             self.keep_log(f'\nNot written: {data[0]} - {data[5]} --> Error: {e}')
+
+    def var_selenium(self, driver, url, old_image):
+        other_images = []
+        driver.get(url)
+        properties = []
+        sleep(2)
+        try:
+            l = driver.find_element(By.XPATH, "//app-detailed-info[contains(@data-test, 'properties-section')]")
+            txt = l.get_attribute('innerHTML')
+            p = re.compile(r'<.*?>')
+            tgs = str(p.sub('\n', txt)).split('\n')
+            for item in tgs:
+                if item.strip() != '':
+                    properties.append(item.strip())
+        except:
+            properties = 'None'
+        try:
+            l = driver.find_element(By.XPATH, "//app-image-slider")
+            txt = str(l.get_attribute('innerHTML'))
+            tgs = re.findall('src="([^"]+)"',txt)
+            for img in tgs:
+                if img.startswith('https://admincontent.bimobject.com/public/productimages/'):
+                    if tgs.count(img) > 1:
+                        tgs.remove(img)
+                    else:
+                        other_images.append(img.replace('&amp;', '&'))
+        except:
+            other_images = []
+        if properties != 'None' or other_images != []:
+            if old_image != None:
+                new_images = [old_image]
+            else:
+                new_images = []
+            for new in other_images:
+                new_images.append(new)
+            return [properties, new_images]
+        else:
+            return ['None', [old_image]]
 
 # scrapy crawl productParse

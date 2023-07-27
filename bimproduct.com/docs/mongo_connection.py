@@ -39,7 +39,7 @@ class MongoConnection():
         for result in results:
             ret[0].append(result["url"])
             ret[1].append(result["p_id"])
-            ret[2].append(result["download_state"])     
+            ret[2].append(result["download_state"]) 
         return ret
 
     def delete_all(self):
@@ -47,7 +47,7 @@ class MongoConnection():
             self.connection.delete_many({})
 
     def update_downloads(self, state, id):
-        self.connection.update_one({'p_id':f'{id}'}, {"$set":{'download_state': state}}),
+        self.connection.update_one({'p_id':f'{id}'}, {"$set":{'download_state': state}})
 
     def update_id(self, ids):
         number = 999
@@ -61,3 +61,6 @@ class MongoConnection():
             number -= 1
             print(f"{id} --> {new_id}")
             self.connection.update_one({'p_id': f'{id}'}, {"$set":{'p_id': f'{new_id}'}})
+            
+# con = MongoConnection()
+# con.delete_all()
