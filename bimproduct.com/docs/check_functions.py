@@ -5,10 +5,10 @@ from os import remove
 from os.path import isdir
 from datetime import datetime, date
 from shutil import rmtree
-from docs.mongo_connection import MongoConnection
+from mongo_connection import MongoConnection
 
-# MAIN_DATAS = 'docs/product_data.txt'
-MAIN_DATAS = 'docs/main_data_storage.txt'
+MAIN_DATAS = 'docs/product_data.txt'
+# MAIN_DATAS = 'docs/main_data_storage.txt'
 LIST_SCOPE = [0,10]
 DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
 DOWNLOAD_LOG = 'docs/download_log.txt'
@@ -76,6 +76,7 @@ def find_a(collection):
     res = []
     for row in results:
         res.append(row['p_id'])
+    print(res)
     return res    
 
 def get_list():
@@ -92,7 +93,9 @@ def get_list():
     downloads = os.listdir(DOWNLOAD_FOLDER)
     for item in downloads:
         if item not in res:
-            print(f"{item} not in db(downloaded --> state: 1")
+            print(f"{item} not in db (downloaded --> state: 1)")
+            fix_state(item, 1)
+            state_changed += 1
     for item in res:
         if item not in downloads:
             connection.update_downloads(0, item)
@@ -125,7 +128,7 @@ def get_list():
             keep_log(f"\n - {item} : Empty Folder")
             empty += 1
             leng -= 1
-            fix_state(item, 2)
+            fix_state(item, 0)
             del_item.append(item)
     for index in range(len(state_data)):
         if state_data[index] == 1:
@@ -135,8 +138,8 @@ def get_list():
                 if len(in_dir) > 0:
                     pass
             else:
-                fix_state(index, 2)
-    keep_log(f"\nItem Number Total: {leng}\n - {double} Double\n - {empty} Empty\n - {zips} Zips\n - {other} Other\n - {state_changed} State Changed\n - {cr} Cr Deleted\n")
+                fix_state(index, 0)
+    keep_log(f"\n - Total Item: {leng}\n - {double} Double\n - {empty} Empty\n - {zips} Zips\n - {other} Other\n - {state_changed} State Changed\n - {cr} Cr Deleted\n")
     return del_item
 
 def lister():
@@ -168,18 +171,15 @@ def lister():
                 min = size[x]
     else:
         min = 0
-    keep_log(f"\nAvarage File Size: {total/(len(size)+1)}\nMax File Size: {max}\nMin File Size: {min}")
+    keep_log(f"\nAvarage File Size: {total/(len(size)+1)}\nMax File Size: {max}\nMin File Size: {min}\n")
 
 def hard_clear():
     connection = MongoConnection()
     mongo = connection.find_all()
     id_data = mongo[1] 
-    downloads = os.listdir(DOWNLOAD_FOLDER)  
-    count = len(downloads)
-    print(f"Total: {len(downloads)}\n")
-    for item in downloads:
-        count -= 1
-        print(count)        
+    downloads = os.listdir(DOWNLOAD_FOLDER)
+    keep_log(f"\nTotal Downloaded Folder: {len(downloads)}\n")
+    for item in downloads:       
         directory = f"{DOWNLOAD_FOLDER}\\{item}"
         in_dir = os.listdir(directory)
         if len(in_dir) == 1:
@@ -190,20 +190,21 @@ def hard_clear():
                 fix_state(id_data.index(item), 0)
         else:
             rmtree(directory, ignore_errors=True)
-            keep_log(f'{item} deleted.\n')
-    keep_log("Hard Clear Ran\n")
+            keep_log(f' - {item} deleted.\n')
+    keep_log(f"Total Downloaded Folder After Hard Clean: {len(downloads)}\n")
 
 def check_all(state = None):
     keep_log("\n---------------------------------------------------------------------------------\n")
+    get_list()
     lister()
     if state == None:
         if int(input('clear?: ')):
             hard_clear()
-            get_list()
     else:
         if state:
             hard_clear()
-            get_list()
+            
 
 if __name__ == '__main__':
     check_hunted()
+    check_all()

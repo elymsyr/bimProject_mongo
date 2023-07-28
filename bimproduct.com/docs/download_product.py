@@ -6,8 +6,8 @@ from os import makedirs, listdir, startfile
 from os.path import exists, realpath
 from multiprocessing import Process
 from shutil import rmtree
-from docs.check_functions import fix_state, check_all
-from docs.mongo_connection import MongoConnection
+from check_functions import fix_state, check_all
+from mongo_connection import MongoConnection
 
 DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
 DOWNLOAD_LOG = 'docs/download_log.txt'
