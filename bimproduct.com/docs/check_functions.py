@@ -8,7 +8,7 @@ from shutil import rmtree
 from mongo_connection import MongoConnection
 
 MAIN_DATAS = 'docs/product_data.txt'
-# MAIN_DATAS = 'docs/main_data_storage.txt'
+# Item scope to write log
 LIST_SCOPE = [0,10]
 DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
 DOWNLOAD_LOG = 'docs/download_log.txt'
@@ -43,25 +43,21 @@ def check_hunted():
     connection = MongoConnection()
     id_data = (connection.find_all())[1]
     url_data = (connection.find_all())[0]
-    print("\n--------  ID ERROR in CSV Rows\n")
     pattern = r"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9]"
     for row in id_data:
         control = match(pattern, str(row))
         if control == None:
             if id_data.index(row) != 0:
-                print(f"{row} , {id_data.index(row)}")
-    print("\n--------  CSV Compability\n")
+                print(f"ID Error - Index:{row} , {id_data.index(row)}")
     for url in url_data:
         if not url.startswith('https://www.bimobject.com/en/'):
-            print(f"{url} --> {url_data.index(url)}")
-    print("\n--------  CSV Count Check\n")
+            print(f"URL Error - {url}: {url_data.index(url)}")
     for url in url_data:
         if url_data.count(url) > 1:
-            print(f"{url} : {url_data.count(url)}")
-    print("\n--------  CSV ID Count Check\n")
+            print(f"URL Count Error - {url}: {url_data.count(url)}")
     for id in id_data:
         if id_data.count(id) > 1:
-            print(f"{id} : {id_data.count(id)} --> {id_data.index(id)}")
+            print(f"ID Count Error - {id} : {id_data.count(id)} --> {id_data.index(id)}")
 
 def keep_log(string):
     with open(DOWNLOAD_LOG, 'a', encoding='utf-8') as f:
@@ -93,12 +89,12 @@ def get_list():
     downloads = os.listdir(DOWNLOAD_FOLDER)
     for item in downloads:
         if item not in res:
-            print(f"{item} not in db (downloaded --> state: 1)")
+            print(f"{item} was not in db as downloaded.")
             fix_state(item, 1)
             state_changed += 1
     for item in res:
         if item not in downloads:
-            connection.update_downloads(0, item)
+            fix_state(item, 0)
             state_changed += 1
     zips = 0
     double = 0
@@ -116,31 +112,18 @@ def get_list():
             elif file.endswith(".crdownload") or file.endswith(".tmp"):
                 remove(f"{directory}\\{file}")
                 cr += 1
-                del_item.append(item)
             else:
-                other += 1
+                other += len(in_dir)
         in_dir = os.listdir(directory)
         if len(in_dir) > 1:
             keep_log(f"\n - {item} : More than One Item")
-            double += (len(in_dir)-1)
-            del_item.append(item)
+            double += (len(in_dir))
         elif len(in_dir) < 1:
             keep_log(f"\n - {item} : Empty Folder")
             empty += 1
             leng -= 1
             fix_state(item, 0)
-            del_item.append(item)
-    for index in range(len(state_data)):
-        if state_data[index] == 1:
-            directory = f"{DOWNLOAD_FOLDER}\\{id_data[index]}"
-            if isdir(directory):  
-                in_dir = os.listdir(directory)
-                if len(in_dir) > 0:
-                    pass
-            else:
-                fix_state(index, 0)
     keep_log(f"\n - Total Item: {leng}\n - {double} Double\n - {empty} Empty\n - {zips} Zips\n - {other} Other\n - {state_changed} State Changed\n - {cr} Cr Deleted\n")
-    return del_item
 
 def lister():
     path = DOWNLOAD_FOLDER

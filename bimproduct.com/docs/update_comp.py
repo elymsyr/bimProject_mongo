@@ -7,6 +7,8 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
+
+# Wait time for page to load 
 TIMEOUT = 10
 
 def var_selenium():
