@@ -14,3 +14,99 @@ Download Log 2023-07-31 - 08:48:07
 Avarage File Size: 0.0
 Max File Size: 0
 Min File Size: 0
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-07-31 - 09:53:35
+
+ - Total Item: 0
+ - 0 Double
+ - 0 Empty
+ - 0 Zips
+ - 0 Other
+ - 0 State Changed
+ - 0 Cr Deleted
+
+Avarage File Size: 0.0
+Max File Size: 0
+Min File Size: 0
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-07-31 - 10:15:00
+
+ - Total Item: 0
+ - 0 Double
+ - 0 Empty
+ - 0 Zips
+ - 0 Other
+ - 0 State Changed
+ - 0 Cr Deleted
+
+Avarage File Size: 0.0
+Max File Size: 0
+Min File Size: 0
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-07-31 - 10:19:33
+
+ - Total Item: 0
+ - 0 Double
+ - 0 Empty
+ - 0 Zips
+ - 0 Other
+ - 0 State Changed
+ - 0 Cr Deleted
+
+Avarage File Size: 0.0
+Max File Size: 0
+Min File Size: 0
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-07-31 - 10:22:54
+
+ - Total Item: 0
+ - 0 Double
+ - 0 Empty
+ - 0 Zips
+ - 0 Other
+ - 0 State Changed
+ - 0 Cr Deleted
+
+Avarage File Size: 0.0
+Max File Size: 0
+Min File Size: 0
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-07-31 - 10:24:32
+
+ - Total Item: 0
+ - 0 Double
+ - 0 Empty
+ - 0 Zips
+ - 0 Other
+ - 0 State Changed
+ - 0 Cr Deleted
+
+Avarage File Size: 0.0
+Max File Size: 0
+Min File Size: 0
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-07-31 - 10:30:42
+
+ - Total Item: 0
+ - 0 Double
+ - 0 Empty
+ - 0 Zips
+ - 0 Other
+ - 0 State Changed
+ - 0 Cr Deleted
+
+Avarage File Size: 0.0
+Max File Size: 0
+Min File Size: 0

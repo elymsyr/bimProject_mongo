@@ -6,12 +6,23 @@ from pandas import DataFrame
 from os import system
 from datetime import datetime, date
 from docs.mongo_connection import MongoConnection
+from time import time
 
 MAIN_DATAS = 'docs/product_data.txt'
 LIST_SCOPE = [0,10]
 DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
 DOWNLOAD_LOG = 'docs/download_log.txt'
-LOG = 'docs/mongo_log.txt'
+MONGO_LOG = 'docs/mongo_log.txt'
+UPDATE_LOG = 'docs/update_log.txt'
+
+def convert(seconds):
+    seconds = int(seconds)
+    seconds = seconds % (24 * 3600)
+    hour = seconds // 3600
+    seconds %= 3600
+    minutes = seconds // 60
+    seconds %= 60
+    return "%d hours, %02d minutes, %02d seconds" % (hour, minutes, seconds)
 
 # def urlExtract():
 #     process = CrawlerProcess(get_project_settings())
@@ -39,12 +50,12 @@ def export():
         del df['_id']       
     df.to_csv('docs/exported.csv', index=False)
 
-def start_log():
+def start_log(LOG):
     now = datetime.now()
     today = date.today()
     current_time = now.strftime("%H:%M:%S")
     with open(LOG, 'a', encoding='utf-8') as f:
-        f.write(f"\nDownload Log {today} - {current_time}\n") 
+        f.write(f"\nLOG {today} - {current_time}\n") 
  
 
 if __name__ == '__main__':
@@ -56,6 +67,7 @@ if __name__ == '__main__':
     parser.add_argument('-l', action='store_true', help='clear database')
     parser.add_argument('-e', action='store_true', help='export database')
     parser.add_argument('-s', action='store_true', help='open search gui')
+    parser.add_argument('-u', action='store_true', help='start updating components')
     args = parser.parse_args()
     config = vars(args)
     check_key = config['c']
@@ -64,16 +76,44 @@ if __name__ == '__main__':
     clear_key = config['l']
     export_key = config['e']
     search_key = config['s']
+    update_key = config['u']
     if check_key:
+        start = time()
+        remainder = start
+        start = 0
         check_all()
+        stop = time()
+        stop -= remainder         
+        print("Elapsed time during the whole program in seconds:", convert(stop))         
     elif hunter_key:
+        start = time()
+        remainder = start
+        start = 0
+        start_log(MONGO_LOG)
         productParse()
-        start_log()
+        stop = time()
+        stop -= remainder         
+        print("Elapsed time during the whole program in seconds:", convert(stop)) 
     elif search_key:
         system('py gui.py')  
     elif download_key:
-        system('py download_product.py')    
+        start = time()
+        remainder = start
+        start = 0
+        system('py docs/download_product.py')
+        stop = time()
+        stop -= remainder         
+        print("Elapsed time during the whole program in seconds:", convert(stop))         
     elif clear_key:
         clear()
     elif export_key:
         export()
+    elif update_key:
+        start = time()
+        remainder = start
+        start = 0
+        start_log(UPDATE_LOG)
+        system('py docs/update_comp.py')
+        stop = time()
+        stop -= remainder        
+        print("Elapsed time during the whole program in seconds:", convert(stop))

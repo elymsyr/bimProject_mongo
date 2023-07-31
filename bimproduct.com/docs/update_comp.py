@@ -7,7 +7,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
-
+UPDATE_LOG = 'docs/update_log.txt'
 # Wait time for page to load 
 TIMEOUT = 10
 
@@ -33,11 +33,10 @@ def var_selenium():
         try:
             element_present = expected_conditions.presence_of_element_located((By.XPATH, "//img[contains(@alt, 'BIMobject logo')]"))
             WebDriverWait(driver, TIMEOUT).until(element_present)
-            keep_log_error("Page loaded successfully.")
+            # keep_log_error("Page loaded successfully.")
         except:
             keep_log_error("Timed out waiting for page to load.")
             page_load = 0
-            keep_log_error("Timed out waiting for page to load.")
         if page_load:
             try:
                 prop_present = expected_conditions.presence_of_element_located((By.XPATH, "//app-detailed-info[contains(@data-test, 'properties-section')]"))
@@ -54,29 +53,32 @@ def var_selenium():
                 keep_log_error("Prop was not found.")
             except:
                 keep_log_error("Something went wrong.")
-        try:
-            l = driver.find_element(By.XPATH, "//app-image-slider")
-            txt = str(l.get_attribute('innerHTML'))
-            tgs = re.findall('src="([^"]+)"',txt)
-            for img in tgs:
-                if img.startswith('https://admincontent.bimobject.com/public/productimages/'):
-                    if tgs.count(img) > 1:
-                        tgs.remove(img)
-                    else:
-                        other_images.append(img.replace('&amp;', '&'))
-        except:
-            keep_log_error("Image not found.")
-            other_images = []
-        if other_images != []:
-            for new in other_images:
-                if new not in old_image:
-                    old_image.append(new)
-        update(url, con, properties, old_image)
+            try:
+                l = driver.find_element(By.XPATH, "//app-image-slider")
+                txt = str(l.get_attribute('innerHTML'))
+                tgs = re.findall('src="([^"]+)"',txt)
+                for img in tgs:
+                    if img.startswith('https://admincontent.bimobject.com/public/productimages/'):
+                        if tgs.count(img) > 1:
+                            tgs.remove(img)
+                        else:
+                            other_images.append(img.replace('&amp;', '&'))
+            except:
+                other_images = []
+            if other_images != []:
+                for new in other_images:
+                    if new not in old_image:
+                        old_image.append(new)
+            elif other_images == []:
+                keep_log_error("No more image found.")
+            update(url, con, properties, old_image)
+        elif page_load == 0:
+            keep_log_error("End Program")
+            break
     keep_log_error("\n\n")
 
 def find_old_image(url, con):
     old_image = con.connection.find_one({'url':f'{url}'})
-    print(old_image['images'], type(old_image['images']))
     return old_image['images']
 
 def find_url(con):
@@ -92,11 +94,11 @@ def update(url, con, prop, img):
     con.connection.update_one(filter, newvalues)
 
 def keep_log_error(error):
-    with open('docs/update_log.txt', 'a', encoding='utf-8') as f:
+    with open(UPDATE_LOG, 'a', encoding='utf-8') as f:
         f.write(f"   {error}\n")
 
 def keep_log_state(url):
-    with open('docs/update_log.txt', 'a', encoding='utf-8') as f:
+    with open(UPDATE_LOG, 'a', encoding='utf-8') as f:
         f.write(f"- {url}\n")
 
 if __name__ == '__main__':
