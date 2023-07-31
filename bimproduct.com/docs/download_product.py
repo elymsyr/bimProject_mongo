@@ -6,12 +6,14 @@ from os import makedirs, listdir, startfile
 from os.path import exists, realpath
 from multiprocessing import Process
 from shutil import rmtree
-from docs.check_functions import fix_state, check_all
-from docs.mongo_connection import MongoConnection
+from check_functions import fix_state, check_all
+from mongo_connection import MongoConnection
 
 DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
 DOWNLOAD_LOG = 'docs/download_log.txt'
+# Driver Number to run at the same time
 MULTIQUEUE_NUMBER = 2
+# Wait time for a product document to download. (a*2) -> waits a seconds, if the file was detected as still downloading, wait for a*2 seconds
 SLEEP_BREAK = 40*2
 
 class DownloadItem():
@@ -98,9 +100,6 @@ def login(driver):
             return 1
         except: return 0
 
-def log_error(connection, id):
-    connection.update_downloads(2, id) 
-
 def create_process(directory, url, id):
    return Process(target=download, args=(directory, url, id))  
 
@@ -151,6 +150,7 @@ def start_download(folder, state = '0'):
         id_data = result[1]
         url_data = result[0]               
         processQueue = []
+        check_all()
         for index in range(len(state_data)):
             if state_data[index] != 1:
                 if not exists(folder):
@@ -158,7 +158,6 @@ def start_download(folder, state = '0'):
                 directory = f"{folder}\\{id_data[index]}"
                 state = create_process(directory, url_data[index], id_data[index])
                 processQueue.append(state)
-        check_all()
         for order in range(len(processQueue)):
             state_id = []
             if order % MULTIQUEUE_NUMBER == 0:

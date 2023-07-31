@@ -14,7 +14,8 @@ class ProductparseSpider(scrapy.Spider):
     name = "productParse"
     allowed_domains = ["bimobject.com"]
     start_urls = ["https://bimobject.com"]
-    id_adding_number = randint(0, 999)
+    # id_adding_number = randint(0, 999)
+    id_adding_number = 1
     id = 0
     merge_url = []
     crawled = []
@@ -22,7 +23,7 @@ class ProductparseSpider(scrapy.Spider):
     chrome_options = ChromeOptions()
     chrome_options.add_argument('--headless=new')
     driver = Chrome(options=chrome_options)
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(3)
     connection = MongoConnection()
     results = connection.find_all()
     url_data = results[0]
@@ -64,6 +65,13 @@ class ProductparseSpider(scrapy.Spider):
     start_urls = merge_url
 
     def start_requests(self):
+        if self.id_adding_number % 10 == 0:
+            self.driver.quit
+            self.chrome_options = ChromeOptions()
+            # chrome_options.add_argument('--headless=new')
+            self.driver = Chrome(options=self.chrome_options)
+            self.driver.implicitly_wait(2)
+            print("\n\n------------------------------------------------\nDriver Updated\n-----------------------------------------------\n\n")
         for url in self.start_urls:
             if url[8:] in self.crawled:
                 print(f"Already crawledd.")
@@ -91,58 +99,65 @@ class ProductparseSpider(scrapy.Spider):
 
         name = response.css('h1.primary-heading::text').extract_first()
         new_product['name'] = self.clear_data(name)
+        new_product['name'] = none_if(new_product['name'])
 
         category = response.css('div.breadcrumb-section.uk-container-xlarge > app-breadcrumb > ul > li:nth-child(3) > a::text').extract_first()
         new_product['category'] = self.clear_data(category)
+        new_product['category'] = none_if(new_product['category'])
 
         subcategory = response.css('div.breadcrumb-section.uk-container-xlarge > app-breadcrumb > ul > li:nth-child(4) > a::text').extract_first()
         new_product['subcategory'] = self.clear_data(subcategory)
+        new_product['subcategory'] = none_if(new_product['subcategory'])
         
         new_product['url'] = response.url
         
         image = response.xpath("//app-image-slider//img/@src").extract_first()
+        if image == '' or image == None:
+            image == None
 
         new_product['direct_link'] = response.xpath("//app-detailed-info[contains(@data-test, 'links-section')]//text()").getall()
+        new_product['direct_link'] = response.xpath("//app-detailed-info[contains(@data-test, 'links-section')]//text()").getall()
+        new_product['direct_link'] = none_if_list(new_product['direct_link'])
 
         brand = response.css('span.secondary-heading::text').extract_first()
         new_product['brand'] = self.clear_data(brand)
+        new_product['brand'] = none_if(new_product['brand'])
 
         new_product['spec'] = response.xpath("//app-detailed-info[contains(@data-test, 'specification-section')]//text()").getall()
+        new_product['spec'] = none_if_list(new_product['spec'])
 
         new_product['desc'] = response.xpath("//div[contains(@data-test, 'description-text-container')]//text()").getall()
+        new_product['desc'] = none_if_list(new_product['desc'])
 
         new_product['tech_spec'] = response.xpath("//app-detailed-info[contains(@data-test, 'technical-specification-section')]//text()").getall()
+        new_product['tech_spec'] = none_if_list(new_product['tech_spec'])
 
         new_product['classification'] = response.xpath("//app-detailed-info[contains(@data-test, 'classification-section')]//text()").getall()
+        new_product['classification'] = none_if_list(new_product['classification'])
 
         new_product['related'] = response.xpath("//app-detailed-info[contains(@data-test, 'related-section')]//text()").getall()
+        new_product['related'] = none_if_list(new_product['related'])
         
         new_product['properties'] = response.xpath("//app-detailed-info[contains(@data-test, 'properties-section')]//text()").getall()
+        new_product['properties'] = none_if_list(new_product['properties'])
 
         new_product['votes'] = response.css('span.votes::text').extract_first()
-        if new_product['votes'] == None or new_product['votes'].strip() == '':
+        if new_product['votes'] == None or new_product['votes'].strip() == '' or new_product['votes'].strip() == '(':
             new_product['votes'] = '(0 reviewes)'
         new_product['rating'] = response.css('span.rating::text').extract_first()
         if new_product['rating'] == None or new_product['rating'].strip() == '':
             new_product['rating'] = 'No Rating'
 
-        result = self.var_selenium(self.driver, response.url, image)
+        if image == None:
+            new_product['images'] = []
+        else:
+            new_product['images'] = [image]
+        new_product['properties'] = none_if_list(new_product['properties'])
 
-        new_product['images'] = result[1]
-        new_product['properties'] = result[0]
-
+        new_product['properties'] = []
+        print(new_product['category'], new_product['subcategory'], new_product['name'])
         id = self.id_assign(new_product['category'], new_product['subcategory'], new_product['name'])
         data = [id, 0, new_product['name'], new_product['category'],new_product['subcategory'],new_product['url'],new_product['images'],new_product['direct_link'][2:],new_product['brand'],new_product['votes'], new_product['rating'], new_product['tech_spec'], new_product['spec'], new_product['desc'], new_product['related'],new_product['classification'],new_product['properties']]
-        for item in range(len(data)):
-            if item == 1:
-                pass
-            else:
-                if data[item] == None:
-                    self.keep_log(f'None found: {data[0]} | ')
-                    data[item] = 'None'
-                if isinstance(data[item], list) and len(data[item]) == 0:
-                    self.keep_log(f'None found: {data[0]} | ')
-                    data[item] = 'None'
         self.write_data(data)
     
     def cat_id(self, cat, sub_cat):
@@ -192,42 +207,16 @@ class ProductparseSpider(scrapy.Spider):
         except Exception as e:
             self.keep_log(f'\nNot written: {data[0]} - {data[5]} --> Error: {e}')
 
-    def var_selenium(self, driver, url, old_image):
-        other_images = []
-        driver.get(url)
-        properties = []
-        sleep(2)
-        try:
-            l = driver.find_element(By.XPATH, "//app-detailed-info[contains(@data-test, 'properties-section')]")
-            txt = l.get_attribute('innerHTML')
-            p = re.compile(r'<.*?>')
-            tgs = str(p.sub('\n', txt)).split('\n')
-            for item in tgs:
-                if item.strip() != '':
-                    properties.append(item.strip())
-        except:
-            properties = 'None'
-        try:
-            l = driver.find_element(By.XPATH, "//app-image-slider")
-            txt = str(l.get_attribute('innerHTML'))
-            tgs = re.findall('src="([^"]+)"',txt)
-            for img in tgs:
-                if img.startswith('https://admincontent.bimobject.com/public/productimages/'):
-                    if tgs.count(img) > 1:
-                        tgs.remove(img)
-                    else:
-                        other_images.append(img.replace('&amp;', '&'))
-        except:
-            other_images = []
-        if properties != 'None' or other_images != []:
-            if old_image != None:
-                new_images = [old_image]
-            else:
-                new_images = []
-            for new in other_images:
-                new_images.append(new)
-            return [properties, new_images]
-        else:
-            return ['None', [old_image]]
+def none_if(comp):
+    if comp == None or comp == '':
+        return 'None'
+    else:
+        return comp
+def none_if_list(comp):
+    if comp == None or comp == '':
+        return []
+    else:
+        return comp
+    
 
 # scrapy crawl productParse

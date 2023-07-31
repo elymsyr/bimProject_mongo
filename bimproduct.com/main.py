@@ -1,7 +1,7 @@
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 import argparse
-from docs.check_functions import check_hunted
+from docs.check_functions import check_all
 from pandas import DataFrame
 from os import system
 from docs.mongo_connection import MongoConnection
@@ -40,7 +40,7 @@ def export():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="crawl helper", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser = argparse.ArgumentParser()
-    parser.add_argument('-c', action='store_true', help='check data compabilities')
+    parser.add_argument('-c', action='store_true', help='check data compabilities and downloads')
     parser.add_argument('-x', action='store_true', help='run product parser')
     parser.add_argument('-d', action='store_true', help='start downloading')
     parser.add_argument('-l', action='store_true', help='clear database')
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     export_key = config['e']
     search_key = config['s']
     if check_key:
-        check_hunted()
+        check_all()
     elif hunter_key:
         productParse()
     elif search_key:
