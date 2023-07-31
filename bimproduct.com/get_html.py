@@ -3,7 +3,7 @@ from time import sleep
 from selenium.webdriver import Chrome
 from selenium.webdriver import ChromeOptions
 from selenium.webdriver.common.by import By
-from mongo_connection import MongoConnection
+from docs.mongo_connection import MongoConnection
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
