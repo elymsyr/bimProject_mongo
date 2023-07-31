@@ -2,10 +2,8 @@ import scrapy, re
 from bimProduct.items import NewProduct
 from random import randint
 from docs.mongo_connection import MongoConnection
-from time import sleep
 from selenium.webdriver import Chrome
 from selenium.webdriver import ChromeOptions
-from selenium.webdriver.common.by import By
 
 MAIN_DATAS = 'docs/product_data.txt'
 LOG = 'docs/mongo_log.txt'
@@ -99,15 +97,15 @@ class ProductparseSpider(scrapy.Spider):
 
         name = response.css('h1.primary-heading::text').extract_first()
         new_product['name'] = self.clear_data(name)
-        new_product['name'] = none_if(new_product['name'])
+        new_product['name'] = self.none_if(new_product['name'])
 
         category = response.css('div.breadcrumb-section.uk-container-xlarge > app-breadcrumb > ul > li:nth-child(3) > a::text').extract_first()
         new_product['category'] = self.clear_data(category)
-        new_product['category'] = none_if(new_product['category'])
+        new_product['category'] = self.none_if(new_product['category'])
 
         subcategory = response.css('div.breadcrumb-section.uk-container-xlarge > app-breadcrumb > ul > li:nth-child(4) > a::text').extract_first()
         new_product['subcategory'] = self.clear_data(subcategory)
-        new_product['subcategory'] = none_if(new_product['subcategory'])
+        new_product['subcategory'] = self.none_if(new_product['subcategory'])
         
         new_product['url'] = response.url
         
@@ -117,29 +115,29 @@ class ProductparseSpider(scrapy.Spider):
 
         new_product['direct_link'] = response.xpath("//app-detailed-info[contains(@data-test, 'links-section')]//text()").getall()
         new_product['direct_link'] = response.xpath("//app-detailed-info[contains(@data-test, 'links-section')]//text()").getall()
-        new_product['direct_link'] = none_if_list(new_product['direct_link'])
+        new_product['direct_link'] = self.none_if_list(new_product['direct_link'])
 
         brand = response.css('span.secondary-heading::text').extract_first()
         new_product['brand'] = self.clear_data(brand)
-        new_product['brand'] = none_if(new_product['brand'])
+        new_product['brand'] = self.none_if(new_product['brand'])
 
         new_product['spec'] = response.xpath("//app-detailed-info[contains(@data-test, 'specification-section')]//text()").getall()
-        new_product['spec'] = none_if_list(new_product['spec'])
+        new_product['spec'] = self.none_if_list(new_product['spec'])
 
         new_product['desc'] = response.xpath("//div[contains(@data-test, 'description-text-container')]//text()").getall()
-        new_product['desc'] = none_if_list(new_product['desc'])
+        new_product['desc'] = self.none_if_list(new_product['desc'])
 
         new_product['tech_spec'] = response.xpath("//app-detailed-info[contains(@data-test, 'technical-specification-section')]//text()").getall()
-        new_product['tech_spec'] = none_if_list(new_product['tech_spec'])
+        new_product['tech_spec'] = self.none_if_list(new_product['tech_spec'])
 
         new_product['classification'] = response.xpath("//app-detailed-info[contains(@data-test, 'classification-section')]//text()").getall()
-        new_product['classification'] = none_if_list(new_product['classification'])
+        new_product['classification'] = self.none_if_list(new_product['classification'])
 
         new_product['related'] = response.xpath("//app-detailed-info[contains(@data-test, 'related-section')]//text()").getall()
-        new_product['related'] = none_if_list(new_product['related'])
+        new_product['related'] = self.none_if_list(new_product['related'])
         
         new_product['properties'] = response.xpath("//app-detailed-info[contains(@data-test, 'properties-section')]//text()").getall()
-        new_product['properties'] = none_if_list(new_product['properties'])
+        new_product['properties'] = self.none_if_list(new_product['properties'])
 
         new_product['votes'] = response.css('span.votes::text').extract_first()
         if new_product['votes'] == None or new_product['votes'].strip() == '' or new_product['votes'].strip() == '(':
@@ -152,7 +150,7 @@ class ProductparseSpider(scrapy.Spider):
             new_product['images'] = []
         else:
             new_product['images'] = [image]
-        new_product['properties'] = none_if_list(new_product['properties'])
+        new_product['properties'] = self.none_if_list(new_product['properties'])
 
         new_product['properties'] = []
         self.control(new_product['category'], new_product['subcategory'], new_product['name'])
@@ -219,16 +217,16 @@ class ProductparseSpider(scrapy.Spider):
             if self.list_product % 100 == 0:
                 print(f"Last --> {self.list_product}")
 
-def none_if(comp):
-    if comp == None or comp == '':
-        return 'None'
-    else:
-        return comp
-def none_if_list(comp):
-    if comp == None or comp == '':
-        return []
-    else:
-        return comp
-    
+    def none_if(self, comp):
+        if comp == None or comp == '':
+            return 'None'
+        else:
+            return comp
+    def none_if_list(self, comp):
+        if comp == None or comp == '':
+            return []
+        else:
+            return comp
+        
 
 # scrapy crawl productParse
