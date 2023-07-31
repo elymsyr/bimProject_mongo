@@ -35,6 +35,10 @@ py main.py -h
 
 ## Version History
 
+* 1.0
+    *  Current Release
+    * GUI and ReadME updated
+        * main.py can be used from GUI now   
 * 0.1
     * Initial Release
 
