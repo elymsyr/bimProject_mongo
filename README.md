@@ -17,10 +17,12 @@ Crawling product datas from 'bimObject.com' by using selenium and scrapy.
 ### Executing program
 
 * Open path/to/bimproduct.com in terminal.
-* See commands:
+  * See commands:
 ```
 py main.py -h 
 ```
+* Use gui.py running it as script.
+* scrapyd can be used only for running spiders
 
 ## Docs
 
