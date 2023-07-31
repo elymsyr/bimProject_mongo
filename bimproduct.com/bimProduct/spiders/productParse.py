@@ -2,20 +2,19 @@ import scrapy, re
 from bimProduct.items import NewProduct
 from random import randint
 from docs.mongo_connection import MongoConnection
-from time import sleep
 from selenium.webdriver import Chrome
 from selenium.webdriver import ChromeOptions
-from selenium.webdriver.common.by import By
 
 MAIN_DATAS = 'docs/product_data.txt'
 LOG = 'docs/mongo_log.txt'
+RESET_DRIVE_EVERY_ = 20
 
 class ProductparseSpider(scrapy.Spider):
     name = "productParse"
     allowed_domains = ["bimobject.com"]
     start_urls = ["https://bimobject.com"]
-    # id_adding_number = randint(0, 999)
-    id_adding_number = 1
+    id_adding_number = randint(0, 999)
+    crawled_last_time = 0
     id = 0
     merge_url = []
     crawled = []
@@ -32,7 +31,6 @@ class ProductparseSpider(scrapy.Spider):
         used_ids.append(id)
     for url in url_data:
         crawled.append(url[12:])
-        
     categories = {
         'Fabrics': [],
         'Fire Products': [],
@@ -58,20 +56,20 @@ class ProductparseSpider(scrapy.Spider):
         'Kitchen': [],
         'Doors': []
     }
-    
     with open(MAIN_DATAS, 'r', encoding='utf-8') as f:
         for url in f.readlines():
             merge_url.append(url.strip())
     start_urls = merge_url
-
+    list_product = len(start_urls)
+    
     def start_requests(self):
-        if self.id_adding_number % 10 == 0:
+        if self.id_adding_number % RESET_DRIVE_EVERY_ == 0:
             self.driver.quit
             self.chrome_options = ChromeOptions()
-            # chrome_options.add_argument('--headless=new')
+            self.chrome_options.add_argument('--headless=new')
             self.driver = Chrome(options=self.chrome_options)
             self.driver.implicitly_wait(2)
-            print("\n\n------------------------------------------------\nDriver Updated\n-----------------------------------------------\n\n")
+            print(f"\n\n------------------------------------------------\nDriver Updated\n-----------------------------------------------\n                                                    {self.id_adding_number}\n")
         for url in self.start_urls:
             if url[8:] in self.crawled:
                 print(f"Already crawledd.")
@@ -99,15 +97,15 @@ class ProductparseSpider(scrapy.Spider):
 
         name = response.css('h1.primary-heading::text').extract_first()
         new_product['name'] = self.clear_data(name)
-        new_product['name'] = none_if(new_product['name'])
+        new_product['name'] = self.none_if(new_product['name'])
 
         category = response.css('div.breadcrumb-section.uk-container-xlarge > app-breadcrumb > ul > li:nth-child(3) > a::text').extract_first()
         new_product['category'] = self.clear_data(category)
-        new_product['category'] = none_if(new_product['category'])
+        new_product['category'] = self.none_if(new_product['category'])
 
         subcategory = response.css('div.breadcrumb-section.uk-container-xlarge > app-breadcrumb > ul > li:nth-child(4) > a::text').extract_first()
         new_product['subcategory'] = self.clear_data(subcategory)
-        new_product['subcategory'] = none_if(new_product['subcategory'])
+        new_product['subcategory'] = self.none_if(new_product['subcategory'])
         
         new_product['url'] = response.url
         
@@ -117,29 +115,29 @@ class ProductparseSpider(scrapy.Spider):
 
         new_product['direct_link'] = response.xpath("//app-detailed-info[contains(@data-test, 'links-section')]//text()").getall()
         new_product['direct_link'] = response.xpath("//app-detailed-info[contains(@data-test, 'links-section')]//text()").getall()
-        new_product['direct_link'] = none_if_list(new_product['direct_link'])
+        new_product['direct_link'] = self.none_if_list(new_product['direct_link'])
 
         brand = response.css('span.secondary-heading::text').extract_first()
         new_product['brand'] = self.clear_data(brand)
-        new_product['brand'] = none_if(new_product['brand'])
+        new_product['brand'] = self.none_if(new_product['brand'])
 
         new_product['spec'] = response.xpath("//app-detailed-info[contains(@data-test, 'specification-section')]//text()").getall()
-        new_product['spec'] = none_if_list(new_product['spec'])
+        new_product['spec'] = self.none_if_list(new_product['spec'])
 
         new_product['desc'] = response.xpath("//div[contains(@data-test, 'description-text-container')]//text()").getall()
-        new_product['desc'] = none_if_list(new_product['desc'])
+        new_product['desc'] = self.none_if_list(new_product['desc'])
 
         new_product['tech_spec'] = response.xpath("//app-detailed-info[contains(@data-test, 'technical-specification-section')]//text()").getall()
-        new_product['tech_spec'] = none_if_list(new_product['tech_spec'])
+        new_product['tech_spec'] = self.none_if_list(new_product['tech_spec'])
 
         new_product['classification'] = response.xpath("//app-detailed-info[contains(@data-test, 'classification-section')]//text()").getall()
-        new_product['classification'] = none_if_list(new_product['classification'])
+        new_product['classification'] = self.none_if_list(new_product['classification'])
 
         new_product['related'] = response.xpath("//app-detailed-info[contains(@data-test, 'related-section')]//text()").getall()
-        new_product['related'] = none_if_list(new_product['related'])
+        new_product['related'] = self.none_if_list(new_product['related'])
         
         new_product['properties'] = response.xpath("//app-detailed-info[contains(@data-test, 'properties-section')]//text()").getall()
-        new_product['properties'] = none_if_list(new_product['properties'])
+        new_product['properties'] = self.none_if_list(new_product['properties'])
 
         new_product['votes'] = response.css('span.votes::text').extract_first()
         if new_product['votes'] == None or new_product['votes'].strip() == '' or new_product['votes'].strip() == '(':
@@ -152,12 +150,12 @@ class ProductparseSpider(scrapy.Spider):
             new_product['images'] = []
         else:
             new_product['images'] = [image]
-        new_product['properties'] = none_if_list(new_product['properties'])
+        new_product['properties'] = self.none_if_list(new_product['properties'])
 
         new_product['properties'] = []
-        print(new_product['category'], new_product['subcategory'], new_product['name'])
         id = self.id_assign(new_product['category'], new_product['subcategory'], new_product['name'])
         data = [id, 0, new_product['name'], new_product['category'],new_product['subcategory'],new_product['url'],new_product['images'],new_product['direct_link'][2:],new_product['brand'],new_product['votes'], new_product['rating'], new_product['tech_spec'], new_product['spec'], new_product['desc'], new_product['related'],new_product['classification'],new_product['properties']]
+        self.control(data)
         self.write_data(data)
     
     def cat_id(self, cat, sub_cat):
@@ -188,7 +186,17 @@ class ProductparseSpider(scrapy.Spider):
             name_two = int(ord(number[1])) % 10
             return str(f"{name_one}{name_two}")
         else: return '99'
- 
+
+    def control(self, data):
+        important_data = []
+        important_data.append(data[2])
+        important_data.append(data[5])
+        important_data.append(data[3])
+        important_data.append(data[4])
+        for prod in important_data:
+            if prod == None or prod == 'None':
+                self.keep_log(f'\nImportant data missing for {data[0]}')
+
     def id_assign(self, cat, sub_cat, name):
         pre_id = self.cat_id(cat, sub_cat)
         pre_id = self.number_defuser(pre_id, 0)
@@ -205,18 +213,23 @@ class ProductparseSpider(scrapy.Spider):
         try:
             self.connection.insert(data)
         except Exception as e:
-            self.keep_log(f'\nNot written: {data[0]} - {data[5]} --> Error: {e}')
+            self.keep_log(f'\nNot written: {data[0]} - {data[5]} --> Error:\n{e}\n')
+        finally:
+            self.list_product -= 1
+            self.crawled_last_time += 1
+            if self.list_product % 100 == 0:
+                print(f"Last --> {self.list_product}")
 
-def none_if(comp):
-    if comp == None or comp == '':
-        return 'None'
-    else:
-        return comp
-def none_if_list(comp):
-    if comp == None or comp == '':
-        return []
-    else:
-        return comp
-    
+    def none_if(self, comp):
+        if comp == None or comp == '':
+            return 'None'
+        else:
+            return comp
+    def none_if_list(self, comp):
+        if comp == None or comp == '':
+            return []
+        else:
+            return comp
+        
 
 # scrapy crawl productParse

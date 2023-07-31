@@ -1,0 +1,14 @@
+setup.py
+bimProduct/__init__.py
+bimProduct/items.py
+bimProduct/middlewares.py
+bimProduct/pipelines.py
+bimProduct/settings.py
+bimProduct/spiders/__init__.py
+bimProduct/spiders/productParse.py
+bimProduct/spiders/urlExtractor.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt

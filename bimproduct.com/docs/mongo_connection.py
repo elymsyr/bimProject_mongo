@@ -64,4 +64,3 @@ class MongoConnection():
             number -= 1
             print(f"{id} --> {new_id}")
             self.connection.update_one({'p_id': f'{id}'}, {"$set":{'p_id': f'{new_id}'}})
-            

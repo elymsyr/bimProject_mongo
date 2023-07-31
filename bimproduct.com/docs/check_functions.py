@@ -2,10 +2,13 @@ import os
 from codecs import open
 from re import match
 from os import remove
-from os.path import isdir
+# from os.path import isdir
 from datetime import datetime, date
 from shutil import rmtree
-from mongo_connection import MongoConnection
+try:
+    from docs.mongo_connection import MongoConnection
+except:
+    from mongo_connection import MongoConnection
 
 MAIN_DATAS = 'docs/product_data.txt'
 # Item scope to write log
@@ -72,7 +75,6 @@ def find_a(collection):
     res = []
     for row in results:
         res.append(row['p_id'])
-    print(res)
     return res    
 
 def get_list():

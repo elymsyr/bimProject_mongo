@@ -1,19 +1,387 @@
-- https://www.bimobject.com/en/kahrs/product/oakmoon596541- https://www.bimobject.com/en/kahrs/product/walnutgroove596404   Page loaded successfully!
-   Prop found.
-- https://www.bimobject.com/en/kahrs/product/oakchevronlightbrown595743   Page loaded successfully!
-   Prop found.
-- https://www.bimobject.com/en/trinar-zh/product/ka3e97177   Page loaded successfully!
-   Prop found.
-- https://www.bimobject.com/en/kahrs/product/oakmoon596541   Page loaded successfully!
-   Prop found.
-- https://www.bimobject.com/en/kahrs/product/ashvaila586473   Page loaded successfully!
-   Prop found.
-- https://www.bimobject.com/en/plants/product/boxelder   Page loaded successfully!
-   Prop was not found.
-- https://www.bimobject.com/en/jvd/product/stellair   Page loaded successfully!
-   Prop found.
-- https://www.bimobject.com/en/kahrs/product/walnutphiladelphia585187   Page loaded successfully!
-   Prop found.
-   
 
+LOG 2023-07-31 - 11:16:17
+ Driver opened.
+ Total item to update -> 6791
+ Total item updated before -> 34
+ Total item in db -> 6825
+ - https://www.bimobject.com/en/jbl-professional/product/awc62-all-weather-compact-2-way-coaxial-loudspeaker-with-6-5-lf
+     Prop was not found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/4253_professional-3-way-main-cinema-screen-speaker
+     Prop was not found.
+    Updated.
+ - https://www.bimobject.com/en/sennheiser/product/slrackreceiverdw
+     Prop was not found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/ac26-wrc-wrx-ultra-compact-2-way-loudspeaker-with-2-x-6-5-lf
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/biamp/product/lvh900ap_community-point-source
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/meyersound/product/meyersound-hms-10
+     Prop found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/control-16c-va-two-way-6-5-co-axial-ceiling-loudspeaker-en54-24
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/meyersound/product/meyersound-ultra-x42
+     Prop found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/stx812m-12-two-way-bass-reflex-stage-monitor-utility
+     Prop was not found.
+    Updated.
+ - https://www.bimobject.com/en/meyersound/product/meyersound-upq-d2
+     Prop found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/control-12c-va-3-compact-ceiling-loudspeaker-en54-24
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/biamp/product/h20_commercial-loudspeakers-projectors-horn
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/biamp/product/dp6_desono-pendant
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/scs-12-spatially-cued-surround-loudspeaker2-way-coaxial
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/biamp/product/is6-115wr_community-subwoofer
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/biamp/product/iv6-118s_community-line-array
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/meyersound/product/meyersound-acheron80-100
+     Prop found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/ac18-26-95-compact-2-way-loudspeaker-with-1-x-8-lf
+     Prop was not found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/asb4128-medium-power-subwoofer-2-x-18-2042h-drivers
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/8320-compact-cinema-surroundspeaker
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/meyersound/product/meyersound-acheron-studio
+     Prop found.
+    Updated.
+ - https://www.bimobject.com/en/biamp/product/cmx20t_commercial-loudspeakers-ceiling
+     Prop was not found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/ac28-26-95-compact-2-way-loudspeaker-with-2-x-8-lf
+     Prop was not found.
+    Updated.
+ - https://www.bimobject.com/en/biamp/product/hm25_commercial-loudspeakers-projectors-horn
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/3733-three-way-screenarray-cinema-loudspeakers
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/biamp/product/h10_commercial-loudspeakers-projectors-horn
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/biamp/product/ma65_commercial-audio-mixing-amplifier
+     Prop was not found.
+    Updated.
+ - https://www.bimobject.com/en/lowell/product/lowell-es-62t
+     Prop found.
+    Updated.
+ - https://www.bimobject.com/en/biamp/product/mx10_community-point-source
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/mtc-25ub-1-u-bracket-for-control-25-1
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/scs-8-spatially-cued-surround-loudspeaker2-way-coaxial
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/5628-ultra-long-excursion-very-high-power-dual-18-cinema-subwoofer
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/9320-12-high-power-cinema-surround-multi-channel
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/lowell/product/es-52t_5-inch-coaxial-speaker
+     Prop found.
+    Updated.
+ - https://www.bimobject.com/en/crown/product/crown-dci-4-600da
+     Prop was not found.
+     No more image found.
+    Updated.
+ - https://www.bimobject.com/en/lowell/product/os-50tb_50w-indoor-outdoor-speaker
+     Prop found.
+    Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/if56b
+     Prop was not found.
+    Updated.
+ - https://www.bimobject.com/en/toshiba-thailand/product/toshiba_washingmachine_tw-bh
+     Prop was not found.
+    Updated.
+ - https://www.bimobject.com/en/jbl-professional/product/mtc-28ub-1-u-bracket-for-control-28-1
+     Prop was not found.
+     No more image found.
+    Updated.
 
+LOG 2023-07-31 - 11:24:41
+ Driver opened.
+ Total item to update -> 6752
+ Total item updated before -> 73
+ Total item in db -> 6825
+ - https://www.bimobject.com/en/electroluxbrasil/product/76usv
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/dm86x
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/lp14x
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/mi41s
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353045765
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353397895
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/led14
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/girbau/product/continentalgirbau-0020
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353395730
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353361995
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/70cs
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/electrolux/product/electrolux_free_standing_tumble_dryer_bf_sahara_60_white
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/electrolux/product/electrolux_free_standing_washer_hec_60_xxl_white
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353362299
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353400472
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/dm86v
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/ke5gp
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/76exr
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/electrolux/product/electrolux_free_standing_washer_hec_54_xxxl_white
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/girbau/product/continentalgirbau-0022
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/ke4gp
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/52exr
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/76ebr
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/girbau/product/continentalgirbau-0001
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353397925
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/dq90x
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353422849
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/electrolux/product/electrolux_free_standing_washer_hec_54_xl_white
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/aeg/product/aeg_free_standing_washer_hec_54_xl_white
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/90ctv
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353395747
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/76exv
+    Prop found.
+   Updated.
+ - https://www.bimobject.com/en/girbau/product/continentalgirbau-0018
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/toshiba-thailand/product/toshiba_washer-dryer_twd-bh90w4t_8kg
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353397918
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/pe12a
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/haceb/product/7704353397932
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/mbcc-group/product/bridge_repair
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/electroluxbrasil/product/lei18
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_scenera_600x1200_2-3
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/kobilabs/product/kobi-toolkit-for-civil-3d-1
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_standard_1200x1200_4-6
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_scenera_200x300_0-2
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/gotessons/product/acoustic-print-big-sound-absorbent
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_scenera_420x420_0-35
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/barrisol/product/acoustic-frame-arcs-14
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_scenera_300x300_0-31
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/danosa/product/impactodan_5
+    Prop found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_standard_300x300_0-31
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/flokk/product/soundwave-village-acoustic-panel
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/flokk/product/soundwave-scrunch-acoustic-panel
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/danosa/product/acustidan_164
+    Prop found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_2-08_white
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_scenera_600x600_0-63
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_3-68_black
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/gotessons/product/sound-off-cloud
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/danosa/product/membrana_acustica_danosa_mad_4
+    Prop found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_standard_1000x1000_4-05
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_standard_100x300_0-11
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_2-05_black
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/mappy/product/mappywood-pr-20
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_3-68_white
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/barrisol/product/acoustic-frame-arcs-16-led
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_2-88_black
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/barrisol/product/acoustic-frame-arcs-13
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_3-55_black
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_3-55_white
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_1-12_white
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_1-65_black
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_1-25_black
+    Something went wrong.
+    No more image found.
