@@ -32,6 +32,7 @@ py main.py -h
   * get_list/lister/hard_clear: checks downloads and corrected download_states
 * download_product.py (py main.py -d): Gets URLs from database and downloads data
 * update_comp.py (py main.py -u): Updates 'properties' and 'images' parts of products in database
+* var.py: all important variables  
 
 ## License
 
