@@ -7,12 +7,7 @@ from datetime import datetime, date
 from docs.mongo_connection import MongoConnection
 from time import time
 
-MAIN_DATAS = 'docs/product_data.txt'
-LIST_SCOPE = [0,10]
-DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
-DOWNLOAD_LOG = 'docs/download_log.txt'
-MONGO_LOG = 'docs/mongo_log.txt'
-UPDATE_LOG = 'docs/update_log.txt'
+from var import MONGO_LOG, UPDATE_LOG
 
 def convert(seconds):
     seconds = int(seconds)

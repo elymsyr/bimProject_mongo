@@ -9,12 +9,7 @@ try:
     from docs.mongo_connection import MongoConnection
 except:
     from mongo_connection import MongoConnection
-
-MAIN_DATAS = 'docs/product_data.txt'
-# Item scope to write log
-LIST_SCOPE = [0,10]
-DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
-DOWNLOAD_LOG = 'docs/download_log.txt'
+from var import MAIN_DATAS, LIST_SCOPE, DOWNLOAD_FOLDER, DOWNLOAD_LOG
 
 def main_check():
     urls = []

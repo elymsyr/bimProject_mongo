@@ -7,9 +7,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
-UPDATE_LOG = 'docs/update_log.txt'
-# Wait time for page to load 
-TIMEOUT = 10
+from var import UPDATE_LOG, TIMEOUT
 
 def var_selenium():
     updated = []

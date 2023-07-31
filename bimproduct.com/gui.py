@@ -1,8 +1,9 @@
 import tkinter as tk
 from codecs import open
 from os import system
-from docs.download_product import start_download, DOWNLOAD_FOLDER
-from docs.mongo_connection import MongoConnection, SELECTORS
+from docs.download_product import start_download
+from docs.mongo_connection import MongoConnection
+from var import SELECTORS, DOWNLOAD_FOLDER
 
 check = ''
 

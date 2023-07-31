@@ -1,10 +1,10 @@
 from pymongo import MongoClient
-
-# Mongo Connection
-DATABASE = 'bim'
-COLLECTION = 'bim-new'
-CLUSTER = 'mongodb+srv://admin0:aqwer1234@bim.0xndej5.mongodb.net/'
-SELECTORS = ['p_id', 'download_state', 'name', 'category', 'subcategory', 'url', 'images', 'direct_link', 'brand', 'votes', 'rating', 'tech-spec', 'specification', 'description', 'related', 'classification','properties']
+from var import DATABASE, COLLECTION, CLUSTER, SELECTORS
+# # Mongo Connection
+# DATABASE = 'bim'
+# COLLECTION = 'bim-new'
+# CLUSTER = 'mongodb+srv://admin0:aqwer1234@bim.0xndej5.mongodb.net/'
+# SELECTORS = ['p_id', 'download_state', 'name', 'category', 'subcategory', 'url', 'images', 'direct_link', 'brand', 'votes', 'rating', 'tech-spec', 'specification', 'description', 'related', 'classification','properties']
 
 class MongoConnection():
     def __init__(self):

@@ -8,13 +8,7 @@ from multiprocessing import Process
 from shutil import rmtree
 from docs.check_functions import fix_state, check_all
 from docs.mongo_connection import MongoConnection
-
-DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
-DOWNLOAD_LOG = 'docs/download_log.txt'
-# Driver Number to run at the same time
-MULTIQUEUE_NUMBER = 2
-# Wait time for a product document to download. (a*2) -> waits a seconds, if the file was detected as still downloading, wait for a*2 seconds
-SLEEP_BREAK = 40*2
+from var import DOWNLOAD_FOLDER, MULTIQUEUE_NUMBER, SLEEP_BREAK
 
 class DownloadItem():
     def __init__(self, url, id, driver=None) -> None:

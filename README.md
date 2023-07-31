@@ -35,6 +35,8 @@ py main.py -h
 
 ## Version History
 
+* 1.0.1
+    * Variables were gathered in var.py
 * 1.0
     *  Current Release
     * GUI and ReadME updated

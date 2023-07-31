@@ -4,9 +4,7 @@
 # from codecs import open
 # from requests import get
 # from re import compile, IGNORECASE
-
-# MAIN_DATAS = 'docs/main_data_storage.txt'
-# SECOND_DATAS = 'docs/new_data_storage.txt'
+# from var import FOR_MAIN_DATAS, SECOND_DATAS
 
 # # scrapy crawl urlExtract
 
@@ -21,7 +19,7 @@
 #         for url in f.readlines():
 #             urls.append(url.strip())
 #             crawled.append(url.strip())
-#     with open(f"{MAIN_DATAS}", 'r', "utf-8") as f:
+#     with open(f"{FOR_MAIN_DATAS}", 'r', "utf-8") as f:
 #         for url in f.readlines():
 #             crawled.append(url.strip())
 #     with open(f"{SECOND_DATAS}", 'w+') as f:
@@ -42,14 +40,14 @@
 #                 elif not match.startswith('https://'):
 #                     match = f"https://bimobject.com{match}"
 #                     if match not in self.crawled:
-#                         with open(f'{MAIN_DATAS}', 'a+', 'utf-8') as f:
+#                         with open(f'{FOR_MAIN_DATAS}', 'a+', 'utf-8') as f:
 #                             f.write(f"{match}\n")
 #                             self.crawled.append(match)
 #                         with open(f'{SECOND_DATAS}', 'a+', 'utf-8') as f:
 #                             f.write(f"{match}\n")
 #                 else:
 #                     if match not in self.crawled:
-#                         with open(f'{MAIN_DATAS}', 'a+', 'utf-8') as f:
+#                         with open(f'{FOR_MAIN_DATAS}', 'a+', 'utf-8') as f:
 #                             f.write(f"{match}\n")
 #                             self.crawled.append(match)
 #                         with open(f'{SECOND_DATAS}', 'a+', 'utf-8') as f:
