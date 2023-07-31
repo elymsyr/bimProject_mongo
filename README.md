@@ -2,7 +2,7 @@
 
 ## Description
 
-Crawling product datas from 'bimObject.com' by using selenium and scrapy.
+Crawling product data from 'bimObject.com' by using selenium and scrapy.
 
 ## Getting Started
 
@@ -16,21 +16,21 @@ Crawling product datas from 'bimObject.com' by using selenium and scrapy.
 
 ### Executing program
 
-* Open path/to/bimproduct.com in terminal.
+* Open path/to/bimproduct.com in the terminal.
   * See commands:
 ```
 py main.py -h 
 ```
-* Use gui.py running it as script.
-* scrapyd can be used only for running spiders
+* Use gui.py to run it as a script.
+* 'scrapyd' can be used only for running spiders
 
 ## Docs
 
 * check_functions.py (py main.py -c): 
-  * main_check : checks MAIN_DATAS for url compabilities
-  * check_hunted : checks database for any ID or url that may cause an error
-  * get_list/lister/hard_clear : checks downloads and corrected download_states
-* download_product.py (py main.py -d): Gets urls from database and downloads datas
+  * main_check: checks MAIN_DATAS for URL compatibilities
+  * check_hunted: checks database for any ID or URL that may cause an error
+  * get_list/lister/hard_clear: checks downloads and corrected download_states
+* download_product.py (py main.py -d): Gets URLs from database and downloads data
 * update_comp.py (py main.py -u): Updates 'properties' and 'images' parts of products in database
 
 ## Version History
@@ -46,7 +46,7 @@ py main.py -h
 
 ## License
 
-This project is licensed under the [MIT] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
  - [github](https://github.com/elymsyr)
  - mail: orhun868@gmail.com
