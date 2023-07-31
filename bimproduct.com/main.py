@@ -4,12 +4,14 @@ import argparse
 from docs.check_functions import check_all
 from pandas import DataFrame
 from os import system
+from datetime import datetime, date
 from docs.mongo_connection import MongoConnection
 
 MAIN_DATAS = 'docs/product_data.txt'
 LIST_SCOPE = [0,10]
 DOWNLOAD_FOLDER = 'C:\\Users\\orhun\\OneDrive\\Belgeler\\Github Repo\\bimObject\\Include\\BimDownloaded'
 DOWNLOAD_LOG = 'docs/download_log.txt'
+LOG = 'docs/mongo_log.txt'
 
 # def urlExtract():
 #     process = CrawlerProcess(get_project_settings())
@@ -21,6 +23,7 @@ def productParse():
     process.crawl('productParse')
     process.start()
     process.join()
+    print("\nEND\n")
     
 def clear():
     connection = MongoConnection()
@@ -35,6 +38,13 @@ def export():
     if '_id' in df:
         del df['_id']       
     df.to_csv('docs/exported.csv', index=False)
+
+def start_log():
+    now = datetime.now()
+    today = date.today()
+    current_time = now.strftime("%H:%M:%S")
+    with open(LOG, 'a', encoding='utf-8') as f:
+        f.write(f"\nDownload Log {today} - {current_time}\n") 
  
 
 if __name__ == '__main__':
@@ -58,6 +68,7 @@ if __name__ == '__main__':
         check_all()
     elif hunter_key:
         productParse()
+        start_log()
     elif search_key:
         system('py gui.py')  
     elif download_key:

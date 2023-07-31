@@ -9,13 +9,14 @@ from selenium.webdriver.common.by import By
 
 MAIN_DATAS = 'docs/product_data.txt'
 LOG = 'docs/mongo_log.txt'
+RESET_DRIVE_EVERY_ = 20
 
 class ProductparseSpider(scrapy.Spider):
     name = "productParse"
     allowed_domains = ["bimobject.com"]
     start_urls = ["https://bimobject.com"]
-    # id_adding_number = randint(0, 999)
-    id_adding_number = 1
+    id_adding_number = randint(0, 999)
+    crawled_last_time = 0
     id = 0
     merge_url = []
     crawled = []
@@ -32,7 +33,6 @@ class ProductparseSpider(scrapy.Spider):
         used_ids.append(id)
     for url in url_data:
         crawled.append(url[12:])
-        
     categories = {
         'Fabrics': [],
         'Fire Products': [],
@@ -58,20 +58,20 @@ class ProductparseSpider(scrapy.Spider):
         'Kitchen': [],
         'Doors': []
     }
-    
     with open(MAIN_DATAS, 'r', encoding='utf-8') as f:
         for url in f.readlines():
             merge_url.append(url.strip())
     start_urls = merge_url
-
+    list_product = len(start_urls)
+    
     def start_requests(self):
-        if self.id_adding_number % 10 == 0:
+        if self.id_adding_number % RESET_DRIVE_EVERY_ == 0:
             self.driver.quit
             self.chrome_options = ChromeOptions()
-            # chrome_options.add_argument('--headless=new')
+            self.chrome_options.add_argument('--headless=new')
             self.driver = Chrome(options=self.chrome_options)
             self.driver.implicitly_wait(2)
-            print("\n\n------------------------------------------------\nDriver Updated\n-----------------------------------------------\n\n")
+            print(f"\n\n------------------------------------------------\nDriver Updated\n-----------------------------------------------\n                                                    {self.id_adding_number}\n")
         for url in self.start_urls:
             if url[8:] in self.crawled:
                 print(f"Already crawledd.")
@@ -155,7 +155,7 @@ class ProductparseSpider(scrapy.Spider):
         new_product['properties'] = none_if_list(new_product['properties'])
 
         new_product['properties'] = []
-        print(new_product['category'], new_product['subcategory'], new_product['name'])
+        self.control(new_product['category'], new_product['subcategory'], new_product['name'])
         id = self.id_assign(new_product['category'], new_product['subcategory'], new_product['name'])
         data = [id, 0, new_product['name'], new_product['category'],new_product['subcategory'],new_product['url'],new_product['images'],new_product['direct_link'][2:],new_product['brand'],new_product['votes'], new_product['rating'], new_product['tech_spec'], new_product['spec'], new_product['desc'], new_product['related'],new_product['classification'],new_product['properties']]
         self.write_data(data)
@@ -188,7 +188,14 @@ class ProductparseSpider(scrapy.Spider):
             name_two = int(ord(number[1])) % 10
             return str(f"{name_one}{name_two}")
         else: return '99'
- 
+
+    def control(self, data):
+        important_data = []
+        important_data.append(data[2], data[3], data[4], data[5])
+        for prod in important_data:
+            if prod == None or prod == 'None':
+                self.keep_log(f'\nImportant data missing for {data[0]}')
+
     def id_assign(self, cat, sub_cat, name):
         pre_id = self.cat_id(cat, sub_cat)
         pre_id = self.number_defuser(pre_id, 0)
@@ -205,7 +212,12 @@ class ProductparseSpider(scrapy.Spider):
         try:
             self.connection.insert(data)
         except Exception as e:
-            self.keep_log(f'\nNot written: {data[0]} - {data[5]} --> Error: {e}')
+            self.keep_log(f'\nNot written: {data[0]} - {data[5]} --> Error:\n{e}\n')
+        finally:
+            self.list_product -= 1
+            self.crawled_last_time += 1
+            if self.list_product % 100 == 0:
+                print(f"Last --> {self.list_product}")
 
 def none_if(comp):
     if comp == None or comp == '':
