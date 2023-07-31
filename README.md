@@ -33,17 +33,6 @@ py main.py -h
 * download_product.py (py main.py -d): Gets URLs from database and downloads data
 * update_comp.py (py main.py -u): Updates 'properties' and 'images' parts of products in database
 
-## Version History
-
-* 1.0.1
-    * Variables were gathered in var.py
-* 1.0
-    *  Current Release
-    * GUI and ReadME updated
-        * main.py can be used from GUI now   
-* 0.1
-    * Initial Release
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
