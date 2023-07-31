@@ -12,14 +12,26 @@ UPDATE_LOG = 'docs/update_log.txt'
 TIMEOUT = 10
 
 def var_selenium():
+    updated = []
+    ready_urls = []
+    with open('docs/updated_urls.txt', 'r', encoding='utf-8') as f:
+        for url in f.readlines():
+            updated.append(url.strip())
     chrome_options = ChromeOptions()
     chrome_options.add_argument('--headless=new')
+    chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
     driver = Chrome(options=chrome_options)
     driver.implicitly_wait(2)
+    keep_log_error(" Driver opened.")
     con = MongoConnection()
     urls = find_url(con)
-    print("Driver opened.")
     for url in urls:
+        if url not in updated:
+            ready_urls.append(url)
+    keep_log_error(f" Total item to update -> {len(ready_urls)}")
+    keep_log_error(f" Total item updated before -> {len(updated)}")
+    keep_log_error(f" Total item in db -> {len(urls)}")
+    for url in ready_urls:
         page_load = 1
         keep_log_state(url)
         properties = []
@@ -27,7 +39,7 @@ def var_selenium():
         try:
             old_image = find_old_image(url, con)
         except Exception as error:
-            keep_log_error(error)
+            keep_log_error(f"    {error}")
             old_image = []
         driver.get(url)
         try:
@@ -35,7 +47,7 @@ def var_selenium():
             WebDriverWait(driver, TIMEOUT).until(element_present)
             # keep_log_error("Page loaded successfully.")
         except:
-            keep_log_error("Timed out waiting for page to load.")
+            keep_log_error("    Timed out waiting for page to load.")
             page_load = 0
         if page_load:
             try:
@@ -48,11 +60,11 @@ def var_selenium():
                 for item in tgs:
                     if item.strip() != '':
                         properties.append(item.strip())
-                keep_log_error("Prop found.")
+                keep_log_error("    Prop found.")
             except (NoSuchElementException, TimeoutException):
-                keep_log_error("Prop was not found.")
+                keep_log_error("    Prop was not found.")
             except:
-                keep_log_error("Something went wrong.")
+                keep_log_error("    Something went wrong.")
             try:
                 l = driver.find_element(By.XPATH, "//app-image-slider")
                 txt = str(l.get_attribute('innerHTML'))
@@ -70,10 +82,16 @@ def var_selenium():
                     if new not in old_image:
                         old_image.append(new)
             elif other_images == []:
-                keep_log_error("No more image found.")
-            update(url, con, properties, old_image)
+                keep_log_error("    No more image found.")
+            try:
+                update(url, con, properties, old_image)
+                with open('docs/updated_urls.txt', 'a', encoding='utf-8') as f:
+                    f.write(f"{url}\n")
+                keep_log_error(f"   Updated.")
+            except Exception as a:
+                keep_log_error(f"   Update Failed: {a}")
         elif page_load == 0:
-            keep_log_error("End Program")
+            keep_log_error("   End Program")
             break
     keep_log_error("\n\n")
 
@@ -95,11 +113,11 @@ def update(url, con, prop, img):
 
 def keep_log_error(error):
     with open(UPDATE_LOG, 'a', encoding='utf-8') as f:
-        f.write(f"   {error}\n")
+        f.write(f"{error}\n")
 
 def keep_log_state(url):
     with open(UPDATE_LOG, 'a', encoding='utf-8') as f:
-        f.write(f"- {url}\n")
+        f.write(f" - {url}\n")
 
 if __name__ == '__main__':
     var_selenium()
