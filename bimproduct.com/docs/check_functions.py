@@ -182,14 +182,18 @@ def check_all(state = None):
     keep_log("\n---------------------------------------------------------------------------------\n")
     get_list()
     lister()
-    if state == None:
-        if int(input('clear?: ')):
-            hard_clear()
-    else:
-        if state:
-            hard_clear()
+    # if state == None:
+    #     if int(input('clear?: ')):
+    #         hard_clear()
+    # else:
+    #     if state:
+    #         hard_clear()
+    hard_clear()
             
 
 if __name__ == '__main__':
+    print("Check started.")
     check_hunted()
     check_all()
+    print("Check finished.")
+    

@@ -385,3 +385,75 @@ LOG 2023-07-31 - 11:24:41
  - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_1-25_black
     Something went wrong.
     No more image found.
+
+LOG 2023-07-31 - 14:00:43
+ Driver opened.
+ Total item to update -> 8121
+ Total item updated before -> 142
+ Total item in db -> 8263
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_1-25_black
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/mappy/product/mappyfiber-l-wavy
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/feltech/product/feltech_acoustic_wall_acoupanel_sculpture
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/flokk/product/soundwave-swell-acoustic-panel
+
+LOG 2023-07-31 - 14:11:54
+ Driver opened.
+ Total item to update -> 8168
+ Total item updated before -> 145
+ Total item in db -> 8313
+ - https://www.bimobject.com/en/flokk/product/soundwave-swell-acoustic-panel
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_standard_200x600_0-39
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_1-52_black
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/danosa/product/danofon
+    Prop found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/feltech/product/feltech_acoustic_wall_ceiling_acoupanel_apd12_printed
+ Driver opened.
+ Total item to update -> 8164
+ Total item updated before -> 149
+ Total item in db -> 8313
+ - https://www.bimobject.com/en/feltech/product/feltech_acoustic_wall_ceiling_acoupanel_apd12_printed
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zandera_standard_200x300_0-2
+    Prop was not found.
+   Updated.
+ - https://www.bimobject.com/en/steriks/product/foundation-650x650x3000-type-2
+
+LOG 2023-07-31 - 14:17:24
+ Driver opened.
+ Total item to update -> 8162
+ Total item updated before -> 151
+ Total item in db -> 8313
+ - https://www.bimobject.com/en/steriks/product/foundation-650x650x3000-type-2
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/steriks/product/foundation-1400x1400x2600-type-5
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/steriks/product/kabelranna-535-citybanan-545x2250x400
+    Prop was not found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/danosa/product/fonodan_bj
+    Prop found.
+    No more image found.
+   Updated.
+ - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white

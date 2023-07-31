@@ -1,7 +1,6 @@
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 import argparse
-from docs.check_functions import check_all
 from pandas import DataFrame
 from os import system
 from datetime import datetime, date
@@ -81,7 +80,7 @@ if __name__ == '__main__':
         start = time()
         remainder = start
         start = 0
-        check_all()
+        system('py check_functions.py')
         stop = time()
         stop -= remainder         
         print("Elapsed time during the whole program in seconds:", convert(stop))         

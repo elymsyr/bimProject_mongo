@@ -15,6 +15,7 @@ class ProductparseSpider(scrapy.Spider):
     start_urls = ["https://bimobject.com"]
     id_adding_number = randint(0, 999)
     crawled_last_time = 0
+    counter = 1
     id = 0
     merge_url = []
     crawled = []
@@ -60,7 +61,7 @@ class ProductparseSpider(scrapy.Spider):
         for url in f.readlines():
             merge_url.append(url.strip())
     start_urls = merge_url
-    list_product = len(start_urls)
+    list_product = len(start_urls) + 1
     
     def start_requests(self):
         if self.id_adding_number % RESET_DRIVE_EVERY_ == 0:
@@ -216,9 +217,11 @@ class ProductparseSpider(scrapy.Spider):
             self.keep_log(f'\nNot written: {data[0]} - {data[5]} --> Error:\n{e}\n')
         finally:
             self.list_product -= 1
+            self.counter += 1
             self.crawled_last_time += 1
             if self.list_product % 100 == 0:
                 print(f"Last --> {self.list_product}")
+        print(f"\ndata written --> {self.counter}\n")
 
     def none_if(self, comp):
         if comp == None or comp == '':

@@ -14,6 +14,7 @@ TIMEOUT = 10
 def var_selenium():
     updated = []
     ready_urls = []
+    counter = 1
     with open('docs/updated_urls.txt', 'r', encoding='utf-8') as f:
         for url in f.readlines():
             updated.append(url.strip())
@@ -23,12 +24,14 @@ def var_selenium():
     driver = Chrome(options=chrome_options)
     driver.implicitly_wait(2)
     keep_log_error(" Driver opened.")
+    print(" Driver opened.")
     con = MongoConnection()
     urls = find_url(con)
     for url in urls:
         if url not in updated:
             ready_urls.append(url)
     keep_log_error(f" Total item to update -> {len(ready_urls)}")
+    print(f" Total item to update -> {len(ready_urls)}")
     keep_log_error(f" Total item updated before -> {len(updated)}")
     keep_log_error(f" Total item in db -> {len(urls)}")
     for url in ready_urls:
@@ -46,6 +49,8 @@ def var_selenium():
             element_present = expected_conditions.presence_of_element_located((By.XPATH, "//img[contains(@alt, 'BIMobject logo')]"))
             WebDriverWait(driver, TIMEOUT).until(element_present)
             # keep_log_error("Page loaded successfully.")
+            print(f"Page loaded successfully -> {counter}", end="\r")
+            counter += 1
         except:
             keep_log_error("    Timed out waiting for page to load.")
             page_load = 0
@@ -91,7 +96,8 @@ def var_selenium():
             except Exception as a:
                 keep_log_error(f"   Update Failed: {a}")
         elif page_load == 0:
-            keep_log_error("   End Program")
+            keep_log_error("Page Error --> Program Ended")
+            print("Page Error --> Program Ended")
             break
     keep_log_error("\n\n")
 

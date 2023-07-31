@@ -1,5 +1,6 @@
 import tkinter as tk
 from codecs import open
+from os import system
 from docs.download_product import start_download, DOWNLOAD_FOLDER
 from docs.mongo_connection import MongoConnection, SELECTORS
 
@@ -77,10 +78,27 @@ def search():
 def listbox_used(event):
     global check
     check = listbox.get(listbox.curselection())
+    
+def func_a():
+    command = 'py main.py -c'
+    system(f"start cmd /c {command}")
+def func_b():
+    command = 'py main.py -u'
+    system(f"start cmd /c {command}")    
+def func_c():
+    command = 'py main.py -x'
+    system(f"start cmd /c {command}")    
 
 window = tk.Tk()
 window.title("BIMOBJECT")
 window.config(padx=40, pady=40)
+
+# output = tk.Text(window, width=36, height=8)
+# output.grid(row=6, column=1, sticky=tk.W+tk.N)
+# scrollbar_y = tk.Scrollbar(window,orient=tk.VERTICAL,command=output.yview)
+# scrollbar_x = tk.Scrollbar(window,orient=tk.HORIZONTAL,command=output.xview)
+# scrollbar_y.grid(row=6, column=1, sticky=tk.N+tk.S+tk.E)
+# scrollbar_x.grid(row=6, column=1, sticky=tk.W+tk.S+tk.E)
 
 search_for = tk.Label(text="Search for: ")
 search_for.grid(row=0, column=0, sticky=tk.W)
@@ -94,8 +112,8 @@ for item in cats:
     listbox.insert(cats.index(item),item)
 listbox.bind("<<ListboxSelect>>", listbox_used)
 scrollbar = tk.Scrollbar(window,orient=tk.VERTICAL,command=listbox.yview)
-listbox['yscrollcommand'] = scrollbar.set
 scrollbar.grid(row=1, column=1, rowspan=2, sticky=tk.N+tk.S+tk.E)
+listbox['yscrollcommand'] = scrollbar.set
 listbox.grid(row=1, column=1, rowspan=2, sticky=tk.W)
 
 search_button = tk.Button(text="Search", width=12, command=search)
@@ -104,10 +122,16 @@ clear_button = tk.Button(text="Clear", width=12, command=clear)
 clear_button.grid(row=4, column=1)
 download_button = tk.Button(text="Download", width=12, command=download)
 download_button.grid(row=4, column=1, sticky=tk.E)
-
 donwload_for = tk.Label(text="Download with ID: ")
 donwload_for.grid(row=3, column=0, sticky=tk.W)
 download_box = tk.Entry(width=50)
 download_box.grid(row=3, column=1, sticky=tk.E)
+
+check_button = tk.Button(text="Check", width=12, command=func_a)
+check_button.grid(row=5, column=1, sticky=tk.W)
+update_button = tk.Button(text="Update", width=12, command=func_b)
+update_button.grid(row=5, column=1)
+hunt_button = tk.Button(text="Run Spider", width=12, command=func_c)
+hunt_button.grid(row=5, column=1, sticky=tk.E)
 
 window.mainloop()
