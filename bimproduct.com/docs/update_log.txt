@@ -816,10 +816,831 @@ PROCESS QUEUE
 
    20d-2_yamadome --> https://www.bimobject.com/en/boj-x-cug/product/20d-2_yamadome:
      Error: No prop 3d_car1
-adome
-     Error: No more image 3d_car1
-adome
 
    terra-dc-wallbox --> https://www.bimobject.com/en/abb/product/terra-dc-wallbox:
      Error: No prop terra-dc-wallbox
      Error: No more image terra-dc-wallbox
+
+LOG 2023-08-01 - 13:05:54
+PROCESS QUEUE
+
+ - Total item updated before -> 207
+ - Total item in db -> 22791
+ - Total item to update -> 101
+ - 34 block created. Each has 3 items.
+
+   3d_car1 --> https://www.bimobject.com/en/boj-x-cug/product/3d_car1:
+     Error: No prop 3d_car1
+     Error: No more image 3d_car1
+
+   4058_5 --> https://www.bimobject.com/en/urmet/product/4058_5:
+     Error: No prop 4058_5
+     Error: No more image 4058_5
+
+   kobi-toolkit-for-civil-3d-21 --> https://www.bimobject.com/en/kobilabs/product/kobi-toolkit-for-civil-3d-21:
+     Error: No prop kobi-toolkit-for-civil-3d-21
+     Updated kobi-toolkit-for-civil-3d-21
+
+   3d_car2 --> https://www.bimobject.com/en/boj-x-cug/product/3d_car2:
+     Error: No prop 3d_car2
+     Error: No more image 3d_car2
+
+   kobi-toolkit-for-civil-3d-4 --> https://www.bimobject.com/en/kobilabs/product/kobi-toolkit-for-civil-3d-4:
+     Error: No prop kobi-toolkit-for-civil-3d-4
+     Updated kobi-toolkit-for-civil-3d-4
+
+   tesla-powerwall --> https://www.bimobject.com/en/tesla/product/tesla-powerwall:
+     Error: No prop tesla-powerwall
+     Updated tesla-powerwall
+
+   cisco-lg-55-display-dual --> https://www.bimobject.com/en/cisco/product/cisco-lg-55-display-dual:
+     Updated cisco-lg-55-display-dual
+
+   cisco-lg-49-display-single --> https://www.bimobject.com/en/cisco/product/cisco-lg-49-display-single:
+     Updated cisco-lg-49-display-single
+
+   mds-del_commercial-audio-microphone --> https://www.bimobject.com/en/biamp/product/mds-del_commercial-audio-microphone:
+     Error: No prop mds-del_commercial-audio-microphone
+     Updated mds-del_commercial-audio-microphone
+
+   cisco-lg-75-display-dual --> https://www.bimobject.com/en/cisco/product/cisco-lg-75-display-dual:
+     Updated cisco-lg-75-display-dual
+
+   cisco-lg-55-display-single --> https://www.bimobject.com/en/cisco/product/cisco-lg-55-display-single:
+     Updated cisco-lg-55-display-single
+
+   touch_screen_ts-770 --> https://www.bimobject.com/en/crestronelectronics/product/touch_screen_ts-770:
+     Error: No prop touch_screen_ts-770
+     Updated touch_screen_ts-770
+
+   cisco-lg-86-display-dual --> https://www.bimobject.com/en/cisco/product/cisco-lg-86-display-dual:
+     Updated cisco-lg-86-display-dual
+
+   cisco-lg-75-display-single --> https://www.bimobject.com/en/cisco/product/cisco-lg-75-display-single:
+     Updated cisco-lg-75-display-single
+
+   cisco-lg-65-display-single --> https://www.bimobject.com/en/cisco/product/cisco-lg-65-display-single:
+     Updated cisco-lg-65-display-single
+
+   cisco-lg-49-display-dual --> https://www.bimobject.com/en/cisco/product/cisco-lg-49-display-dual:
+     Updated cisco-lg-49-display-dual
+
+   bdl2105x-00-videowall-display --> https://www.bimobject.com/en/philips/product/bdl2105x-00-videowall-display:
+     Error: No prop bdl2105x-00-videowall-display
+     Updated bdl2105x-00-videowall-display
+
+   cisco-webex-room-navigator-table --> https://www.bimobject.com/en/cisco/product/cisco-webex-room-navigator-table:
+     Error: No prop cisco-webex-room-navigator-table
+     Updated cisco-webex-room-navigator-table
+
+   cisco-lg-65-display-dual --> https://www.bimobject.com/en/cisco/product/cisco-lg-65-display-dual:
+     Updated cisco-lg-65-display-dual
+
+   concierge-station-busch-welcomeip --> https://www.bimobject.com/en/abb/product/concierge-station-busch-welcomeip:
+     Error: No prop concierge-station-busch-welcomeip
+     Error: No more image concierge-station-busch-welcomeip
+
+   mds-chair_commercial-audio-microphone --> https://www.bimobject.com/en/biamp/product/mds-chair_commercial-audio-microphone:
+     Error: No prop mds-chair_commercial-audio-microphone
+     Updated mds-chair_commercial-audio-microphone
+
+   cisco-lg-86-display-single --> https://www.bimobject.com/en/cisco/product/cisco-lg-86-display-single:
+     Updated cisco-lg-86-display-single
+
+   bdl4052e-00-professional-display --> https://www.bimobject.com/en/philips/product/bdl4052e-00-professional-display:
+     Error: No prop bdl4052e-00-professional-display
+     Updated bdl4052e-00-professional-display
+
+   nt-sd-701-touch-panel --> https://www.bimobject.com/en/amx/product/nt-sd-701-touch-panel:
+     Error: No prop nt-sd-701-touch-panel
+     Error: No more image nt-sd-701-touch-panel
+
+   amx-00118b --> https://www.bimobject.com/en/amx/product/amx-00118b:
+     Error: No more image amx-00118b
+     Updated amx-00118b
+
+   cisco-precision-60 --> https://www.bimobject.com/en/cisco/product/cisco-precision-60:
+     Error: No prop cisco-precision-60
+     Updated cisco-precision-60
+
+   micpat-d_commercial-audio-microphone --> https://www.bimobject.com/en/biamp/product/micpat-d_commercial-audio-microphone:
+     Error: No prop micpat-d_commercial-audio-microphone
+     Error: No more image micpat-d_commercial-audio-microphone
+
+   dvx-2265-4k-presentation-switcher --> https://www.bimobject.com/en/amx/product/dvx-2265-4k-presentation-switcher:
+     Error: No prop dvx-2265-4k-presentation-switcher
+     Updated dvx-2265-4k-presentation-switcher
+
+   saros_8in_2-way_in-ceiling_speaker --> https://www.bimobject.com/en/crestronelectronics/product/saros_8in_2-way_in-ceiling_speaker:
+     Error: No prop saros_8in_2-way_in-ceiling_speaker
+     Updated saros_8in_2-way_in-ceiling_speaker
+
+   varia-100-touch-panel --> https://www.bimobject.com/en/amx/product/varia-100-touch-panel:
+     Error: No prop varia-100-touch-panel
+     Updated varia-100-touch-panel
+
+   bdl8051c-00-professional-display --> https://www.bimobject.com/en/philips/product/bdl8051c-00-professional-display:
+     Error: No prop bdl8051c-00-professional-display
+     Updated bdl8051c-00-professional-display
+
+   uc-p8-t --> https://www.bimobject.com/en/crestronelectronics/product/uc-p8-t:
+     Error: No prop uc-p8-t
+     Error: No more image uc-p8-t
+
+   micpat-4_commercial-audio-microphone --> https://www.bimobject.com/en/biamp/product/micpat-4_commercial-audio-microphone:
+     Error: No prop micpat-4_commercial-audio-microphone
+     Error: No more image micpat-4_commercial-audio-microphone
+
+   panduit-r2ps --> https://www.bimobject.com/en/panduit/product/panduit-r2ps:
+     Error: No more image panduit-r2ps
+     Updated panduit-r2ps
+
+   dm-md16x16-cpu3-switcher --> https://www.bimobject.com/en/crestronelectronics/product/dm-md16x16-cpu3-switcher:
+     Error: No prop dm-md16x16-cpu3-switcher
+     Updated dm-md16x16-cpu3-switcher
+
+   saros_6_5in_2-way_pendant_speaker --> https://www.bimobject.com/en/crestronelectronics/product/saros_6_5in_2-way_pendant_speaker:
+     Error: No prop saros_6_5in_2-way_pendant_speaker
+     Updated saros_6_5in_2-way_pendant_speaker
+
+   amx-00119b --> https://www.bimobject.com/en/amx/product/amx-00119b:
+     Error: No prop amx-00119b
+     Error: No more image amx-00119b
+
+   ortronics-1105 --> https://www.bimobject.com/en/ortronics/product/ortronics-1105:
+     Error: No prop ortronics-1105
+     Error: No more image ortronics-1105
+
+   ortronics-1101 --> https://www.bimobject.com/en/ortronics/product/ortronics-1101:
+     Error: No prop ortronics-1101
+     Error: No more image ortronics-1101
+
+   bdl6115l-00-professional-led-display --> https://www.bimobject.com/en/philips/product/bdl6115l-00-professional-led-display:
+     Error: No prop bdl6115l-00-professional-led-display
+     Updated bdl6115l-00-professional-led-display
+
+   bdl8000l-00-professional-led-display --> https://www.bimobject.com/en/philips/product/bdl8000l-00-professional-led-display:
+     Error: No prop bdl8000l-00-professional-led-display
+     Updated bdl8000l-00-professional-led-display
+
+   faac-js-80-r --> https://www.bimobject.com/en/faac/product/faac-js-80-r:
+     Error: No prop faac-js-80-r
+     Updated faac-js-80-r
+
+   jupiter-aps --> https://www.bimobject.com/en/hub-parking/product/jupiter-aps:
+     Updated jupiter-aps
+
+   cisco-webex-room-55-dual-floor-stand --> https://www.bimobject.com/en/cisco/product/cisco-webex-room-55-dual-floor-stand:
+     Updated cisco-webex-room-55-dual-floor-stand
+
+   faac-js-48-r --> https://www.bimobject.com/en/faac/product/faac-js-48-r:
+     Error: No prop faac-js-48-r
+     Updated faac-js-48-r
+
+   ortronics-1106 --> https://www.bimobject.com/en/ortronics/product/ortronics-1106:
+     Error: No prop ortronics-1106
+     Error: No more image ortronics-1106
+
+   magnetic-access --> https://www.bimobject.com/en/magnetic-autocontrol/product/magnetic-access:
+     Error: No prop magnetic-access
+     Error: No more image magnetic-access
+
+   cisco-speakertrack60 --> https://www.bimobject.com/en/cisco/product/cisco-speakertrack60:
+     Error: No prop cisco-speakertrack60
+     Updated cisco-speakertrack60
+
+   faac-j200-f --> https://www.bimobject.com/en/faac/product/faac-j200-f:
+     Updated faac-j200-f
+
+   traffic_automatic_bollards_rb349 --> https://www.bimobject.com/en/tiso/product/traffic_automatic_bollards_rb349:
+     Updated traffic_automatic_bollards_rb349
+
+   fixed-rated-bollards --> https://www.bimobject.com/en/atkore/product/fixed-rated-bollards:
+     Error: No prop fixed-rated-bollards
+     Error: No more image fixed-rated-bollards
+
+   jupiter-les --> https://www.bimobject.com/en/hub-parking/product/jupiter-les:
+     Updated jupiter-les
+
+   jupiter-lxs --> https://www.bimobject.com/en/hub-parking/product/jupiter-lxs:
+     Updated jupiter-lxs
+
+   fixed-base-plate-bollards-calpipe-security --> https://www.bimobject.com/en/atkore/product/fixed-base-plate-bollards-calpipe-security:
+     Error: No prop fixed-base-plate-bollards-calpipe-security
+     Error: No more image fixed-base-plate-bollards-calpipe-security
+
+   jupiter-ls --> https://www.bimobject.com/en/hub-parking/product/jupiter-ls:
+     Updated jupiter-ls
+
+   jupiter-lss --> https://www.bimobject.com/en/hub-parking/product/jupiter-lss:
+     Updated jupiter-lss
+
+   safety-fixed-bollards-calpipe-security --> https://www.bimobject.com/en/atkore/product/safety-fixed-bollards-calpipe-security:
+     Error: No prop safety-fixed-bollards-calpipe-security
+     Error: No more image safety-fixed-bollards-calpipe-security
+
+   faac-j275-f-2k --> https://www.bimobject.com/en/faac/product/faac-j275-f-2k:
+     Error: No more image faac-j275-f-2k
+     Updated faac-j275-f-2k
+
+   high_security_automatic_bollards_m30_k4 --> https://www.bimobject.com/en/tiso/product/high_security_automatic_bollards_m30_k4:
+     Updated high_security_automatic_bollards_m30_k4
+
+   magnetic-access-pro-h --> https://www.bimobject.com/en/magnetic-autocontrol/product/magnetic-access-pro-h:
+     Error: No prop magnetic-access-pro-h
+     Error: No more image magnetic-access-pro-h
+
+   faac-j275-ha-2k --> https://www.bimobject.com/en/faac/product/faac-j275-ha-2k:
+     Error: No more image faac-j275-ha-2k
+     Updated faac-j275-ha-2k
+
+   architectural-internal-locking-removable-bollards --> https://www.bimobject.com/en/atkore/product/architectural-internal-locking-removable-bollards:
+     Error: No prop architectural-internal-locking-removable-bollards
+     Error: No more image architectural-internal-locking-removable-bollards
+
+   faac-js-80-f --> https://www.bimobject.com/en/faac/product/faac-js-80-f:
+     Error: No prop faac-js-80-f
+     Updated faac-js-80-f
+
+   architectural-fixed-bollards-calpipe-security --> https://www.bimobject.com/en/atkore/product/architectural-fixed-bollards-calpipe-security:
+     Error: No prop architectural-fixed-bollards-calpipe-security
+     Error: No more image architectural-fixed-bollards-calpipe-security
+
+   faac-js-48-ha --> https://www.bimobject.com/en/faac/product/faac-js-48-ha:
+     Error: No prop faac-js-48-ha
+     Updated faac-js-48-ha
+
+   guardiar-sidewalk-bollards --> https://www.bimobject.com/en/betafence/product/guardiar-sidewalk-bollards:
+     Error: No prop guardiar-sidewalk-bollards
+     Updated guardiar-sidewalk-bollards
+
+   high_security_automatic_bollards_m50_k2 --> https://www.bimobject.com/en/tiso/product/high_security_automatic_bollards_m50_k2:
+     Error: No more image high_security_automatic_bollards_m50_k2
+     Updated high_security_automatic_bollards_m50_k2
+
+   faac-b680h --> https://www.bimobject.com/en/faac/product/faac-b680h:
+     Error: No prop faac-b680h
+     Error: No more image faac-b680h
+
+   magnetic-access-xl2-xxl --> https://www.bimobject.com/en/magnetic-autocontrol/product/magnetic-access-xl2-xxl:
+     Error: No prop magnetic-access-xl2-xxl
+     Error: No more image magnetic-access-xl2-xxl
+
+   jupiter-lx --> https://www.bimobject.com/en/hub-parking/product/jupiter-lx:
+     Updated jupiter-lx
+
+   faac-j200-sa --> https://www.bimobject.com/en/faac/product/faac-j200-sa:
+     Updated faac-j200-sa
+
+   architectural-external-padlocking-removable-bollards-calpipe-security --> https://www.bimobject.com/en/atkore/product/architectural-external-padlocking-removable-bollards-calpipe-security:
+     Error: No prop architectural-external-padlocking-removable-bollards-calpipe-security
+     Error: No more image architectural-external-padlocking-removable-bollards-calpipe-security
+
+   jupiter-le --> https://www.bimobject.com/en/hub-parking/product/jupiter-le:
+     Updated jupiter-le
+
+   faac-j275-ha_v2 --> https://www.bimobject.com/en/faac/product/faac-j275-ha_v2:
+     Updated faac-j275-ha_v2
+
+   faac-js-80-ha --> https://www.bimobject.com/en/faac/product/faac-js-80-ha:
+     Error: No prop faac-js-80-ha
+     Updated faac-js-80-ha
+
+LOG 2023-08-01 - 13:17:31
+PROCESS QUEUE
+
+ - Total item updated before -> 282
+ - Total item in db -> 22791
+ - Total item to update -> 101
+ - 34 block created. Each has 3 items.
+
+   high_security_road_blockers_m50_k12 --> https://www.bimobject.com/en/tiso/product/high_security_road_blockers_m50_k12:
+     Updated high_security_road_blockers_m50_k12
+
+   jupiter-apc --> https://www.bimobject.com/en/hub-parking/product/jupiter-apc:
+     Error: No more image jupiter-apc
+     Updated jupiter-apc
+
+   safety-external-padlocking-removable-bollards-calpipe-security --> https://www.bimobject.com/en/atkore/product/safety-external-padlocking-removable-bollards-calpipe-security:
+     Error: No prop safety-external-padlocking-removable-bollards-calpipe-security
+     Error: No more image safety-external-padlocking-removable-bollards-calpipe-security
+
+   faac-j200-ha --> https://www.bimobject.com/en/faac/product/faac-j200-ha:
+     Updated faac-j200-ha
+
+   guide-roue-acier --> https://www.bimobject.com/en/norsud/product/guide-roue-acier:
+     Error: No prop guide-roue-acier
+     Updated guide-roue-acier
+
+   safety-internal-locking-removable-bollards-calpipe-security --> https://www.bimobject.com/en/atkore/product/safety-internal-locking-removable-bollards-calpipe-security:
+     Error: No prop safety-internal-locking-removable-bollards-calpipe-security
+     Error: No more image safety-internal-locking-removable-bollards-calpipe-security
+
+   blocco-bk-30-2f-argilla-intonaco --> https://www.bimobject.com/en/ferrari-bk/product/blocco-bk-30-2f-argilla-intonaco:
+     Updated blocco-bk-30-2f-argilla-intonaco
+
+   guardiar-sentry-retractable-bollards --> https://www.bimobject.com/en/betafence/product/guardiar-sentry-retractable-bollards:
+     Error: No prop guardiar-sentry-retractable-bollards
+     Updated guardiar-sentry-retractable-bollards
+
+   guardiar-sentry-fixed-bollards --> https://www.bimobject.com/en/betafence/product/guardiar-sentry-fixed-bollards:
+     Error: No prop guardiar-sentry-fixed-bollards
+     Updated guardiar-sentry-fixed-bollards
+
+   ladrillo-caravista-blue-metallic --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-blue-metallic:
+     Updated ladrillo-caravista-blue-metallic
+
+   ladrillo-caravista-flaseado-torneo --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-flaseado-torneo:
+     Error: No more image ladrillo-caravista-flaseado-torneo
+     Updated ladrillo-caravista-flaseado-torneo
+
+   metallic-black --> https://www.bimobject.com/en/ceramicasmora/product/metallic-black:
+     Error: No prop metallic-black
+     Error: No more image metallic-black
+
+   brick_common_brown_71 --> https://www.bimobject.com/en/genericmaterials/product/brick_common_brown_71:
+     Error: No more image brick_common_brown_71
+     Updated brick_common_brown_71
+
+   traffic_automatic_bollards_rb343 --> https://www.bimobject.com/en/tiso/product/traffic_automatic_bollards_rb343:
+     Error: No more image traffic_automatic_bollards_rb343
+     Updated traffic_automatic_bollards_rb343
+
+   ladrillo-caravista-antracita --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-antracita:
+     Updated ladrillo-caravista-antracita
+
+   brick_common_grey_112 --> https://www.bimobject.com/en/genericmaterials/product/brick_common_grey_112:
+     Error: No more image brick_common_grey_112
+     Updated brick_common_grey_112
+
+   ladrillo-caravista-damasco --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-damasco:
+     Updated ladrillo-caravista-damasco
+
+   crimson --> https://www.bimobject.com/en/boralbricks/product/crimson:
+     Error: No prop crimson
+     Error: No more image crimson
+
+   blocco-bk-30-2f-cemento-facciavista --> https://www.bimobject.com/en/ferrari-bk/product/blocco-bk-30-2f-cemento-facciavista:
+     Updated blocco-bk-30-2f-cemento-facciavista
+
+   blocco-bk-25-2f-cemento-facciavista-idrofugato --> https://www.bimobject.com/en/ferrari-bk/product/blocco-bk-25-2f-cemento-facciavista-idrofugato:
+     Updated blocco-bk-25-2f-cemento-facciavista-idrofugato
+
+   uc-p10-t --> https://www.bimobject.com/en/crestronelectronics/product/uc-p10-t:
+     Error: No prop uc-p10-t
+     Error: No more image uc-p10-t
+
+   york-building-products-standard-cmu-gemstone --> https://www.bimobject.com/en/yorkbuilding/product/york-building-products-standard-cmu-gemstone:
+     Error: No more image york-building-products-standard-cmu-gemstone
+     Updated york-building-products-standard-cmu-gemstone
+
+   ladrillo-caravista-flaseado-timanfaya --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-flaseado-timanfaya:
+     Error: No more image ladrillo-caravista-flaseado-timanfaya
+     Updated ladrillo-caravista-flaseado-timanfaya
+
+   emperor_2-25 --> https://www.bimobject.com/en/interstate_brick/product/emperor_2-25:
+     Error: No prop emperor_2-25
+     Error: No more image emperor_2-25
+
+   blocco-bk-10-cemento-intonaco --> https://www.bimobject.com/en/ferrari-bk/product/blocco-bk-10-cemento-intonaco:
+     Updated blocco-bk-10-cemento-intonaco
+
+   comp_v_lm24-cv --> https://www.bimobject.com/en/hispalyt/product/comp_v_lm24-cv:
+     Error: No more image comp_v_lm24-cv
+     Updated comp_v_lm24-cv
+
+   vesta-blue --> https://www.bimobject.com/en/ceramicasmora/product/vesta-blue:
+     Error: No prop vesta-blue
+     Error: No more image vesta-blue
+
+   blocco-bk-12-cemento-facciavista-idrofugato --> https://www.bimobject.com/en/ferrari-bk/product/blocco-bk-12-cemento-facciavista-idrofugato:
+     Updated blocco-bk-12-cemento-facciavista-idrofugato
+
+   ladrillo-caravista-esmaltado-burdeos --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-esmaltado-burdeos:
+     Updated ladrillo-caravista-esmaltado-burdeos
+
+   aura-white --> https://www.bimobject.com/en/ceramicasmora/product/aura-white:
+     Error: No prop aura-white
+     Error: No more image aura-white
+
+   bb-mainstreet-red-range --> https://www.bimobject.com/en/boral-bricks-inc/product/bb-mainstreet-red-range:
+     Error: No more image bb-mainstreet-red-range
+     Updated bb-mainstreet-red-range
+
+   blocco-bk-20-2f-cemento-intonaco --> https://www.bimobject.com/en/ferrari-bk/product/blocco-bk-20-2f-cemento-intonaco:
+     Updated blocco-bk-20-2f-cemento-intonaco
+
+   ladrillo-caravista-flaseado-vison --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-flaseado-vison:
+     Error: No more image ladrillo-caravista-flaseado-vison
+     Updated ladrillo-caravista-flaseado-vison
+
+   termoarcilla_base_19 --> https://www.bimobject.com/en/ceramica-campo/product/termoarcilla_base_19:
+     Updated termoarcilla_base_19
+
+   ladrillo-caravista-prensado-rojo-prado --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-prensado-rojo-prado:
+     Updated ladrillo-caravista-prensado-rojo-prado
+
+   ladrillo-caravista-esmaltado-blanco --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-esmaltado-blanco:
+     Updated ladrillo-caravista-esmaltado-blanco
+
+   brick_common_red_57 --> https://www.bimobject.com/en/genericmaterials/product/brick_common_red_57:
+     Error: No more image brick_common_red_57
+     Updated brick_common_red_57
+
+   blocco-bk-25p-cemento-facciavista --> https://www.bimobject.com/en/ferrari-bk/product/blocco-bk-25p-cemento-facciavista:
+     Updated blocco-bk-25p-cemento-facciavista
+
+   superbrick --> https://www.bimobject.com/en/ceramicabelianes/product/superbrick:
+     Error: No prop superbrick
+     Updated superbrick
+
+   blocco-bk-20p-plus-cemento-intonaco --> https://www.bimobject.com/en/ferrari-bk/product/blocco-bk-20p-plus-cemento-intonaco:
+     Updated blocco-bk-20p-plus-cemento-intonaco
+
+   ladrillo-caravista-azabache --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-azabache:
+     Updated ladrillo-caravista-azabache
+
+   baco-brick --> https://www.bimobject.com/en/ceramicasmora/product/baco-brick:
+     Error: Something went wrong baco-brick
+     Error: No more image baco-brick
+
+   blocco-bk-12p-argilla-intonaco --> https://www.bimobject.com/en/ferrari-bk/product/blocco-bk-12p-argilla-intonaco:
+     Updated blocco-bk-12p-argilla-intonaco
+
+     Updated block_aac_8_080_021
+
+   dr1015551 --> https://www.bimobject.com/en/corona/product/dr1015551:
+     Error: No prop dr1015551
+     Error: No more image dr1015551
+
+   brick_common_brown_54 --> https://www.bimobject.com/en/genericmaterials/product/brick_common_brown_54:
+     Error: No more image brick_common_brown_54
+     Updated brick_common_brown_54
+
+   cibeles-blanco --> https://www.bimobject.com/en/ceramicasmora/product/cibeles-blanco:
+     Error: No prop cibeles-blanco
+     Error: No more image cibeles-blanco
+
+   21x120-sockel-allmoge-profil-34 --> https://www.bimobject.com/en/beijer/product/21x120-sockel-allmoge-profil-34:
+     Error: No prop 21x120-sockel-allmoge-profil-34
+     Error: No more image 21x120-sockel-allmoge-profil-34
+
+   blocco-bk-10-argilla-facciavista --> https://www.bimobject.com/en/ferrari-bk/product/blocco-bk-10-argilla-facciavista:
+     Updated blocco-bk-10-argilla-facciavista
+
+   icmu_oebe_strecher --> https://www.bimobject.com/en/echelon/product/icmu_oebe_strecher:
+     Error: No prop icmu_oebe_strecher
+     Error: No more image icmu_oebe_strecher
+
+   15x69-sockel-allmoge --> https://www.bimobject.com/en/beijer/product/15x69-sockel-allmoge:
+     Error: No prop 15x69-sockel-allmoge
+     Error: No more image 15x69-sockel-allmoge
+
+   ladrillo-caravista-flaseado-albarracin --> https://www.bimobject.com/en/malpesa/product/ladrillo-caravista-flaseado-albarracin:
+     Error: No more image ladrillo-caravista-flaseado-albarracin
+     Updated ladrillo-caravista-flaseado-albarracin
+
+   15x69-foder-allmoge --> https://www.bimobject.com/en/beijer/product/15x69-foder-allmoge:
+     Error: No prop 15x69-foder-allmoge
+     Error: No more image 15x69-foder-allmoge
+
+   21x95-foder-allmoge --> https://www.bimobject.com/en/beijer/product/21x95-foder-allmoge:
+     Error: No prop 21x95-foder-allmoge
+     Error: No more image 21x95-foder-allmoge
+
+   12x95-sockel-allmoge-profil-23 --> https://www.bimobject.com/en/beijer/product/12x95-sockel-allmoge-profil-23:
+     Error: No prop 15x69-sockel-allmoge-profil-34
+     Error: No prop 12x95-sockel-allmoge-profil-23
+     Error: No more image 15x69-sockel-allmoge-profil-34
+     Error: No more image 12x95-sockel-allmoge-profil-23
+
+   21x56-taklist-allmoge --> https://www.bimobject.com/en/beijer/product/21x56-taklist-allmoge:
+     Error: No prop 21x56-taklist-allmoge
+     Error: No more image 21x56-taklist-allmoge
+
+   19x27-salningslist --> https://www.bimobject.com/en/beijer/product/19x27-salningslist:
+     Error: No prop 19x27-salningslist
+     Updated 19x27-salningslist
+
+   15x56-taklist-allmoge-svanhals --> https://www.bimobject.com/en/beijer/product/15x56-taklist-allmoge-svanhals:
+     Error: No prop 15x56-taklist-allmoge-svanhals
+     Updated 15x56-taklist-allmoge-svanhals
+
+   15x43-taklist-allmoge-svanhals --> https://www.bimobject.com/en/beijer/product/15x43-taklist-allmoge-svanhals:
+     Error: No prop 15x43-taklist-allmoge-svanhals
+     Updated 15x43-taklist-allmoge-svanhals
+
+   21x95-foder-allmoge-vaxtorp --> https://www.bimobject.com/en/beijer/product/21x95-foder-allmoge-vaxtorp:
+     Error: No prop 21x95-foder-allmoge-vaxtorp
+     Error: No more image 21x95-foder-allmoge-vaxtorp
+
+   12x69-sockel-allmoge-profil-24 --> https://www.bimobject.com/en/beijer/product/12x69-sockel-allmoge-profil-24:
+     Error: No prop 12x69-sockel-allmoge-profil-24
+     Error: No more image 12x69-sockel-allmoge-profil-24
+
+   16x80-dorromfattning --> https://www.bimobject.com/en/beijer/product/16x80-dorromfattning:
+     Error: No prop 16x80-dorromfattning
+     Updated 16x80-dorromfattning
+
+   18x170-fonstersmyg-fals-9_5x35mm --> https://www.bimobject.com/en/beijer/product/18x170-fonstersmyg-fals-9_5x35mm:
+     Error: No prop 18x170-fonstersmyg-fals-9_5x35mm
+     Error: No more image 18x170-fonstersmyg-fals-9_5x35mm
+
+   15x69-sockel --> https://www.bimobject.com/en/beijer/product/15x69-sockel:
+     Error: No prop 15x69-sockel
+     Error: No more image 15x69-sockel
+
+   12x69-sockel --> https://www.bimobject.com/en/beijer/product/12x69-sockel:
+     Error: No prop 12x69-sockel
+     Updated 12x69-sockel
+
+   15x69-foder-allmoge-profil-15 --> https://www.bimobject.com/en/beijer/product/15x69-foder-allmoge-profil-15:
+     Error: No prop 15x69-foder-allmoge-profil-15
+     Error: No more image 15x69-foder-allmoge-profil-15
+
+   15x33-halkalslist --> https://www.bimobject.com/en/beijer/product/15x33-halkalslist:
+     Error: No prop 15x33-halkalslist
+     Error: No more image 15x33-halkalslist
+
+   16x120-dorromfattning --> https://www.bimobject.com/en/beijer/product/16x120-dorromfattning:
+     Error: No prop 16x120-dorromfattning
+     Updated 16x120-dorromfattning
+
+   15x67-sockel-allmoge-lackeby --> https://www.bimobject.com/en/beijer/product/15x67-sockel-allmoge-lackeby:
+     Error: No prop 15x67-sockel-allmoge-lackeby
+     Error: No more image 15x67-sockel-allmoge-lackeby
+
+   16x100-fonstersmyg --> https://www.bimobject.com/en/beijer/product/16x100-fonstersmyg:
+     Error: No prop 16x100-fonstersmyg
+     Updated 16x100-fonstersmyg
+
+   15x67-foder-allmoge-lackeby --> https://www.bimobject.com/en/beijer/product/15x67-foder-allmoge-lackeby:
+     Error: No prop 15x67-foder-allmoge-lackeby
+     Error: No more image 15x67-foder-allmoge-lackeby
+
+   15x69-foder-allmoge-vaxtorp --> https://www.bimobject.com/en/beijer/product/15x69-foder-allmoge-vaxtorp:
+     Error: No prop 15x69-foder-allmoge-vaxtorp
+     Error: No more image 15x69-foder-allmoge-vaxtorp
+
+   21x69-salningslist --> https://www.bimobject.com/en/beijer/product/21x69-salningslist:
+     Error: No prop 21x69-salningslist
+
+   15x95-sockel-allmoge-vaxtorp --> https://www.bimobject.com/en/beijer/product/15x95-sockel-allmoge-vaxtorp:
+     Updated 21x69-salningslist
+     Error: No prop 15x95-sockel-allmoge-vaxtorp
+     Error: No more image 15x95-sockel-allmoge-vaxtorp
+
+   15x69-foder-allmoge-f1 --> https://www.bimobject.com/en/beijer/product/15x69-foder-allmoge-f1:
+     Error: No prop 15x69-foder-allmoge-f1
+     Error: No more image 15x69-foder-allmoge-f1
+
+   16x130-dorromfattning --> https://www.bimobject.com/en/beijer/product/16x130-dorromfattning:
+     Error: No prop 16x130-dorromfattning
+     Updated 16x130-dorromfattning
+
+   16x155-dorromfattning --> https://www.bimobject.com/en/beijer/product/16x155-dorromfattning:
+     Error: No prop 16x155-dorromfattning
+     Updated 16x155-dorromfattning
+
+   21x145-tackbrada --> https://www.bimobject.com/en/beijer/product/21x145-tackbrada:
+     Error: No prop 21x145-tackbrada
+     Error: No more image 21x145-tackbrada
+
+   15x69-taklist-allmoge-svanhals --> https://www.bimobject.com/en/beijer/product/15x69-taklist-allmoge-svanhals:
+     Error: No prop 15x69-taklist-allmoge-svanhals
+     Updated 15x69-taklist-allmoge-svanhals
+
+   12x56-sockel --> https://www.bimobject.com/en/beijer/product/12x56-sockel:
+     Error: No prop 12x56-sockel
+     Updated 12x56-sockel
+
+   15x69-sockel-allmoge-vaxtorp --> https://www.bimobject.com/en/beijer/product/15x69-sockel-allmoge-vaxtorp:
+     Error: No prop 15x69-sockel-allmoge-vaxtorp
+     Error: No more image 15x69-sockel-allmoge-vaxtorp
+
+   21x43-skugglist --> https://www.bimobject.com/en/beijer/product/21x43-skugglist:
+     Error: No prop 21x43-skugglist
+     Updated 21x43-skugglist
+
+   14x69-sockel-ventilerad --> https://www.bimobject.com/en/beijer/product/14x69-sockel-ventilerad:
+     Error: No prop 14x69-sockel-ventilerad
+     Error: No more image 14x69-sockel-ventilerad
+
+   15x95-foder-allmoge-profil-14 --> https://www.bimobject.com/en/beijer/product/15x95-foder-allmoge-profil-14:
+     Error: No prop 15x95-foder-allmoge-profil-14
+     Error: No more image 15x95-foder-allmoge-profil-14
+
+   15x56-halkalslist --> https://www.bimobject.com/en/beijer/product/15x56-halkalslist:
+     Error: No prop 15x56-halkalslist
+     Updated 15x56-halkalslist
+
+   12x69-foder-allmoge-profil-8 --> https://www.bimobject.com/en/beijer/product/12x69-foder-allmoge-profil-8:
+     Error: No prop 12x69-foder-allmoge-profil-8
+     Error: No more image 12x69-foder-allmoge-profil-8
+
+   15x69-taklist-allmoge-m42 --> https://www.bimobject.com/en/beijer/product/15x69-taklist-allmoge-m42:
+     Error: No prop 15x69-taklist-allmoge-m42
+     Error: No more image 15x69-taklist-allmoge-m42
+
+   azek-crown-moulding-profiles --> https://www.bimobject.com/en/azek-building-products/product/azek-crown-moulding-profiles:
+     Error: No prop azek-crown-moulding-profiles
+     Updated azek-crown-moulding-profiles
+
+   12x43-sockel --> https://www.bimobject.com/en/beijer/product/12x43-sockel:
+     Error: No prop 12x43-sockel
+     Updated 12x43-sockel
+
+   lutron-vive-wireless-hub --> https://www.bimobject.com/en/lutronelectronics/product/lutron-vive-wireless-hub:
+     Error: No more image lutron-vive-wireless-hub
+     Updated lutron-vive-wireless-hub
+
+   e-vol60_commercial-audio-control-interface --> https://www.bimobject.com/en/biamp/product/e-vol60_commercial-audio-control-interface:
+     Error: No prop e-vol60_commercial-audio-control-interface
+     Error: No more image e-vol60_commercial-audio-control-interface
+
+   d-vol60_commercial-audio-control-interface --> https://www.bimobject.com/en/biamp/product/d-vol60_commercial-audio-control-interface:
+     Error: No prop d-vol60_commercial-audio-control-interface
+     Updated d-vol60_commercial-audio-control-interface
+
+   d-vol120_commercial-audio-control-interface --> https://www.bimobject.com/en/biamp/product/d-vol120_commercial-audio-control-interface:
+     Error: No prop d-vol120_commercial-audio-control-interface
+     Updated d-vol120_commercial-audio-control-interface
+
+   e-vol120_commercial-audio-control-interface --> https://www.bimobject.com/en/biamp/product/e-vol120_commercial-audio-control-interface:
+     Error: No prop e-vol120_commercial-audio-control-interface
+     Error: No more image e-vol120_commercial-audio-control-interface
+
+   touch_screen_tsw-1070 --> https://www.bimobject.com/en/crestronelectronics/product/touch_screen_tsw-1070:
+     Error: No prop touch_screen_tsw-1070
+     Updated touch_screen_tsw-1070
+
+   crestron-dm-nvx-dir-160 --> https://www.bimobject.com/en/crestronelectronics/product/crestron-dm-nvx-dir-160:
+     Error: No more image crestron-dm-nvx-dir-160
+     Updated crestron-dm-nvx-dir-160
+
+   crestron-tst-902 --> https://www.bimobject.com/en/crestronelectronics/product/crestron-tst-902:
+     Error: No prop crestron-tst-902
+     Updated crestron-tst-902
+
+   crestron-dmf-ci-8 --> https://www.bimobject.com/en/crestronelectronics/product/crestron-dmf-ci-8:
+     Error: No prop crestron-dmf-ci-8
+     Updated crestron-dmf-ci-8
+
+   61209 --> https://www.bimobject.com/en/gessi/product/61209:
+     Error: No prop 61209
+     Error: No more image 61209
+
+LOG 2023-08-01 - 13:35:39
+PROCESS QUEUE
+
+ - Total item updated before -> 381
+ - Total item in db -> 22791
+ - Total item to update -> 101
+ - 34 block created. Each has 3 items.
+
+   crestron-tsd-2220 --> https://www.bimobject.com/en/crestronelectronics/product/crestron-tsd-2220:
+     Updated crestron-tsd-2220
+
+   12x95-sockel-allmoge-profil-23 --> https://www.bimobject.com/en/beijer/product/12x95-sockel-allmoge-profil-23:
+     Error: No prop 12x95-sockel-allmoge-profil-23
+     Error: No more image 12x95-sockel-allmoge-profil-23
+
+   m-shev --> https://www.bimobject.com/en/simon-protec/product/m-shev:
+     Error: No prop m-shev
+     Updated m-shev
+
+   e-vol40_commercial-audio-control-interface --> https://www.bimobject.com/en/biamp/product/e-vol40_commercial-audio-control-interface:
+     Error: No prop e-vol40_commercial-audio-control-interface
+     Error: No more image e-vol40_commercial-audio-control-interface
+
+   crestron-chv-tstat-fcu-pir-10 --> https://www.bimobject.com/en/crestronelectronics/product/crestron-chv-tstat-fcu-pir-10:
+     Error: No prop crestron-chv-tstat-fcu-pir-10
+     Updated crestron-chv-tstat-fcu-pir-10
+
+   apprimo-touch-8i_control-panel --> https://www.bimobject.com/en/biamp/product/apprimo-touch-8i_control-panel:
+     Error: No prop apprimo-touch-8i_control-panel
+     Error: No more image apprimo-touch-8i_control-panel
+
+   shev-6-ap --> https://www.bimobject.com/en/simon-protec/product/shev-6-ap:
+     Error: No prop shev-6-ap
+     Updated shev-6-ap
+
+   m-shev-12-ap --> https://www.bimobject.com/en/simon-protec/product/m-shev-12-ap:
+     Error: No prop m-shev-12-ap
+     Updated m-shev-12-ap
+
+   touch_screen_ts-1070 --> https://www.bimobject.com/en/crestronelectronics/product/touch_screen_ts-1070:
+     Error: No prop touch_screen_ts-1070
+     Updated touch_screen_ts-1070
+
+   crestron-chv-tstat-fcu --> https://www.bimobject.com/en/crestronelectronics/product/crestron-chv-tstat-fcu:
+     Error: No more image crestron-chv-tstat-fcu
+     Updated crestron-chv-tstat-fcu
+
+   crestron-gls-oirlcl-c-cn --> https://www.bimobject.com/en/crestronelectronics/product/crestron-gls-oirlcl-c-cn:
+     Error: No prop crestron-gls-oirlcl-c-cn
+     Updated crestron-gls-oirlcl-c-cn
+
+   crestron-gls-part-cn --> https://www.bimobject.com/en/crestronelectronics/product/crestron-gls-part-cn:
+     Error: No prop crestron-gls-part-cn
+     Updated crestron-gls-part-cn
+
+   3-series-media-presentation-controller-201-mpc3-201 --> https://www.bimobject.com/en/crestronelectronics/product/3-series-media-presentation-controller-201-mpc3-201:
+     Error: No prop 3-series-media-presentation-controller-201-mpc3-201
+     Updated 3-series-media-presentation-controller-201-mpc3-201
+
+   impera-uniform_control-pad --> https://www.bimobject.com/en/biamp/product/impera-uniform_control-pad:
+     Error: No prop impera-uniform_control-pad
+     Error: No more image impera-uniform_control-pad
+
+   e-vol20_commercial-audio-control-interface --> https://www.bimobject.com/en/biamp/product/e-vol20_commercial-audio-control-interface:
+     Error: No prop e-vol20_commercial-audio-control-interface
+     Error: No more image e-vol20_commercial-audio-control-interface
+
+   61090 --> https://www.bimobject.com/en/gessi/product/61090:
+     Error: No prop 61090
+     Error: No more image 61090
+
+   crestron-dmps3-4k-250-c --> https://www.bimobject.com/en/crestronelectronics/product/crestron-dmps3-4k-250-c:
+     Error: No prop crestron-dmps3-4k-250-c
+     Updated crestron-dmps3-4k-250-c
+
+   am-3000-wf --> https://www.bimobject.com/en/crestronelectronics/product/am-3000-wf:
+     Error: No prop am-3000-wf
+     Updated am-3000-wf
+
+   tesira-hd-1_control --> https://www.bimobject.com/en/biamp/product/tesira-hd-1_control:
+     Error: No prop tesira-hd-1_control
+     Updated tesira-hd-1_control
+
+   am-3200 --> https://www.bimobject.com/en/crestronelectronics/product/am-3200:
+     Error: No prop am-3200
+     Updated am-3200
+
+   crestron-dmps3-4k-350-c --> https://www.bimobject.com/en/crestronelectronics/product/crestron-dmps3-4k-350-c:
+     Error: No prop crestron-dmps3-4k-350-c
+     Updated crestron-dmps3-4k-350-c
+
+   crestron-dm-nvx-dir-80 --> https://www.bimobject.com/en/crestronelectronics/product/crestron-dm-nvx-dir-80:
+     Updated crestron-dm-nvx-dir-80
+
+   tesira-tec-1i_control --> https://www.bimobject.com/en/biamp/product/tesira-tec-1i_control:
+     Error: No prop tesira-tec-1i_control
+     Updated tesira-tec-1i_control
+
+   cen-gwexer --> https://www.bimobject.com/en/crestronelectronics/product/cen-gwexer:
+     Error: No prop cen-gwexer
+     Updated cen-gwexer
+
+   tacteo-room-numbers-and-corridor-sensors --> https://www.bimobject.com/en/abb/product/tacteo-room-numbers-and-corridor-sensors:
+     Error: No more image tacteo-room-numbers-and-corridor-sensors
+     Updated tacteo-room-numbers-and-corridor-sensors
+
+   impera-sierra-ii_control-pad --> https://www.bimobject.com/en/biamp/product/impera-sierra-ii_control-pad:
+     Error: No prop impera-sierra-ii_control-pad
+     Error: No more image impera-sierra-ii_control-pad
+
+   alinp_commercial-audio-control-interface --> https://www.bimobject.com/en/biamp/product/alinp_commercial-audio-control-interface:
+     Error: No prop alinp_commercial-audio-control-interface
+     Updated alinp_commercial-audio-control-interface
+
+   crestron-pc-300 --> https://www.bimobject.com/en/crestronelectronics/product/crestron-pc-300:
+     Error: No prop crestron-pc-300
+     Updated crestron-pc-300
+
+   crestron-dmps3-4k-50 --> https://www.bimobject.com/en/crestronelectronics/product/crestron-dmps3-4k-50:
+     Error: No prop crestron-dmps3-4k-50
+     Updated crestron-dmps3-4k-50
+
+   3-series-media-presentation-controller-302-mpc3-302 --> https://www.bimobject.com/en/crestronelectronics/product/3-series-media-presentation-controller-302-mpc3-302:
+     Error: No prop 3-series-media-presentation-controller-302-mpc3-302
+     Updated 3-series-media-presentation-controller-302-mpc3-302
+
+   swm12rupl-26-26 --> https://www.bimobject.com/en/ortronics/product/swm12rupl-26-26:
+     Updated swm12rupl-26-26
+
+   swm26rupl-26-26 --> https://www.bimobject.com/en/ortronics/product/swm26rupl-26-26:
+     Updated swm26rupl-26-26
+
+   crestron-htt-b10ex-w-t --> https://www.bimobject.com/en/crestronelectronics/product/crestron-htt-b10ex-w-t:
+     Error: No more image crestron-htt-b10ex-w-t
+     Updated crestron-htt-b10ex-w-t
+
+   vwmfd-4ru-36-b --> https://www.bimobject.com/en/ortronics/product/vwmfd-4ru-36-b:
+     Updated vwmfd-4ru-36-b
+
+   ortronics-1066 --> https://www.bimobject.com/en/ortronics/product/ortronics-1066:
+     Error: No more image ortronics-1066
+     Updated ortronics-1066
+
+   swm26rupd-26-26 --> https://www.bimobject.com/en/ortronics/product/swm26rupd-26-26:
+     Updated swm26rupd-26-26
+
+   swm26rusd-26-26 --> https://www.bimobject.com/en/ortronics/product/swm26rusd-26-26:
+     Updated swm26rusd-26-26
+
+   swm18rupl-26-26 --> https://www.bimobject.com/en/ortronics/product/swm18rupl-26-26:
+     Updated swm18rupl-26-26
+
+   swm12rupd-26-26 --> https://www.bimobject.com/en/ortronics/product/swm12rupd-26-26:
+     Updated swm12rupd-26-26
