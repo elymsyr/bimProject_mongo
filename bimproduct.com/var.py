@@ -24,3 +24,6 @@ SLEEP_BREAK = 40*2
 
 # Wait time for page to load 
 TIMEOUT = 10
+
+# Component Update -> Max Process Number run at the same time 
+MAX_DRIVER = 3
