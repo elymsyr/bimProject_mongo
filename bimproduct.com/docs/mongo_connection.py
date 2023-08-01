@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from var import DATABASE, COLLECTION, CLUSTER, SELECTORS
+from docs.var import DATABASE, COLLECTION, CLUSTER, SELECTORS
 # # Mongo Connection
 # DATABASE = 'bim'
 # COLLECTION = 'bim-new'

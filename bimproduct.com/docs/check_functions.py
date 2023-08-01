@@ -9,7 +9,7 @@ try:
     from docs.mongo_connection import MongoConnection
 except:
     from mongo_connection import MongoConnection
-from var import MAIN_DATAS, LIST_SCOPE, DOWNLOAD_FOLDER, DOWNLOAD_LOG
+from docs.var import MAIN_DATAS, LIST_SCOPE, DOWNLOAD_FOLDER, DOWNLOAD_LOG
 
 def main_check():
     urls = []

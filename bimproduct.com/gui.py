@@ -3,7 +3,7 @@ from codecs import open
 from os import system
 from docs.download_product import start_download
 from docs.mongo_connection import MongoConnection
-from var import SELECTORS, DOWNLOAD_FOLDER
+from docs.var import SELECTORS, DOWNLOAD_FOLDER
 
 check = ''
 

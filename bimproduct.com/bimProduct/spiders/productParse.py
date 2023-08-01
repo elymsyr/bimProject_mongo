@@ -4,7 +4,7 @@ from random import randint
 from docs.mongo_connection import MongoConnection
 from selenium.webdriver import Chrome
 from selenium.webdriver import ChromeOptions
-from var import MAIN_DATAS, MONGO_LOG, RESET_DRIVE_EVERY_
+from docs.var import MAIN_DATAS, MONGO_LOG, RESET_DRIVE_EVERY_
 
 class ProductparseSpider(scrapy.Spider):
     name = "productParse"

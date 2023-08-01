@@ -8,7 +8,7 @@ from multiprocessing import Process
 from shutil import rmtree
 from docs.check_functions import fix_state, check_all
 from docs.mongo_connection import MongoConnection
-from var import DOWNLOAD_FOLDER, MULTIQUEUE_NUMBER, SLEEP_BREAK
+from docs.var import DOWNLOAD_FOLDER, MULTIQUEUE_NUMBER, SLEEP_BREAK
 
 class DownloadItem():
     def __init__(self, url, id, driver=None) -> None:

@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from multiprocessing import Process
-from var import UPDATE_LOG, TIMEOUT, MAX_DRIVER
+from docs.var import UPDATE_LOG, TIMEOUT, MAX_DRIVER
 
 def var_selenium():
     updated = []

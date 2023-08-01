@@ -7,7 +7,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
-from var import UPDATE_LOG, TIMEOUT
+from docs.var import UPDATE_LOG, TIMEOUT
 
 def var_selenium():
     updated = []
