@@ -46,17 +46,15 @@ There are 5 main functions:
   * Run 'update_comp.py' as a script.
   * Use GUI by running 'gui.py' as a script.
   * Enter cmd 'path/to/python.exe path/to/main.py -u' to run 'update_comp.py' as a script.
-
-## Docs
-
-* var.py: all important variables
-* check_functions.py (py main.py -c): 
+### Check Compatibilities:
+* **check_functions.py (py main.py -c):** 
   * main_check: checks MAIN_DATAS for URL compatibilities
   * check_hunted: checks database for any ID or URL that may cause an error
-  * get_list/lister/hard_clear: checks downloads and corrected download_states
-* download_product.py (py main.py -d): Gets URLs from database and downloads data
-* update_comp_old.py: Updates 'properties' and 'images' parts of products in database
-* update_comp.py (py main.py -u): Same work, but faster. Uses multiprocessing.
+  * get_list/lister/hard_clear: checks downloads and correct download_states
+
+## Other Docs
+* var.py: all important variables
+* update_comp_old.py: Updates 'properties' and 'images' parts of products in the database
 * get_access_..._guest.py: Get data from my database as a guest.
 
 ## License
