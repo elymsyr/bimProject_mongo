@@ -16,3 +16,7 @@ class NewProduct(scrapy.Item):
     properties = scrapy.Field()
     votes = scrapy.Field()
     rating = scrapy.Field()
+    
+class BimobjectsItem(scrapy.Item):
+    # name = scrapy.Field()
+    url = scrapy.Field()
