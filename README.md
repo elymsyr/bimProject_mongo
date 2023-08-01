@@ -25,16 +25,31 @@ py main.py -h
 * 'scrapyd' can be used only for running spiders
 
 ## Using Repo from Zero
-There are 4 main functions:
+There are 5 main functions:
   * Find products
   * Parse products
   * Update Products
   * Download Products
-Spiders are the main functions to find and parse all the products. Updating and downloading necessary items from the web and updating the database are done by two scripts in the docs file.
-
+  * Check Compatibilities and Errors
+<br>Spiders are the main functions to find and parse all the products. Updating and downloading necessary items from the web and updating the database are done by two scripts in the docs file.
+### Spiders:
+* **productParse**: Uses URLs that were found before to parse product data and write data to Mongo DB.
+* **urlExtractor**: Takes any number of product URLs and using them, finds other products.
+* **urlExtract**: Uses category links as a start to provide URL links to *urlExtractor*.
+<br>***Scrapyd*** can be used to run spiders. [Check how to do it!]([url](https://scrapeops.io/python-scrapy-playbook/extensions/scrapy-scrapyd-guide/))
+### Update and Download:
+* **Download**:
+  * Run 'download_propuct.py' as a script. Choose one doc to download using its ID or enter 0 to download all items in DB.
+  * Use GUI by running 'gui.py' as a script. Choose one doc to download using its ID or enter 0 to download all items in DB.
+  * Enter cmd 'path/to/python.exe path/to/main.py -d' to run 'download_propuct.py' as a script.
+* **Update**:
+  * Run 'update_comp.py' as a script.
+  * Use GUI by running 'gui.py' as a script.
+  * Enter cmd 'path/to/python.exe path/to/main.py -u' to run 'update_comp.py' as a script.
 
 ## Docs
 
+* var.py: all important variables
 * check_functions.py (py main.py -c): 
   * main_check: checks MAIN_DATAS for URL compatibilities
   * check_hunted: checks database for any ID or URL that may cause an error
@@ -42,8 +57,7 @@ Spiders are the main functions to find and parse all the products. Updating and 
 * download_product.py (py main.py -d): Gets URLs from database and downloads data
 * update_comp_old.py: Updates 'properties' and 'images' parts of products in database
 * update_comp.py (py main.py -u): Same work, but faster. Uses multiprocessing.
-* var.py: all important variables
-* get_access_..._guest.py: Get data from my database as guest.
+* get_access_..._guest.py: Get data from my database as a guest.
 
 ## License
 
