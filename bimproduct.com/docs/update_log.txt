@@ -458,4 +458,368 @@ LOG 2023-07-31 - 14:17:24
    Updated.
  - https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white
 
-LOG 2023-08-01 - 11:11:07
+LOG 2023-08-01 - 11:15:57
+PROCESS QUEUE
+
+ - Total item updated before -> 156
+ - Total item in db -> 22791
+ - Total item to update -> 22636
+ - 7545 block created. Each has 3 items.
+
+   kabelranna-350-350x2250x300 --> https://www.bimobject.com/en/steriks/product/kabelranna-350-350x2250x300:
+     Error: No prop kabelranna-350-350x2250x300
+     Error: No more image kabelranna-350-350x2250x300
+
+   kabelranna-1070-citybanan --> https://www.bimobject.com/en/steriks/product/kabelranna-1070-citybanan:
+     Error: No prop kabelranna-1070-citybanan
+     Error: No more image kabelranna-1070-citybanan
+
+   scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white --> https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white:
+     Error: No prop scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white
+     Error: No more image scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white
+
+   foundation-1400x1900x2600 --> https://www.bimobject.com/en/steriks/product/foundation-1400x1900x2600:
+     Error: No prop foundation-1400x1900x2600
+     Error: No more image foundation-1400x1900x2600
+
+   kabelranna-350-citybanan-355x2250x400 --> https://www.bimobject.com/en/steriks/product/kabelranna-350-citybanan-355x2250x400:
+     Error: No prop kabelranna-350-citybanan-355x2250x400
+     Error: No more image kabelranna-350-citybanan-355x2250x400
+
+   track-crane-160t --> https://www.bimobject.com/en/boj-x-cug/product/track-crane-160t:
+     Error: No prop track-crane-160t
+     Error: No more image track-crane-160t
+
+   cranetruck1 --> https://www.bimobject.com/en/boj-x-cug/product/cranetruck1:
+     Error: No prop cranetruck1
+     Error: No more image cranetruck1
+
+   excavator-2 --> https://www.bimobject.com/en/boj-x-cug/product/excavator-2:
+     Error: No prop excavator-2
+     Error: No more image excavator-2
+
+   shovel_7t --> https://www.bimobject.com/en/boj-x-cug/product/shovel_7t:
+     Error: No prop shovel_7t
+     Error: No more image shovel_7t
+
+   yumbo --> https://www.bimobject.com/en/boj-x-cug/product/yumbo:
+     Error: No prop yumbo
+     Error: No more image yumbo
+
+   bg-rail-cable-trough --> https://www.bimobject.com/en/bg-graspointner/product/bg-rail-cable-trough:
+     Error: No prop bg-rail-cable-trough
+     Error: No more image bg-rail-cable-trough
+
+   kabelranna-880-dubbelkanal --> https://www.bimobject.com/en/steriks/product/kabelranna-880-dubbelkanal:
+     Error: No prop kabelranna-880-dubbelkanal
+     Error: No more image kabelranna-880-dubbelkanal
+
+   40bl-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/40bl-yamadome:
+     Error: No prop 40bl-yamadome
+     Error: No more image 40bl-yamadome
+
+   crane_jib-2 --> https://www.bimobject.com/en/boj-x-cug/product/crane_jib-2:
+     Error: No prop crane_jib-2
+     Error: No more image crane_jib-2
+
+   kobi-toolkit-for-civil-3d-2 --> https://www.bimobject.com/en/kobilabs/product/kobi-toolkit-for-civil-3d-2:
+     Error: No prop kobi-toolkit-for-civil-3d-2
+     Updated kobi-toolkit-for-civil-3d-2
+
+   20p-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/20p-yamadome:
+     Error: No prop 20p-yamadome
+     Error: No more image 20p-yamadome
+
+   30ha_35-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/30ha_35-yamadome:
+     Error: No prop 30ha_35-yamadome
+     Error: No more image 30ha_35-yamadome
+
+   20ha_7-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/20ha_7-yamadome:
+     Error: No prop 20ha_7-yamadome
+     Error: No more image 20ha_7-yamadome
+
+   25d-2_yamadome --> https://www.bimobject.com/en/boj-x-cug/product/25d-2_yamadome:
+     Error: No prop 25d-2_yamadome
+     Error: No more image 25d-2_yamadome
+
+   crane_crawler_tower_200t --> https://www.bimobject.com/en/boj-x-cug/product/crane_crawler_tower_200t:
+     Error: No prop crane_crawler_tower_200t
+     Error: No more image crane_crawler_tower_200t
+
+   35hb-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/35hb-yamadome:
+     Error: No prop 35hb-yamadome
+     Error: No more image 35hb-yamadome
+
+   flp2535-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/flp2535-yamadome:
+     Error: No prop flp2535-yamadome
+     Error: No more image flp2535-yamadome
+
+   35ha_30-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/35ha_30-yamadome:
+     Error: No prop 35ha_30-yamadome
+     Error: No more image 35ha_30-yamadome
+
+   kop510-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/kop510-yamadome:
+     Error: No prop kop510-yamadome
+     Error: No more image kop510-yamadome
+
+LOG 2023-08-01 - 11:20:25
+PROCESS QUEUE
+
+ - Total item updated before -> 157
+ - Total item in db -> 22791
+ - Total item to update -> 22635
+ - 7545 block created. Each has 3 items.
+
+   kabelranna-350-350x2250x300 --> https://www.bimobject.com/en/steriks/product/kabelranna-350-350x2250x300:
+     Error: No prop kabelranna-350-350x2250x300
+     Error: No more image kabelranna-350-350x2250x300
+
+   scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white --> https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white:
+     Error: No prop scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white
+     Error: No more image scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white
+
+   kabelranna-1070-citybanan --> https://www.bimobject.com/en/steriks/product/kabelranna-1070-citybanan:
+     Error: No prop kabelranna-1070-citybanan
+     Error: No more image kabelranna-1070-citybanan
+
+   foundation-1400x1900x2600 --> https://www.bimobject.com/en/steriks/product/foundation-1400x1900x2600:
+     Error: No prop foundation-1400x1900x2600
+     Error: No more image foundation-1400x1900x2600
+
+   track-crane-160t --> https://www.bimobject.com/en/boj-x-cug/product/track-crane-160t:
+     Error: No prop track-crane-160t
+     Error: No more image track-crane-160t
+
+   kabelranna-350-citybanan-355x2250x400 --> https://www.bimobject.com/en/steriks/product/kabelranna-350-citybanan-355x2250x400:
+     Error: No prop kabelranna-350-citybanan-355x2250x400
+     Error: No more image kabelranna-350-citybanan-355x2250x400
+
+   cranetruck1 --> https://www.bimobject.com/en/boj-x-cug/product/cranetruck1:
+     Error: No prop cranetruck1
+     Error: No more image cranetruck1
+
+   excavator-2 --> https://www.bimobject.com/en/boj-x-cug/product/excavator-2:
+     Error: No prop excavator-2
+     Error: No more image excavator-2
+
+   shovel_7t --> https://www.bimobject.com/en/boj-x-cug/product/shovel_7t:
+     Error: No prop shovel_7t
+     Error: No more image shovel_7t
+
+LOG 2023-08-01 - 11:23:47
+PROCESS QUEUE
+
+ - Total item updated before -> 157
+ - Total item in db -> 22791
+ - Total item to update -> 22635
+ - 7545 block created. Each has 3 items.
+
+   kabelranna-1070-citybanan --> https://www.bimobject.com/en/steriks/product/kabelranna-1070-citybanan:
+     Error: No prop kabelranna-1070-citybanan
+     Error: No more image kabelranna-1070-citybanan
+
+   scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white --> https://www.bimobject.com/en/scg/product/scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white:
+     Error: No prop scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white
+     Error: No more image scg_wall_acoustic_cylence_zoftone_600x1200_2-88_white
+
+   kabelranna-350-350x2250x300 --> https://www.bimobject.com/en/steriks/product/kabelranna-350-350x2250x300:
+     Error: No prop kabelranna-350-350x2250x300
+     Error: No more image kabelranna-350-350x2250x300
+
+   track-crane-160t --> https://www.bimobject.com/en/boj-x-cug/product/track-crane-160t:
+     Error: No prop track-crane-160t
+     Error: No more image track-crane-160t
+
+   kabelranna-350-citybanan-355x2250x400 --> https://www.bimobject.com/en/steriks/product/kabelranna-350-citybanan-355x2250x400:
+     Error: No prop kabelranna-350-citybanan-355x2250x400
+     Error: No more image kabelranna-350-citybanan-355x2250x400
+
+   foundation-1400x1900x2600 --> https://www.bimobject.com/en/steriks/product/foundation-1400x1900x2600:
+     Error: No prop foundation-1400x1900x2600
+     Error: No more image foundation-1400x1900x2600
+
+   cranetruck1 --> https://www.bimobject.com/en/boj-x-cug/product/cranetruck1:
+     Error: No prop cranetruck1
+     Error: No more image cranetruck1
+
+   excavator-2 --> https://www.bimobject.com/en/boj-x-cug/product/excavator-2:
+     Error: No prop excavator-2
+     Error: No more image excavator-2
+
+   shovel_7t --> https://www.bimobject.com/en/boj-x-cug/product/shovel_7t:
+     Error: No prop shovel_7t
+     Error: No more image shovel_7t
+
+   kabelranna-880-dubbelkanal --> https://www.bimobject.com/en/steriks/product/kabelranna-880-dubbelkanal:
+     Error: No prop kabelranna-880-dubbelkanal
+     Error: No more image kabelranna-880-dubbelkanal
+
+   yumbo --> https://www.bimobject.com/en/boj-x-cug/product/yumbo:
+     Error: No prop yumbo
+     Error: No more image yumbo
+
+   bg-rail-cable-trough --> https://www.bimobject.com/en/bg-graspointner/product/bg-rail-cable-trough:
+     Error: No prop bg-rail-cable-trough
+     Error: No more image bg-rail-cable-trough
+
+   40bl-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/40bl-yamadome:
+     Error: No prop 40bl-yamadome
+     Error: No more image 40bl-yamadome
+
+   crane_jib-2 --> https://www.bimobject.com/en/boj-x-cug/product/crane_jib-2:
+     Error: No prop crane_jib-2
+     Error: No more image crane_jib-2
+
+   20ha_7-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/20ha_7-yamadome:
+     Error: No prop 20ha_7-yamadome
+     Error: No more image 20ha_7-yamadome
+
+   30ha_35-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/30ha_35-yamadome:
+     Error: No prop 30ha_35-yamadome
+     Error: No more image 30ha_35-yamadome
+
+   35hb-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/35hb-yamadome:
+     Error: No prop 35hb-yamadome
+     Error: No more image 35hb-yamadome
+
+   20p-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/20p-yamadome:
+     Error: No prop 20p-yamadome
+     Error: No more image 20p-yamadome
+
+   25d-2_yamadome --> https://www.bimobject.com/en/boj-x-cug/product/25d-2_yamadome:
+     Error: No prop 25d-2_yamadome
+     Error: No more image 25d-2_yamadome
+
+   35ha_30-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/35ha_30-yamadome:
+     Error: No prop 35ha_30-yamadome
+     Error: No more image 35ha_30-yamadome
+
+   crane_crawler_tower_200t --> https://www.bimobject.com/en/boj-x-cug/product/crane_crawler_tower_200t:
+     Error: No prop crane_crawler_tower_200t
+     Error: No more image crane_crawler_tower_200t
+
+   35ha_60-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/35ha_60-yamadome:
+     Error: No prop 35ha_60-yamadome
+     Error: No more image 35ha_60-yamadome
+
+   kop510-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/kop510-yamadome:
+     Error: No prop kop510-yamadome
+     Error: No more image kop510-yamadome
+
+   flp2535-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/flp2535-yamadome:
+     Error: No prop flp2535-yamadome
+     Error: No more image flp2535-yamadome
+
+   nidagravel --> https://www.bimobject.com/en/nidaplast/product/nidagravel:
+     Error: No prop nidagravel
+     Updated nidagravel
+
+   clamshell --> https://www.bimobject.com/en/boj-x-cug/product/clamshell:
+     Error: No prop clamshell
+     Error: No more image clamshell
+
+   forklift_25 --> https://www.bimobject.com/en/boj-x-cug/product/forklift_25:
+     Error: No prop forklift_25
+     Error: No more image forklift_25
+
+   crane_06 --> https://www.bimobject.com/en/boj-x-cug/product/crane_06:
+     Error: No prop crane_06
+     Error: No more image crane_06
+
+   30ha_40-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/30ha_40-yamadome:
+     Error: No prop 30ha_40-yamadome
+     Error: No more image 30ha_40-yamadome
+
+   backhoe_200-08 --> https://www.bimobject.com/en/boj-x-cug/product/backhoe_200-08:
+     Error: No prop backhoe_200-08
+     Error: No more image backhoe_200-08
+
+   crane_crawler_mini --> https://www.bimobject.com/en/boj-x-cug/product/crane_crawler_mini:
+     Error: No prop crane_crawler_mini
+     Error: No more image crane_crawler_mini
+
+   crane_roughter-2 --> https://www.bimobject.com/en/boj-x-cug/product/crane_roughter-2:
+     Error: No prop crane_roughter-2
+     Error: No more image crane_roughter-2
+
+   crane_truck-2 --> https://www.bimobject.com/en/boj-x-cug/product/crane_truck-2:
+     Error: No prop crane_truck-2
+     Error: No more image crane_truck-2
+
+   aerial_vehicle_nul07 --> https://www.bimobject.com/en/boj-x-cug/product/aerial_vehicle_nul07:
+     Error: No prop aerial_vehicle_nul07
+     Error: No more image aerial_vehicle_nul07
+
+   flp3040-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/flp3040-yamadome:
+     Error: No prop flp3040-yamadome
+     Error: No more image flp3040-yamadome
+
+   crane_climbing_ots-23n --> https://www.bimobject.com/en/boj-x-cug/product/crane_climbing_ots-23n:
+     Error: No prop crane_climbing_ots-23n
+     Error: No more image crane_climbing_ots-23n
+
+   concrete_mixer_01 --> https://www.bimobject.com/en/boj-x-cug/product/concrete_mixer_01:
+     Error: No prop concrete_mixer_01
+     Error: No more image concrete_mixer_01
+
+   kopl820-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/kopl820-yamadome:
+     Error: No prop kopl820-yamadome
+     Error: No more image kopl820-yamadome
+
+   excavator_1000 --> https://www.bimobject.com/en/boj-x-cug/product/excavator_1000:
+     Error: No prop excavator_1000
+     Error: No more image excavator_1000
+
+LOG 2023-08-01 - 11:39:58
+PROCESS QUEUE
+
+ - Total item updated before -> 196
+ - Total item in db -> 22791
+ - Total item to update -> 101
+ - 34 block created. Each has 3 items.
+
+   cable-chamber-geo-crm --> https://www.bimobject.com/en/geoplastgmbh/product/cable-chamber-geo-crm:
+     Error: No more image cable-chamber-geo-crm
+     Updated cable-chamber-geo-crm
+
+   excavator-1 --> https://www.bimobject.com/en/boj-x-cug/product/excavator-1:
+     Error: No prop excavator-1
+     Error: No more image excavator-1
+
+   35p-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/35p-yamadome:
+     Error: No prop 35p-yamadome
+     Error: No more image 35p-yamadome
+
+   35vp30-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/35vp30-yamadome:
+     Error: No prop 35vp30-yamadome
+     Error: No more image 35vp30-yamadome
+
+   3d_car_patrol --> https://www.bimobject.com/en/boj-x-cug/product/3d_car_patrol:
+     Error: No prop 3d_car_patrol
+     Error: No more image 3d_car_patrol
+
+   nopg300-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/nopg300-yamadome:
+     Error: No prop nopg300-yamadome
+     Error: No more image nopg300-yamadome
+
+   30ha_2-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/30ha_2-yamadome:
+     Error: No prop 30ha_2-yamadome
+     Error: No more image 30ha_2-yamadome
+
+   3d_car3 --> https://www.bimobject.com/en/boj-x-cug/product/3d_car3:
+     Error: No prop 3d_car3
+     Error: No more image 3d_car3
+
+   25js_25-yamadome --> https://www.bimobject.com/en/boj-x-cug/product/25js_25-yamadome:
+     Error: No prop 25js_25-yamadome
+     Error: No more image 25js_25-yamadome
+
+   20d-2_yamadome --> https://www.bimobject.com/en/boj-x-cug/product/20d-2_yamadome:
+     Error: No prop 3d_car1
+adome
+     Error: No more image 3d_car1
+adome
+
+   terra-dc-wallbox --> https://www.bimobject.com/en/abb/product/terra-dc-wallbox:
+     Error: No prop terra-dc-wallbox
+     Error: No more image terra-dc-wallbox

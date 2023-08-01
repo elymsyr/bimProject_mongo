@@ -8,7 +8,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from multiprocessing import Process
-from docs.var import UPDATE_LOG, TIMEOUT, MAX_DRIVER
+try:
+    from var import UPDATE_LOG, TIMEOUT, MAX_DRIVER, MAX_NUMBER_AT_A_TIME
+except:
+    from var import UPDATE_LOG, TIMEOUT, MAX_DRIVER, MAX_NUMBER_AT_A_TIME
 
 def var_selenium():
     updated = []
@@ -111,7 +114,7 @@ def update_process(url, order):
     driver.implicitly_wait(2)
     print(f"Driver {order+1} opened.")
     con = MongoConnection()    
-    print(f"{name} assigned to driver {order}")
+    print(f"{name} assigned to driver {order+1}")
     page_load = 1
     properties = []
     other_images = []
@@ -162,8 +165,6 @@ def update_process(url, order):
         if other_images != [] or properties != []:            
             try:
                 update(url, con, properties, old_image)
-                with open('docs/updated_urls.txt', 'a', encoding='utf-8') as f:
-                    f.write(f"{url}\n")
                 log.append(f"     Updated {name}")
             except Exception as a:
                             log.append(f"     Error: Update Failed {name}")
@@ -172,6 +173,8 @@ def update_process(url, order):
     keep_log_error(f"\n   {name} --> {url}:")
     for row in log:
         keep_log_error(row)
+    with open('docs/updated_urls.txt', 'a', encoding='utf-8') as f:
+        f.write(f"{url}\n")
     driver.quit()
 
 def var_selenium_process():
@@ -184,10 +187,15 @@ def var_selenium_process():
     ready_urls = []
     con = MongoConnection()
     print("Getting URL data...")
+    url_number = 0
     urls = find_url(con)
     for url in urls:
         if url not in updated:
-            ready_urls.append(url)
+            if url_number < MAX_NUMBER_AT_A_TIME:
+                ready_urls.append(url)
+                url_number += 1
+            else:
+                break
     keep_log_state(f"Total item updated before -> {len(updated)+1}")
     keep_log_state(f"Total item in db -> {len(urls)+1}")
     keep_log_state(f"Total item to update -> {len(ready_urls)+1}")

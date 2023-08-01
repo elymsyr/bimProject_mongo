@@ -27,3 +27,5 @@ TIMEOUT = 10
 
 # Component Update -> Max Process Number run at the same time 
 MAX_DRIVER = 3
+# Get max number of items to update through the execute of the script
+MAX_NUMBER_AT_A_TIME = 100
