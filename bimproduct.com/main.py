@@ -6,8 +6,7 @@ from os import system
 from datetime import datetime, date
 from docs.mongo_connection import MongoConnection
 from time import time
-
-from var import MONGO_LOG, UPDATE_LOG
+from docs.var import MONGO_LOG, UPDATE_LOG
 
 def convert(seconds):
     seconds = int(seconds)

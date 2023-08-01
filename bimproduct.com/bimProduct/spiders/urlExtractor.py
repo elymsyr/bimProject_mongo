@@ -4,7 +4,7 @@
 # from codecs import open
 # from requests import get
 # from re import compile, IGNORECASE
-# from var import FOR_MAIN_DATAS, SECOND_DATAS
+# from docs.var import FOR_MAIN_DATAS, SECOND_DATAS
 
 # # scrapy crawl urlExtract
 
