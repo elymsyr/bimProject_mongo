@@ -1,0 +1,72 @@
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-08-02 - 16:15:00
+
+ - 6 Total Folders
+ - 0 Double Deleted
+ - 0 Empty Deleted
+ - 6 Zips
+ - 0 Other Files
+ - 0 Cr Deleted
+
+0400740519 --> BIMobject-WÖHR PARKLIFT 450 -170 - 320 - 2,0 t - Platform Width 230-300460-540.zip : 1.716MB 
+0400740522 --> BIMobject-WÖHR PARKLIFT 463 - 565 - 605 - 2,0 t - Platform Width 230-270460-540.zip : 1.301MB 
+0400790515 --> BIMobject-COMBILIFT 543 MR 190 - 355 - 2,0 t - Platform Width 250 - 300.zip : 8.906MB 
+0400790520 --> BIMobject-COMBILIFT 542 MR - 190 - 220 - 2,0 t - Platform Width 250 - 300.zip : 6.128MB 
+0400790523 --> BIMobject-COMBILIFT 542 - 175 - 220 - 2,0 t - Platform Width 230 - 300.zip : 4.976MB 
+0600410521 --> BIMobject-TeamConnect Ceiling Medium.zip : 5.053MB 
+
+Avarage File Size: 4.011428571428572
+Max File Size: 8.906
+Min File Size: 1.301
+
+Elapsed time during the whole program in seconds:
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-08-02 - 16:15:38
+
+ - 6 Total Folders
+ - 0 Double Deleted
+ - 0 Empty Deleted
+ - 6 Zips
+ - 0 Other Files
+ - 0 Cr Deleted
+
+0400740519 --> BIMobject-WÖHR PARKLIFT 450 -170 - 320 - 2,0 t - Platform Width 230-300460-540.zip : 1.716MB 
+0400740522 --> BIMobject-WÖHR PARKLIFT 463 - 565 - 605 - 2,0 t - Platform Width 230-270460-540.zip : 1.301MB 
+0400790515 --> BIMobject-COMBILIFT 543 MR 190 - 355 - 2,0 t - Platform Width 250 - 300.zip : 8.906MB 
+0400790520 --> BIMobject-COMBILIFT 542 MR - 190 - 220 - 2,0 t - Platform Width 250 - 300.zip : 6.128MB 
+0400790523 --> BIMobject-COMBILIFT 542 - 175 - 220 - 2,0 t - Platform Width 230 - 300.zip : 4.976MB 
+0600410521 --> BIMobject-TeamConnect Ceiling Medium.zip : 5.053MB 
+
+Avarage File Size: 4.011428571428572
+Max File Size: 8.906
+Min File Size: 1.301
+
+Elapsed time during the whole program in seconds: 1 seconds
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-08-02 - 16:15:44
+
+ - 6 Total Folders
+ - 0 Double Deleted
+ - 0 Empty Deleted
+ - 6 Zips
+ - 0 Other Files
+ - 0 Cr Deleted
+
+0400740519 --> BIMobject-WÖHR PARKLIFT 450 -170 - 320 - 2,0 t - Platform Width 230-300460-540.zip : 1.716MB 
+0400740522 --> BIMobject-WÖHR PARKLIFT 463 - 565 - 605 - 2,0 t - Platform Width 230-270460-540.zip : 1.301MB 
+0400790515 --> BIMobject-COMBILIFT 543 MR 190 - 355 - 2,0 t - Platform Width 250 - 300.zip : 8.906MB 
+0400790520 --> BIMobject-COMBILIFT 542 MR - 190 - 220 - 2,0 t - Platform Width 250 - 300.zip : 6.128MB 
+0400790523 --> BIMobject-COMBILIFT 542 - 175 - 220 - 2,0 t - Platform Width 230 - 300.zip : 4.976MB 
+0600410521 --> BIMobject-TeamConnect Ceiling Medium.zip : 5.053MB 
+
+Avarage File Size: 4.011428571428572
+Max File Size: 8.906
+Min File Size: 1.301
+
+Elapsed time during the whole program in seconds: 1 seconds

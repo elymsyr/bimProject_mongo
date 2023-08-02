@@ -6,8 +6,8 @@ from os import makedirs, listdir, startfile
 from os.path import exists, realpath
 from multiprocessing import Process
 from shutil import rmtree
-from check_functions import check_all
-from mongo_connection import MongoConnection
+from docs.check_functions import check_all
+from docs.mongo_connection import MongoConnection
 try:
     from var import DOWNLOAD_FOLDER, MULTIQUEUE_NUMBER, SLEEP_BREAK, MAX_NUMBER_AT_A_TIME
 except:
@@ -188,7 +188,11 @@ def start_download(folder=DOWNLOAD_FOLDER, state = '0', datas=None):
             con = MongoConnection()
             data = con.connection.find_one({'p_id':f'{state}'})
             makedirs(f"{directory}")
-            url = data['url']
+            try:
+                url = data['url']
+            except:
+                print("No data founded in Mongo DB. It will not be downloaded.")
+                return 0
             chrome_options = ChromeOptions()
             prefs = {'download.default_directory' : f'{directory}'}
             chrome_options.add_experimental_option('prefs', prefs)
