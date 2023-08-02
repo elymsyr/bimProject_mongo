@@ -6,7 +6,7 @@ from os import makedirs, listdir, startfile
 from os.path import exists, realpath
 from multiprocessing import Process
 from shutil import rmtree
-from check_functions import fix_state, check_all
+from check_functions import check_all
 from mongo_connection import MongoConnection
 try:
     from var import DOWNLOAD_FOLDER, MULTIQUEUE_NUMBER, SLEEP_BREAK, MAX_NUMBER_AT_A_TIME
@@ -139,21 +139,17 @@ def download(directory, url, id):
     except Exception as error: 
         print(f"Not Downloaded: {id} --> {error}")
 
-def start_download(folder=DOWNLOAD_FOLDER, state = '0'):
+def start_download(folder=DOWNLOAD_FOLDER, state = '0', datas=None):
     if state.isdigit() and int(state.replace('-', '')) == 0:
-        connection = MongoConnection()
-        print("Getting data...")
-        result = connection.connection.find({'download_state':0})
+        if datas == None:
+            return print("\nData not found. Download stopped.")
+        print("Starting Checking...")
         check_all(0)
         downloads = listdir(DOWNLOAD_FOLDER)
-        id_data = []
-        url_data = []
-        for res in result[:MAX_NUMBER_AT_A_TIME]:
-            id_data.append(res['p_id'])
-            url_data.append(res['url'])
+        id_data = datas[0]
+        url_data = datas[1]
+        print(id_data[:3], url_data[:3], len(id_data), len(url_data))
         processQueue = []
-        print("Starting Checking...")
-        print("Checked")
         print("Download Starting...")
         if not exists(folder):
             makedirs(folder)
@@ -175,87 +171,97 @@ def start_download(folder=DOWNLOAD_FOLDER, state = '0'):
                     print(f"finished process {order}")
                     order += 1
     else:
-        connection = MongoConnection()
         c_download = 1
-        find = connection.connection.find_one({'p_id': f'{state}'})
-        if find != None:
-            directory = f"{DOWNLOAD_FOLDER}\\{state}"
-            if not exists(directory):
-                pass
-            else:
-                in_dir = listdir(directory)
-                if len(in_dir) == 1:
-                    if not in_dir[0].endswith(".crdownload") or not in_dir[0].endswith(".tmp"):
-                        c_download = 0
+        directory = f"{DOWNLOAD_FOLDER}\\{state}"
+        if not exists(directory):
+            print(f"Directory {state} not founded.")
+        else:
+            in_dir = listdir(directory)
+            if len(in_dir) == 1:
+                if not in_dir[0].endswith(".crdownload") or not in_dir[0].endswith(".tmp"):
+                    c_download = 0
                 else:
                     rmtree(directory, ignore_errors=True)
-            if c_download == 1:
-                makedirs(f"{directory}")
-                url = find['url']
-                chrome_options = ChromeOptions()
-                prefs = {'download.default_directory' : f'{directory}'}
-                chrome_options.add_experimental_option('prefs', prefs)
-                chrome_options.add_argument('--headless=new')
-                driver = Chrome(options=chrome_options)
-                login_state = login(driver)
-                before = listdir(f"{directory}")
-                if login_state == 1:
-                    test_item = DownloadItem(url, state, driver)
-                    download_state = test_item.download_item()
-                    if download_state == 1:
+            else:
+                rmtree(directory, ignore_errors=True)
+        if c_download == 1:
+            con = MongoConnection()
+            data = con.connection.find_one({'p_id':f'{state}'})
+            makedirs(f"{directory}")
+            url = data['url']
+            chrome_options = ChromeOptions()
+            prefs = {'download.default_directory' : f'{directory}'}
+            chrome_options.add_experimental_option('prefs', prefs)
+            chrome_options.add_argument('--headless=new')
+            driver = Chrome(options=chrome_options)
+            login_state = login(driver)
+            before = listdir(f"{directory}")
+            if login_state == 1:
+                test_item = DownloadItem(url, state, driver)
+                download_state = test_item.download_item()
+                if download_state == 1:
+                    now = listdir(f"{directory}")
+                    for e in now:
+                        if e.endswith(".crdownload") or e.endswith(".tmp"):
+                            now.remove(e)
+                    sleep_time = 0
+                    while before == now:
+                        if sleep_time > SLEEP_BREAK:
+                            raise Exception("ERROR: Waited for too long !")
                         now = listdir(f"{directory}")
                         for e in now:
                             if e.endswith(".crdownload") or e.endswith(".tmp"):
                                 now.remove(e)
-                        sleep_time = 0
-                        while before == now:
-                            if sleep_time > SLEEP_BREAK:
-                                raise Exception("ERROR: Waited for too long !")
-                            now = listdir(f"{directory}")
-                            for e in now:
-                                if e.endswith(".crdownload") or e.endswith(".tmp"):
-                                    now.remove(e)
-                                    sleep_time += 1
-                            sleep_time += 2
-                            sleep(1)
-                        driver.quit()
-                        state = download_control(state)
-                        if state:
-                            path = realpath(directory)
-                            startfile(path)
-                            return 1
-                    else:
-                        print(f"Download Error: {state}")
+                                sleep_time -= 1
+                        sleep_time += 2 
+                        sleep(1)
+                    driver.quit()
+                    state = download_control(state)
+                    if state:
+                        path = realpath(directory)
+                        startfile(path)
+                        return 1
                 else:
-                    print(f"Login Failed: {state}")
+                    print(f"Download Error: {state}")
             else:
-                print(f"Already downloaded: {state}")
-                path = realpath(directory)
-                startfile(path)
-            return 0
+                print(f"Login Failed: {state}")
+        else:
+            print(f"Already downloaded: {state}")
+            path = realpath(directory)
+            startfile(path)
+        return 0
 
 def download_control(id):
     directory = f"{DOWNLOAD_FOLDER}\\{id}"    
     in_dir = listdir(directory)
     if len(in_dir) == 1:
         if not in_dir[0].endswith(".crdownload") or not in_dir[0].endswith(".tmp"):
-            fix_state(id, 1)
             print(f"{id} downloaded")
             return 1
         else:
             rmtree(directory, ignore_errors=True)
-            fix_state(id, 0)
             print(f"{id} error")
             return 0
     else:
         rmtree(directory, ignore_errors=True)
-        fix_state(id, 0)
         print(f"{id} error")
         return 0
     
 if __name__ == '__main__':
     # state = input("select[id] or all[0] : ")
+    state = '0400740522'
     state = '0'
     if state == '0':
-        for _ in range(250):
-            start_download(state=state) # "1400-87-887"
+        connection = MongoConnection()
+        print("Getting data...")
+        result = connection.connection.find({})
+        id_data = []
+        url_data = []
+        for res in result[:MAX_NUMBER_AT_A_TIME]:
+            id_data.append(res['p_id'])
+            url_data.append(res['url'])
+        data = [id_data, url_data]
+        # for _ in range(250):
+        start_download(state=state, datas=data) # "try state --> 0400740522"
+    else:
+        start_download(state=state)

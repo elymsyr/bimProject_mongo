@@ -51,15 +51,19 @@ class MongoConnection():
             self.connection.delete_many({})
 
     def update_id(self, ids):
-        number = 999
         for id in ids:
-            number += randint(0,999)
-            new_id = id
+            number = 99999
+            number += randint(0,9999)
+            new_id = str(id)
             new_id = list(new_id)
-            new_id[8] = str(number)[0] 
-            new_id[9] = str(number)[1] 
-            new_id[10] = str(number)[2]
+            new_id[7] = str(number)[-1] 
+            new_id[8] = str(number)[-2] 
+            new_id[9] = str(number)[-3]
+            new_id[10] = str(number)[-4]
             new_id = ''.join(new_id)
-            number -= 1
+            new_id = int(new_id)
             print(f"{id} --> {new_id}")
             self.connection.update_one({'p_id': f'{id}'}, {"$set":{'p_id': f'{new_id}'}})
+            
+# con = MongoConnection()
+# con.delete_all()

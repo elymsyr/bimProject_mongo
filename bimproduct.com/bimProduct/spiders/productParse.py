@@ -11,7 +11,6 @@ class ProductparseSpider(scrapy.Spider):
     allowed_domains = ["bimobject.com"]
     start_urls = ["https://bimobject.com"]
     id_adding_number = randint(0, 999)
-    crawled_last_time = 0
     counter = 1
     id = 0
     merge_url = []
@@ -187,10 +186,10 @@ class ProductparseSpider(scrapy.Spider):
 
     def control(self, data):
         important_data = []
-        important_data.append(data[2])
-        important_data.append(data[5])
-        important_data.append(data[3])
+        important_data.append(data[1])
         important_data.append(data[4])
+        important_data.append(data[2])
+        important_data.append(data[3])
         for prod in important_data:
             if prod == None or prod == 'None':
                 self.keep_log(f'\nImportant data missing for {data[0]}')
@@ -200,25 +199,25 @@ class ProductparseSpider(scrapy.Spider):
         pre_id = self.number_defuser(pre_id, 0)
         mid_id = self.number_defuser(name, 2)
         post_id = self.number_defuser(0, 1)
-        new_id = (f"{pre_id}-{mid_id}-{post_id}")[:11]
+        new_id = (f"{pre_id}{mid_id}{post_id}")
         while new_id in self.used_ids:
             self.id_adding_number += 1
             post_id = self.number_defuser(0, 1)
-            new_id = int(f"{pre_id}{mid_id}{post_id}")
-        return new_id
+            new_id = (f"{pre_id}{mid_id}{post_id}")
+        self.used_ids.append((new_id))
+        return (new_id)
 
     def write_data(self, data):
         try:
             self.connection.insert(data)
         except Exception as e:
-            self.keep_log(f'\nNot written: {data[0]} - {data[5]} --> Error:\n{e}\n')
+            self.keep_log(f'\nNot written: {data[0]} - {data[4]} --> Error:\n{e}\n')
         finally:
             self.list_product -= 1
             self.counter += 1
-            self.crawled_last_time += 1
             if self.list_product % 100 == 0:
-                print(f"Last --> {self.list_product}")
-        print(f"\ndata written --> {self.counter}\n")
+                print(f"\nLast --> {self.list_product}")
+        print(f"\r\rWritten {self.counter}")
 
     def none_if(self, comp):
         if comp == None or comp == '':

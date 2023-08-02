@@ -54,7 +54,7 @@ def check_hunted():
     data = connection.find_all()
     id_data = data[1]
     url_data = data[0]
-    pattern = r"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9]"
+    pattern = r"[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
     print("Checking...")
     for row in id_data:
         control = match(pattern, str(row))
@@ -72,7 +72,7 @@ def check_hunted():
             print(f"ID Count Error - {id} : {id_data.count(id)} --> {id_data.index(id)}")
             if id not in id_error:
                 id_error.append(id)
-    correct_id(id_error)
+    # correct_id(id_error)
 
 def keep_log(string):
     with open(DOWNLOAD_LOG, 'a', encoding='utf-8') as f:
@@ -83,7 +83,6 @@ def get_list():
     now = datetime.now()
     today = date.today()
     current_time = now.strftime("%H:%M:%S")
-    state_changed = 0
     downloads = os.listdir(DOWNLOAD_FOLDER)
     zips = 0
     double = 0
@@ -91,6 +90,8 @@ def get_list():
     other = 0
     leng = len(downloads)
     cr = 0
+    double_f = []
+    empty_f = []
     keep_log(f"\nDownload Log {today} - {current_time}\n")
     print("Checking... ( See Log --> download_log.txt )")
     for item in downloads:
@@ -106,15 +107,21 @@ def get_list():
                 other += len(in_dir)
         in_dir = os.listdir(directory)
         if len(in_dir) > 1:
-            keep_log(f"\n - {item} : More than One Item")
+            double_f.append(item)
             double += (len(in_dir))
             rmtree(directory)
         elif len(in_dir) < 1:
-            keep_log(f"\n - {item} : Empty Folder")
+            empty_f.append(item)
             rmtree(directory)
             empty += 1
             leng -= 1
-    keep_log(f"\n - Total Item: {leng}\n - {double} Double\n - {empty} Empty\n - {zips} Zips\n - {other} Other\n - {state_changed} State Changed\n - {cr} Cr Deleted\n")
+    keep_log(f"\n - {leng} Total Folders\n - {double} Double Deleted")
+    for item in double_f:
+        keep_log(f"\n    + {item}")
+    keep_log(f"\n - {empty} Empty Deleted")
+    for item in empty_f:
+        keep_log(f"\n    + {item}")    
+    keep_log(f"\n - {zips} Zips\n - {other} Other Files\n - {cr} Cr Deleted\n")
 
 def lister():
     print(" - lister:")
@@ -146,7 +153,7 @@ def lister():
                 min = size[x]
     else:
         min = 0
-    keep_log(f"\nAvarage File Size: {total/(len(size)+1)}\nMax File Size: {max}\nMin File Size: {min}\n")
+    keep_log(f"\n\nAvarage File Size: {total/(len(size)+1)}\nMax File Size: {max}\nMin File Size: {min}\n")
     print(f"\nAvarage File Size: {total/(len(size)+1)}\nMax File Size: {max}\nMin File Size: {min}\n")
 
 def check_all(state = None):
@@ -155,6 +162,7 @@ def check_all(state = None):
         get_list()
         lister()
     else:
+        main_check()
         check_hunted()
     
             

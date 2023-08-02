@@ -9,9 +9,9 @@ from selenium.webdriver.support import expected_conditions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from multiprocessing import Process
 try:
-    from var import UPDATE_LOG, TIMEOUT, MAX_DRIVER, MAX_NUMBER_AT_A_TIME
+    from var import UPDATE_LOG, TIMEOUT, MULTIQUEUE_NUMBER, MAX_NUMBER_AT_A_TIME
 except:
-    from var import UPDATE_LOG, TIMEOUT, MAX_DRIVER, MAX_NUMBER_AT_A_TIME
+    from var import UPDATE_LOG, TIMEOUT, MULTIQUEUE_NUMBER, MAX_NUMBER_AT_A_TIME
 
 def var_selenium():
     updated = []
@@ -196,20 +196,19 @@ def var_selenium_process():
                 url_number += 1
             else:
                 break
-    keep_log_state(f"Total item updated before -> {len(updated)+1}")
-    keep_log_state(f"Total item in db -> {len(urls)+1}")
-    keep_log_state(f"Total item to update -> {len(ready_urls)+1}")
+    keep_log_state(f"Total item updated before -> {len(updated)}")
+    keep_log_state(f"Total item in db -> {len(urls)}")
+    keep_log_state(f"Total item to update -> {len(ready_urls)}")
     print("Processing URLs...")
-    total = len(ready_urls)+1
     start = 0
     end = len(ready_urls)
-    step = MAX_DRIVER
+    step = MULTIQUEUE_NUMBER
     block = 0
     for i in range(start, end, step):
         x = i
         block += 1
         processQueue.append(ready_urls[x:x+step])
-    keep_log_state(f"{block} block created. Each has {MAX_DRIVER} items.")
+    keep_log_state(f"{block} block created. Each has {MULTIQUEUE_NUMBER} items.")
     for indexes in range(len(processQueue)):
         print(f"\n{indexes+1}/{len(processQueue)}\n")
         processes = []
