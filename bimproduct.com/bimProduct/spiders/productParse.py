@@ -217,7 +217,6 @@ class ProductparseSpider(scrapy.Spider):
             self.counter += 1
             if self.list_product % 100 == 0:
                 print(f"\nLast --> {self.list_product}")
-        print(f"\r\rWritten {self.counter}")
 
     def none_if(self, comp):
         if comp == None or comp == '':
