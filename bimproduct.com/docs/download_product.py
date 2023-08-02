@@ -132,44 +132,40 @@ def download(directory, url, id):
                 driver.quit()
                 return download_control(id)
             else:
-                print(f"Download Error: {id}")
+                print(f"Selenium Error: {id}")
         else:
             print(f"Login Failed: {id}")
         driver.quit()
     except Exception as error: 
         print(f"Not Downloaded: {id} --> {error}")
 
-def start_download(folder, state = '0'):
+def start_download(folder=DOWNLOAD_FOLDER, state = '0'):
     if state.isdigit() and int(state.replace('-', '')) == 0:
         connection = MongoConnection()
         print("Getting data...")
         result = connection.connection.find({'download_state':0})
-        state_data = []
+        check_all(0)
+        downloads = listdir(DOWNLOAD_FOLDER)
         id_data = []
         url_data = []
         for res in result[:MAX_NUMBER_AT_A_TIME]:
-            state_data.append(res['download_state'])
             id_data.append(res['p_id'])
             url_data.append(res['url'])
-        print(len(id_data))
         processQueue = []
         print("Starting Checking...")
-        check_all(0)
         print("Checked")
         print("Download Starting...")
-        for index in range(len(state_data)):
-            if state_data[index] != 1:
-                if not exists(folder):
-                    makedirs(folder)
+        if not exists(folder):
+            makedirs(folder)
+        for index in range(len(id_data)):
+            if id_data not in downloads:
                 directory = f"{folder}\\{id_data[index]}"
                 state = create_process(directory, url_data[index], id_data[index])
                 processQueue.append(state)
         for order in range(len(processQueue)):
-            state_id = []
             if order % MULTIQUEUE_NUMBER == 0:
                 print(f"\n{len(processQueue) - order} in queue...")
                 for _ in range(MULTIQUEUE_NUMBER):
-                    state_id.append(id_data[order])
                     processQueue[order].start()
                     print(f"running process {order}")
                     order += 1               
@@ -262,4 +258,4 @@ if __name__ == '__main__':
     state = '0'
     if state == '0':
         for _ in range(250):
-            start_download(DOWNLOAD_FOLDER, state) # "1400-87-887"
+            start_download(state=state) # "1400-87-887"

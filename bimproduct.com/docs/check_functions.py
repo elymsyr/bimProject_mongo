@@ -1,7 +1,8 @@
 import os
 from codecs import open
 from re import match
-from os import remove, rmdir
+from os import remove
+from shutil import rmtree
 from os.path import exists
 # from os.path import isdir
 from datetime import datetime, date
@@ -75,18 +76,7 @@ def check_hunted():
 
 def keep_log(string):
     with open(DOWNLOAD_LOG, 'a', encoding='utf-8') as f:
-        f.write(f"{string}")
-        
-def fix_state(id, state):
-    connection = MongoConnection()
-    connection.update_downloads(state, id)
-    
-def find_a(collection):
-    results = collection.connection.find({'download_state': 1})
-    res = []
-    for row in results:
-        res.append(row['p_id'])
-    return res    
+        f.write(f"{string}") 
 
 def get_list():
     print(" - get_list:")
@@ -109,7 +99,7 @@ def get_list():
         for file in in_dir:
             if file.endswith(".zip"):
                 zips += 1
-            elif file.endswith(".crdownload") or file.endswith(".tmp"):
+            elif file.endswith(".crdownload"):
                 remove(f"{directory}\\{file}")
                 cr += 1
             else:
@@ -118,11 +108,12 @@ def get_list():
         if len(in_dir) > 1:
             keep_log(f"\n - {item} : More than One Item")
             double += (len(in_dir))
+            rmtree(directory)
         elif len(in_dir) < 1:
             keep_log(f"\n - {item} : Empty Folder")
+            rmtree(directory)
             empty += 1
             leng -= 1
-            fix_state(item, 0)
     keep_log(f"\n - Total Item: {leng}\n - {double} Double\n - {empty} Empty\n - {zips} Zips\n - {other} Other\n - {state_changed} State Changed\n - {cr} Cr Deleted\n")
 
 def lister():
@@ -158,65 +149,13 @@ def lister():
     keep_log(f"\nAvarage File Size: {total/(len(size)+1)}\nMax File Size: {max}\nMin File Size: {min}\n")
     print(f"\nAvarage File Size: {total/(len(size)+1)}\nMax File Size: {max}\nMin File Size: {min}\n")
 
-def hard_clear():
-    print(" - hard_clear:")
-    new_connection = MongoConnection()
-    print("Getting data...")
-    mongo = new_connection.find_all()
-    id_data = mongo[1]
-    state_data = mongo[2]
-    print(id_data[:100])
-    print(state_data[:100])
-    downloads = os.listdir(DOWNLOAD_FOLDER)
-    keep_log(f"\nTotal Downloaded Folder: {len(downloads)}\n")
-    print(f"\nTotal Downloaded Folder: {len(downloads)}\n")
-    for item in range(len(id_data)):
-        if state_data[item] == 1:
-            directory = f"{DOWNLOAD_FOLDER}\\{id_data[item]}"
-            if not exists(directory):
-                fix_state(id_data[item], 0)
-                print(f"{id_data[item]} - State changed to 0. Directory could not be founded.")
-            else:
-                in_dir = os.listdir(directory)
-                if len(in_dir) == 1 and (not in_dir[0].endswith(".crdownload") or not in_dir[0].endswith(".tmp")):
-                    pass
-                else:
-                    rmtree(directory, ignore_errors=True)
-                    fix_state(id_data[item], 0)
-                    print(f"{id_data[item]} - State changed to 0, directory deleted.")
-    downloads = os.listdir(DOWNLOAD_FOLDER)
-    for item in downloads:
-        directory = f"{DOWNLOAD_FOLDER}\\{item}"
-        in_dir = os.listdir(directory)
-        if len(in_dir) == 1:
-            if item in id_data and (not in_dir[0].endswith(".crdownload") or not in_dir[0].endswith(".tmp")):
-                if id_data.index(item) != 1:
-                    fix_state(id_data.index(item), 1)
-                    print(f"{item} - State changed to 1.")
-            else:
-                rmtree(directory, ignore_errors=True)
-                fix_state(id_data.index(item), 0)
-                print(f"{item} - State changed to 0, directory deleted.")
-        else:
-            rmtree(directory, ignore_errors=True)
-            fix_state(id_data.index(item), 0)
-            print(f"{item} - State changed to 0, directory deleted.")
-    downloads = os.listdir(DOWNLOAD_FOLDER)
-    keep_log(f"Total Downloaded Folder After Hard Clean: {len(downloads)}\n")
-    print(f"Total Downloaded Folder After Hard Clean: {len(downloads)}\n")
-
 def check_all(state = None):
     keep_log("\n---------------------------------------------------------------------------------\n")
     if state == 0:
         get_list()
-        hard_clear()
         lister()
-    elif state == 1:
-        check_hunted()
     else:
         check_hunted()
-        get_list()
-        lister()
     
             
 

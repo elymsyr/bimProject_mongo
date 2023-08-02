@@ -34,26 +34,21 @@ class MongoConnection():
             self.selectors[12]: data[12],
             self.selectors[13]: data[13],
             self.selectors[14]: data[14],
-            self.selectors[15]: data[15],
-            self.selectors[16]: data[16],
+            self.selectors[15]: data[15]
             }
         self.connection.insert_one(insert_data)
 
     def find_all(self):
-        ret = [[], [], []]
+        ret = [[], []]
         results = self.connection.find({})
         for result in results:
             ret[0].append(result["url"])
             ret[1].append(result["p_id"])
-            ret[2].append(result["download_state"])
         return ret
 
     def delete_all(self):
         if int(input('sure? ')):
             self.connection.delete_many({})
-
-    def update_downloads(self, state, id):
-        self.connection.update_one({'p_id':f'{id}'}, {"$set":{'download_state': state}})
 
     def update_id(self, ids):
         number = 999

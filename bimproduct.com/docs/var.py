@@ -1,8 +1,8 @@
 #DATABASE SETTINGS
 DATABASE = 'bim'
-COLLECTION = 'bim-new'
+COLLECTION = 'bim'
 CLUSTER = 'mongodb+srv://admin0:aqwer1234@bim.0xndej5.mongodb.net/'
-SELECTORS = ['p_id', 'download_state', 'name', 'category', 'subcategory', 'url', 'images', 'direct_link', 'brand', 'votes', 'rating', 'tech-spec', 'specification', 'description', 'related', 'classification','properties']
+SELECTORS = ['p_id', 'name', 'category', 'subcategory', 'url', 'images', 'direct_link', 'brand', 'votes', 'rating', 'tech-spec', 'specification', 'description', 'related', 'classification','properties']
 
 #FOLDER PATHS
 MAIN_DATAS = 'docs/product_data.txt'
