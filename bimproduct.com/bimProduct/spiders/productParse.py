@@ -11,7 +11,6 @@ class ProductparseSpider(scrapy.Spider):
     allowed_domains = ["bimobject.com"]
     start_urls = ["https://bimobject.com"]
     id_adding_number = randint(0, 999)
-    crawled_last_time = 0
     counter = 1
     id = 0
     merge_url = []
@@ -152,7 +151,7 @@ class ProductparseSpider(scrapy.Spider):
 
         new_product['properties'] = []
         id = self.id_assign(new_product['category'], new_product['subcategory'], new_product['name'])
-        data = [id, 0, new_product['name'], new_product['category'],new_product['subcategory'],new_product['url'],new_product['images'],new_product['direct_link'][2:],new_product['brand'],new_product['votes'], new_product['rating'], new_product['tech_spec'], new_product['spec'], new_product['desc'], new_product['related'],new_product['classification'],new_product['properties']]
+        data = [id, new_product['name'], new_product['category'],new_product['subcategory'],new_product['url'],new_product['images'],new_product['direct_link'][2:],new_product['brand'],new_product['votes'], new_product['rating'], new_product['tech_spec'], new_product['spec'], new_product['desc'], new_product['related'],new_product['classification'],new_product['properties']]
         self.control(data)
         self.write_data(data)
     
@@ -176,9 +175,9 @@ class ProductparseSpider(scrapy.Spider):
             number_two = f"000{str(number[1] % 100)}"
             return str(f"{number_one[-2:]}{number_two[-2:]}")
         elif mod == 1:
-            id_adding = f"00{self.id_adding_number % 1000}"
+            id_adding = f"00{self.id_adding_number % 10000}"
             self.id_adding_number += 1
-            return id_adding[-3:]
+            return id_adding[-4:]
         elif mod == 2:
             name_one = int(ord(number[0])) % 10
             name_two = int(ord(number[1])) % 10
@@ -187,10 +186,10 @@ class ProductparseSpider(scrapy.Spider):
 
     def control(self, data):
         important_data = []
-        important_data.append(data[2])
-        important_data.append(data[5])
-        important_data.append(data[3])
+        important_data.append(data[1])
         important_data.append(data[4])
+        important_data.append(data[2])
+        important_data.append(data[3])
         for prod in important_data:
             if prod == None or prod == 'None':
                 self.keep_log(f'\nImportant data missing for {data[0]}')
@@ -200,25 +199,25 @@ class ProductparseSpider(scrapy.Spider):
         pre_id = self.number_defuser(pre_id, 0)
         mid_id = self.number_defuser(name, 2)
         post_id = self.number_defuser(0, 1)
-        new_id = (f"{pre_id}-{mid_id}-{post_id}")[:11]
+        new_id = (f"{pre_id}{mid_id}{post_id}")
         while new_id in self.used_ids:
             self.id_adding_number += 1
             post_id = self.number_defuser(0, 1)
-            new_id = (f"{pre_id}-{mid_id}-{post_id}")[:11]
-        return new_id
+            new_id = (f"{pre_id}{mid_id}{post_id}")
+        self.used_ids.append((new_id))
+        return (new_id)
 
     def write_data(self, data):
         try:
             self.connection.insert(data)
         except Exception as e:
-            self.keep_log(f'\nNot written: {data[0]} - {data[5]} --> Error:\n{e}\n')
+            self.keep_log(f'\nNot written: {data[0]} - {data[4]} --> Error:\n{e}\n')
         finally:
             self.list_product -= 1
             self.counter += 1
-            self.crawled_last_time += 1
             if self.list_product % 100 == 0:
-                print(f"Last --> {self.list_product}")
-        print(f"\ndata written --> {self.counter}\n")
+                print(f"\nLast --> {self.list_product}")
+        print(f"\r\rWritten {self.counter}")
 
     def none_if(self, comp):
         if comp == None or comp == '':

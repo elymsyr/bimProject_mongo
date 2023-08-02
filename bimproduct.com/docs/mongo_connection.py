@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from random import randint
 try:
     from var import DATABASE, COLLECTION, CLUSTER, SELECTORS
 except:
@@ -7,9 +8,13 @@ except:
 class MongoConnection():
     def __init__(self):
         self.cluster = MongoClient(CLUSTER)
-        self.db = self.cluster[DATABASE]
-        self.connection = self.db[COLLECTION]
-        self.selectors = SELECTORS
+        try:
+            self.cluster.server_info()
+            self.db = self.cluster[DATABASE]
+            self.connection = self.db[COLLECTION]
+            self.selectors = SELECTORS
+        except Exception as error:
+            print(f"\n\nServer Connection Error --> {error}")
 
     def insert(self, data):
         
@@ -29,36 +34,33 @@ class MongoConnection():
             self.selectors[12]: data[12],
             self.selectors[13]: data[13],
             self.selectors[14]: data[14],
-            self.selectors[15]: data[15],
-            self.selectors[16]: data[16],
+            self.selectors[15]: data[15]
             }
         self.connection.insert_one(insert_data)
 
     def find_all(self):
-        ret = [[], [], []]
+        ret = [[], []]
         results = self.connection.find({})
         for result in results:
             ret[0].append(result["url"])
             ret[1].append(result["p_id"])
-            ret[2].append(result["download_state"]) 
         return ret
 
     def delete_all(self):
         if int(input('sure? ')):
             self.connection.delete_many({})
 
-    def update_downloads(self, state, id):
-        self.connection.update_one({'p_id':f'{id}'}, {"$set":{'download_state': state}})
-
     def update_id(self, ids):
-        number = 999
         for id in ids:
-            new_id = id
+            number = 99999
+            number += randint(0,9999)
+            new_id = str(id)
             new_id = list(new_id)
-            new_id[8] = str(number)[0] 
-            new_id[9] = str(number)[1] 
-            new_id[10] = str(number)[2]
+            new_id[7] = str(number)[-1] 
+            new_id[8] = str(number)[-2] 
+            new_id[9] = str(number)[-3]
+            new_id[10] = str(number)[-4]
             new_id = ''.join(new_id)
-            number -= 1
+            new_id = int(new_id)
             print(f"{id} --> {new_id}")
             self.connection.update_one({'p_id': f'{id}'}, {"$set":{'p_id': f'{new_id}'}})

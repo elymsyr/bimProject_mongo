@@ -2,7 +2,7 @@
 DATABASE = 'bim'
 COLLECTION = 'bim-new'
 CLUSTER = 'mongodb+srv://admin0:aqwer1234@bim.0xndej5.mongodb.net/'
-SELECTORS = ['p_id', 'download_state', 'name', 'category', 'subcategory', 'url', 'images', 'direct_link', 'brand', 'votes', 'rating', 'tech-spec', 'specification', 'description', 'related', 'classification','properties']
+SELECTORS = ['p_id', 'name', 'category', 'subcategory', 'url', 'images', 'direct_link', 'brand', 'votes', 'rating', 'tech-spec', 'specification', 'description', 'related', 'classification','properties']
 
 #FOLDER PATHS
 MAIN_DATAS = 'docs/product_data.txt'
@@ -18,7 +18,7 @@ RESET_DRIVE_EVERY_ = 20
 LIST_SCOPE = [0,10]
 
 # Driver Number to run at the same time
-MULTIQUEUE_NUMBER = 2
+MULTIQUEUE_NUMBER = 3
 # Wait time for a product document to download. (a*2) -> waits a seconds, if the file was detected as still downloading, wait for a*2 seconds
 SLEEP_BREAK = 40*2
 
@@ -26,6 +26,6 @@ SLEEP_BREAK = 40*2
 TIMEOUT = 10
 
 # Component Update -> Max Process Number run at the same time 
-MAX_DRIVER = 3
+MAX_DRIVER = 1
 # Get max number of items to update through the execute of the script
-MAX_NUMBER_AT_A_TIME = 100
+MAX_NUMBER_AT_A_TIME = 99999
