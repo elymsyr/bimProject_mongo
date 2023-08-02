@@ -6,8 +6,14 @@ from os import makedirs, listdir, startfile
 from os.path import exists, realpath
 from multiprocessing import Process
 from shutil import rmtree
-from docs.check_functions import check_all
-from docs.mongo_connection import MongoConnection
+try:
+    from check_functions import check_all
+except:
+    from docs.check_functions import check_all
+try:
+    from mongo_connection import MongoConnection
+except:
+    from docs.mongo_connection import MongoConnection
 try:
     from var import DOWNLOAD_FOLDER, MULTIQUEUE_NUMBER, SLEEP_BREAK, MAX_NUMBER_AT_A_TIME
 except:
@@ -148,7 +154,6 @@ def start_download(folder=DOWNLOAD_FOLDER, state = '0', datas=None):
         downloads = listdir(DOWNLOAD_FOLDER)
         id_data = datas[0]
         url_data = datas[1]
-        print(id_data[:3], url_data[:3], len(id_data), len(url_data))
         processQueue = []
         print("Download Starting...")
         if not exists(folder):
