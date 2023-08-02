@@ -21,11 +21,8 @@ LIST_SCOPE = [0,10]
 MULTIQUEUE_NUMBER = 3
 # Wait time for a product document to download. (a*2) -> waits a seconds, if the file was detected as still downloading, wait for a*2 seconds
 SLEEP_BREAK = 40*2
+# Get max number of items to update through the execute of the script
+MAX_NUMBER_AT_A_TIME = 99999
 
 # Wait time for page to load 
 TIMEOUT = 10
-
-# Component Update -> Max Process Number run at the same time 
-MAX_DRIVER = 1
-# Get max number of items to update through the execute of the script
-MAX_NUMBER_AT_A_TIME = 99999

@@ -3,7 +3,7 @@ from codecs import open
 from os import system
 from docs.download_product import start_download
 from docs.mongo_connection import MongoConnection
-from docs.var import SELECTORS, DOWNLOAD_FOLDER
+from docs.var import SELECTORS, MAX_NUMBER_AT_A_TIME
 
 check = ''
 
@@ -37,8 +37,20 @@ def clear():
     search_box.delete(0, tk.END)
     
 def download():
-    download_id = download_box.get()
-    start_download(DOWNLOAD_FOLDER, download_id)
+    state = str(download_box.get())
+    if state == '0':
+        connection = MongoConnection()
+        print("Getting data...")
+        result = connection.connection.find({})
+        id_data = []
+        url_data = []
+        for res in result[:MAX_NUMBER_AT_A_TIME]:
+            id_data.append(res['p_id'])
+            url_data.append(res['url'])
+        data = [id_data, url_data]
+        start_download(state=state, datas=data) # "try state --> 0400740522"
+    else:
+        start_download(state=state)
 
 def search():
     ret = [[], [], []]
