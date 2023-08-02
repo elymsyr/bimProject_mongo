@@ -72,7 +72,7 @@ def check_hunted():
             print(f"ID Count Error - {id} : {id_data.count(id)} --> {id_data.index(id)}")
             if id not in id_error:
                 id_error.append(id)
-    # correct_id(id_error)
+    correct_id(id_error)
 
 def keep_log(string):
     with open(DOWNLOAD_LOG, 'a', encoding='utf-8') as f:
@@ -164,8 +164,6 @@ def check_all(state = None):
     else:
         main_check()
         check_hunted()
-    
-            
 
 if __name__ == '__main__':
     check_all(0)

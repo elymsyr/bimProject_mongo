@@ -64,6 +64,3 @@ class MongoConnection():
             new_id = int(new_id)
             print(f"{id} --> {new_id}")
             self.connection.update_one({'p_id': f'{id}'}, {"$set":{'p_id': f'{new_id}'}})
-            
-# con = MongoConnection()
-# con.delete_all()

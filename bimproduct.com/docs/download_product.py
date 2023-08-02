@@ -248,9 +248,7 @@ def download_control(id):
         return 0
     
 if __name__ == '__main__':
-    # state = input("select[id] or all[0] : ")
-    state = '0400740522'
-    state = '0'
+    state = input("select[id] or all[0] : ")
     if state == '0':
         connection = MongoConnection()
         print("Getting data...")
@@ -261,7 +259,6 @@ if __name__ == '__main__':
             id_data.append(res['p_id'])
             url_data.append(res['url'])
         data = [id_data, url_data]
-        # for _ in range(250):
         start_download(state=state, datas=data) # "try state --> 0400740522"
     else:
         start_download(state=state)

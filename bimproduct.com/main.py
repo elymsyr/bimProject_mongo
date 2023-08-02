@@ -6,7 +6,7 @@ from os import system
 from datetime import datetime, date
 from docs.mongo_connection import MongoConnection
 from time import time
-from docs.var import MONGO_LOG, UPDATE_LOG
+from docs.var import MONGO_LOG, UPDATE_LOG, DOWNLOAD_LOG
 
 def convert(seconds):
     seconds = int(seconds)
@@ -15,7 +15,20 @@ def convert(seconds):
     seconds %= 3600
     minutes = seconds // 60
     seconds %= 60
-    return "%d hours, %02d minutes, %02d seconds" % (hour, minutes, seconds)
+    adder = []
+    if hour != 0:
+        adder.append(f" {hour} hours,")
+    else:
+        adder.append("")
+    if minutes != 0:
+        adder.append(f" {minutes} minutes,")
+    else:
+        adder.append("")                  
+    if seconds != 0:
+        adder.append(f" {seconds} seconds")
+    else:
+        adder.append("")
+    return f"{adder[0]}{adder[1]}{adder[2]}"
 
 # def urlExtract():
 #     process = CrawlerProcess(get_project_settings())
@@ -48,8 +61,11 @@ def start_log(LOG):
     today = date.today()
     current_time = now.strftime("%H:%M:%S")
     with open(LOG, 'a', encoding='utf-8') as f:
-        f.write(f"\nLOG {today} - {current_time}\n") 
- 
+        f.write(f"\nLOG {today} - {current_time}\n")
+
+def finish_log(LOG, string):
+    with open(LOG, 'a', encoding='utf-8') as f:
+        f.write(f"\n{string}\n")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="crawl helper", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -77,7 +93,8 @@ if __name__ == '__main__':
         system('py docs/check_functions.py')
         stop = time()
         stop -= remainder         
-        print("Elapsed time during the whole program in seconds:", convert(stop))         
+        print("Elapsed time during the whole program in seconds:", convert(stop))
+        finish_log(DOWNLOAD_LOG, f"Elapsed time during the whole program in seconds:{convert(stop)}")
     elif hunter_key:
         start = time()
         remainder = start
@@ -86,7 +103,8 @@ if __name__ == '__main__':
         productParse()
         stop = time()
         stop -= remainder         
-        print("Elapsed time during the whole program in seconds:", convert(stop)) 
+        print("Elapsed time during the whole program in seconds:", convert(stop))
+        finish_log(MONGO_LOG, f"Elapsed time during the whole program in seconds:{convert(stop)}")
     elif search_key:
         system('py gui.py')  
     elif download_key:
@@ -96,11 +114,18 @@ if __name__ == '__main__':
         system('py docs/download_product.py')
         stop = time()
         stop -= remainder         
-        print("Elapsed time during the whole program in seconds:", convert(stop))         
+        print("Elapsed time during the whole program in seconds:", convert(stop))
+        finish_log(DOWNLOAD_LOG, f"Elapsed time during the whole program in seconds:{convert(stop)}")      
     elif clear_key:
         clear()
     elif export_key:
+        start = time()
+        remainder = start
+        start = 0        
         export()
+        stop = time()
+        stop -= remainder         
+        print("Elapsed time during the whole program in seconds:", convert(stop))        
     elif update_key:
         start = time()
         remainder = start
@@ -110,3 +135,4 @@ if __name__ == '__main__':
         stop = time()
         stop -= remainder        
         print("Elapsed time during the whole program in seconds:", convert(stop))
+        finish_log(UPDATE_LOG, f"Elapsed time during the whole program in seconds:{convert(stop)}")      
