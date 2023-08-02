@@ -123,11 +123,11 @@ def download(directory, url, id):
                     if sleep_time > SLEEP_BREAK:
                         raise Exception("ERROR: Waited for too long !")
                     now = listdir(f"{directory}")
+                    sleep_time += 2
                     for e in now:
                         if e.endswith(".crdownload") or e.endswith(".tmp"):
                             now.remove(e)
                             sleep_time += 1
-                    sleep_time += 2
                     sleep(1)
                 driver.quit()
                 return download_control(id)
