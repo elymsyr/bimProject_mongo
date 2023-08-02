@@ -1,7 +1,8 @@
 import os
 from codecs import open
 from re import match
-from os import remove
+from os import remove, rmdir
+from os.path import exists
 # from os.path import isdir
 from datetime import datetime, date
 from shutil import rmtree
@@ -39,12 +40,21 @@ def main_check():
     with open(MAIN_DATAS, 'a+', "utf-8") as f:
         for url in urls:
             f.write(f"{url}\n")
+            
+def correct_id(ids):
+    connection = MongoConnection()
+    connection.update_id(ids)
 
 def check_hunted():
+    print(" - check_hunted:")
+    print("Getting data...")
+    id_error = []
     connection = MongoConnection()
-    id_data = (connection.find_all())[1]
-    url_data = (connection.find_all())[0]
+    data = connection.find_all()
+    id_data = data[1]
+    url_data = data[0]
     pattern = r"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9]"
+    print("Checking...")
     for row in id_data:
         control = match(pattern, str(row))
         if control == None:
@@ -59,6 +69,9 @@ def check_hunted():
     for id in id_data:
         if id_data.count(id) > 1:
             print(f"ID Count Error - {id} : {id_data.count(id)} --> {id_data.index(id)}")
+            if id not in id_error:
+                id_error.append(id)
+    correct_id(id_error)
 
 def keep_log(string):
     with open(DOWNLOAD_LOG, 'a', encoding='utf-8') as f:
@@ -76,26 +89,12 @@ def find_a(collection):
     return res    
 
 def get_list():
-    del_item = []
+    print(" - get_list:")
     now = datetime.now()
     today = date.today()
     current_time = now.strftime("%H:%M:%S")
-    connection = MongoConnection()
-    res = find_a(connection)
     state_changed = 0
-    mongo = connection.find_all()
-    state_data = mongo[2] 
-    id_data = mongo[1]     
     downloads = os.listdir(DOWNLOAD_FOLDER)
-    for item in downloads:
-        if item not in res:
-            print(f"{item} was not in db as downloaded.")
-            fix_state(item, 1)
-            state_changed += 1
-    for item in res:
-        if item not in downloads:
-            fix_state(item, 0)
-            state_changed += 1
     zips = 0
     double = 0
     empty = 0
@@ -103,6 +102,7 @@ def get_list():
     leng = len(downloads)
     cr = 0
     keep_log(f"\nDownload Log {today} - {current_time}\n")
+    print("Checking... ( See Log --> download_log.txt )")
     for item in downloads:
         directory = f"{DOWNLOAD_FOLDER}\\{item}"
         in_dir = os.listdir(directory)
@@ -126,6 +126,7 @@ def get_list():
     keep_log(f"\n - Total Item: {leng}\n - {double} Double\n - {empty} Empty\n - {zips} Zips\n - {other} Other\n - {state_changed} State Changed\n - {cr} Cr Deleted\n")
 
 def lister():
+    print(" - lister:")
     path = DOWNLOAD_FOLDER
     size = []
     folders = os.listdir(DOWNLOAD_FOLDER)
@@ -155,43 +156,70 @@ def lister():
     else:
         min = 0
     keep_log(f"\nAvarage File Size: {total/(len(size)+1)}\nMax File Size: {max}\nMin File Size: {min}\n")
+    print(f"\nAvarage File Size: {total/(len(size)+1)}\nMax File Size: {max}\nMin File Size: {min}\n")
 
 def hard_clear():
-    connection = MongoConnection()
-    mongo = connection.find_all()
-    id_data = mongo[1] 
+    print(" - hard_clear:")
+    new_connection = MongoConnection()
+    print("Getting data...")
+    mongo = new_connection.find_all()
+    id_data = mongo[1]
+    state_data = mongo[2]
+    print(id_data[:100])
+    print(state_data[:100])
     downloads = os.listdir(DOWNLOAD_FOLDER)
     keep_log(f"\nTotal Downloaded Folder: {len(downloads)}\n")
-    for item in downloads:       
+    print(f"\nTotal Downloaded Folder: {len(downloads)}\n")
+    for item in range(len(id_data)):
+        if state_data[item] == 1:
+            directory = f"{DOWNLOAD_FOLDER}\\{id_data[item]}"
+            if not exists(directory):
+                fix_state(id_data[item], 0)
+                print(f"{id_data[item]} - State changed to 0. Directory could not be founded.")
+            else:
+                in_dir = os.listdir(directory)
+                if len(in_dir) == 1 and (not in_dir[0].endswith(".crdownload") or not in_dir[0].endswith(".tmp")):
+                    pass
+                else:
+                    rmtree(directory, ignore_errors=True)
+                    fix_state(id_data[item], 0)
+                    print(f"{id_data[item]} - State changed to 0, directory deleted.")
+    downloads = os.listdir(DOWNLOAD_FOLDER)
+    for item in downloads:
         directory = f"{DOWNLOAD_FOLDER}\\{item}"
         in_dir = os.listdir(directory)
         if len(in_dir) == 1:
             if item in id_data and (not in_dir[0].endswith(".crdownload") or not in_dir[0].endswith(".tmp")):
-                fix_state(id_data.index(item), 1)
+                if id_data.index(item) != 1:
+                    fix_state(id_data.index(item), 1)
+                    print(f"{item} - State changed to 1.")
             else:
                 rmtree(directory, ignore_errors=True)
                 fix_state(id_data.index(item), 0)
+                print(f"{item} - State changed to 0, directory deleted.")
         else:
             rmtree(directory, ignore_errors=True)
-            keep_log(f' - {item} deleted.\n')
+            fix_state(id_data.index(item), 0)
+            print(f"{item} - State changed to 0, directory deleted.")
+    downloads = os.listdir(DOWNLOAD_FOLDER)
     keep_log(f"Total Downloaded Folder After Hard Clean: {len(downloads)}\n")
+    print(f"Total Downloaded Folder After Hard Clean: {len(downloads)}\n")
 
 def check_all(state = None):
     keep_log("\n---------------------------------------------------------------------------------\n")
-    get_list()
-    lister()
-    # if state == None:
-    #     if int(input('clear?: ')):
-    #         hard_clear()
-    # else:
-    #     if state:
-    #         hard_clear()
-    hard_clear()
+    if state == 0:
+        get_list()
+        hard_clear()
+        lister()
+    elif state == 1:
+        check_hunted()
+    else:
+        check_hunted()
+        get_list()
+        lister()
+    
             
 
 if __name__ == '__main__':
-    print("Check started.")
-    check_hunted()
-    check_all()
-    print("Check finished.")
+    check_all(0)
     

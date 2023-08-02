@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from random import randint
 try:
     from var import DATABASE, COLLECTION, CLUSTER, SELECTORS
 except:
@@ -7,9 +8,13 @@ except:
 class MongoConnection():
     def __init__(self):
         self.cluster = MongoClient(CLUSTER)
-        self.db = self.cluster[DATABASE]
-        self.connection = self.db[COLLECTION]
-        self.selectors = SELECTORS
+        try:
+            self.cluster.server_info()
+            self.db = self.cluster[DATABASE]
+            self.connection = self.db[COLLECTION]
+            self.selectors = SELECTORS
+        except Exception as error:
+            print(f"\n\nServer Connection Error --> {error}")
 
     def insert(self, data):
         
@@ -40,7 +45,7 @@ class MongoConnection():
         for result in results:
             ret[0].append(result["url"])
             ret[1].append(result["p_id"])
-            ret[2].append(result["download_state"]) 
+            ret[2].append(result["download_state"])
         return ret
 
     def delete_all(self):
@@ -53,6 +58,7 @@ class MongoConnection():
     def update_id(self, ids):
         number = 999
         for id in ids:
+            number += randint(0,999)
             new_id = id
             new_id = list(new_id)
             new_id[8] = str(number)[0] 

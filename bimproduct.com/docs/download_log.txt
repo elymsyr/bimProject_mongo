@@ -1,315 +1,186 @@
 
 ---------------------------------------------------------------------------------
 
-Download Log 2023-07-31 - 08:48:07
+---------------------------------------------------------------------------------
 
- - Total Item: 0
+Download Log 2023-08-02 - 09:51:04
+
+ - 0300-17-873 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 5
  - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
- - 4 State Changed
- - 0 Cr Deleted
-
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
+ - 3 Empty
+ - 3 Zips
+ - 2 Other
+ - 0 State Changed
+ - 1 Cr Deleted
 
 ---------------------------------------------------------------------------------
 
-Download Log 2023-07-31 - 09:53:35
+Download Log 2023-08-02 - 09:56:01
 
- - Total Item: 0
+ - 0300-17-873 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 5
  - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
+ - 3 Empty
+ - 3 Zips
+ - 2 Other
  - 0 State Changed
  - 0 Cr Deleted
 
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
 ---------------------------------------------------------------------------------
 
-Download Log 2023-07-31 - 10:15:00
+Download Log 2023-08-02 - 09:58:32
 
- - Total Item: 0
+ - 0300-17-873 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 5
  - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
+ - 3 Empty
+ - 3 Zips
+ - 2 Other
  - 0 State Changed
  - 0 Cr Deleted
 
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
 ---------------------------------------------------------------------------------
 
-Download Log 2023-07-31 - 10:19:33
+Download Log 2023-08-02 - 10:03:06
 
- - Total Item: 0
+ - 0300-17-873 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 5
  - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
+ - 3 Empty
+ - 3 Zips
+ - 2 Other
  - 0 State Changed
  - 0 Cr Deleted
 
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
 ---------------------------------------------------------------------------------
 
-Download Log 2023-07-31 - 10:22:54
+Download Log 2023-08-02 - 10:05:05
 
- - Total Item: 0
+ - 0300-17-873 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 5
  - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
+ - 3 Empty
+ - 3 Zips
+ - 2 Other
  - 0 State Changed
  - 0 Cr Deleted
 
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
 ---------------------------------------------------------------------------------
 
-Download Log 2023-07-31 - 10:24:32
+Download Log 2023-08-02 - 10:06:24
 
- - Total Item: 0
+ - 0300-17-873 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 5
  - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
+ - 3 Empty
+ - 3 Zips
+ - 2 Other
  - 0 State Changed
  - 0 Cr Deleted
 
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
 ---------------------------------------------------------------------------------
 
-Download Log 2023-07-31 - 10:30:42
+Download Log 2023-08-02 - 10:11:24
 
- - Total Item: 0
+ - 0300-17-873 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 5
  - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
+ - 3 Empty
+ - 3 Zips
+ - 2 Other
  - 0 State Changed
  - 0 Cr Deleted
 
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
 ---------------------------------------------------------------------------------
 
-Download Log 2023-07-31 - 13:28:27
+Download Log 2023-08-02 - 10:16:21
 
- - Total Item: 0
+ - 0300-17-873 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 5
  - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
+ - 3 Empty
+ - 3 Zips
+ - 2 Other
  - 0 State Changed
  - 0 Cr Deleted
 
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
-Total Downloaded Folder: 0
-Total Downloaded Folder After Hard Clean: 0
-
 ---------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------
+Download Log 2023-08-02 - 10:20:31
 
-Download Log 2023-07-31 - 13:39:28
-
- - Total Item: 0
+ - 0300-17-873 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 5
  - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
+ - 3 Empty
+ - 3 Zips
+ - 2 Other
  - 0 State Changed
  - 0 Cr Deleted
 
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
+Total Downloaded Folder: 8
+Total Downloaded Folder After Hard Clean: 5
+
+0300-04-871 --> BIMobject-Protectosil Chem-Trete 40 VOC.zip : 4.241MB 
+0301-79-870 --> Tector® NATURAL EXTRALISO.pdf : 0.435MB 
+0900-45-857 --> JARTON_PanicButtonRF433SmartHomeWi-Fi.rfa : 0.438MB 
+1800-58-858 --> BIMobject-Altro Puraguard Wall Panels.zip : 300.574MB 
+1800-58-859 --> BIMobject-Altro Whiterock Matte Wall Protection.zip : 300.828MB 
+Avarage File Size: 101.086
+Max File Size: 300.828
+Min File Size: 0.435
 
 ---------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------
+Download Log 2023-08-02 - 11:20:04
 
----------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------
-
-Download Log 2023-07-31 - 13:56:10
-
- - Total Item: 0
+ - 0600-34-183 : Empty Folder
+ - 0600-71-184 : Empty Folder
+ - 0601-36-216 : Empty Folder
+ - 0601-67-215 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 93
  - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
+ - 6 Empty
+ - 71 Zips
+ - 22 Other
+ - 0 State Changed
+ - 2 Cr Deleted
+
+Total Downloaded Folder: 99
+
+---------------------------------------------------------------------------------
+
+Download Log 2023-08-02 - 11:35:09
+
+ - 0600-71-184 : Empty Folder
+ - 0601-36-216 : Empty Folder
+ - 0601-67-215 : Empty Folder
+ - 1800-58-860 : Empty Folder
+ - 1800-58-861 : Empty Folder
+ - Total Item: 93
+ - 0 Double
+ - 5 Empty
+ - 71 Zips
+ - 22 Other
  - 0 State Changed
  - 0 Cr Deleted
-
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
----------------------------------------------------------------------------------
-
-Download Log 2023-07-31 - 13:57:07
-
- - Total Item: 0
- - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
- - 0 State Changed
- - 0 Cr Deleted
-
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
----------------------------------------------------------------------------------
-
-Download Log 2023-07-31 - 13:57:56
-
- - Total Item: 0
- - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
- - 0 State Changed
- - 0 Cr Deleted
-
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
----------------------------------------------------------------------------------
-
-Download Log 2023-07-31 - 13:59:04
-
- - Total Item: 0
- - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
- - 0 State Changed
- - 0 Cr Deleted
-
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
-Total Downloaded Folder: 0
-Total Downloaded Folder After Hard Clean: 0
-
----------------------------------------------------------------------------------
-
-Download Log 2023-07-31 - 14:01:06
-
- - Total Item: 0
- - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
- - 0 State Changed
- - 0 Cr Deleted
-
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
----------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------
-
-Download Log 2023-07-31 - 14:04:42
-
- - Total Item: 0
- - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
- - 0 State Changed
- - 0 Cr Deleted
-
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
-Total Downloaded Folder: 0
-Total Downloaded Folder After Hard Clean: 0
-
----------------------------------------------------------------------------------
-
-Download Log 2023-07-31 - 14:06:31
-
- - Total Item: 0
- - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
- - 0 State Changed
- - 0 Cr Deleted
-
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
-Total Downloaded Folder: 0
-Total Downloaded Folder After Hard Clean: 0
-
----------------------------------------------------------------------------------
-
-Download Log 2023-07-31 - 14:07:53
-
- - Total Item: 0
- - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
- - 0 State Changed
- - 0 Cr Deleted
-
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0
-
-Total Downloaded Folder: 0
-Total Downloaded Folder After Hard Clean: 0
-
----------------------------------------------------------------------------------
-
-Download Log 2023-07-31 - 14:15:50
-
- - Total Item: 0
- - 0 Double
- - 0 Empty
- - 0 Zips
- - 0 Other
- - 0 State Changed
- - 0 Cr Deleted
-
-Avarage File Size: 0.0
-Max File Size: 0
-Min File Size: 0

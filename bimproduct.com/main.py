@@ -74,7 +74,7 @@ if __name__ == '__main__':
         start = time()
         remainder = start
         start = 0
-        system('py check_functions.py')
+        system('py docs/check_functions.py')
         stop = time()
         stop -= remainder         
         print("Elapsed time during the whole program in seconds:", convert(stop))         

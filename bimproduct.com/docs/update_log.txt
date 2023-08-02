@@ -1644,3 +1644,235 @@ PROCESS QUEUE
 
    swm12rupd-26-26 --> https://www.bimobject.com/en/ortronics/product/swm12rupd-26-26:
      Updated swm12rupd-26-26
+PROCESS QUEUE
+
+ - Total item updated before -> 420
+ - Total item in db -> 22791
+ - Total item to update -> 101
+ - 34 block created. Each has 3 items.
+
+   qvmd610 --> https://www.bimobject.com/en/ortronics/product/qvmd610:
+     Updated qvmd610
+
+   mm6e706 --> https://www.bimobject.com/en/ortronics/product/mm6e706:
+     Error: No more image mm6e706
+     Updated mm6e706
+
+   vwmsd-4ru-42-b --> https://www.bimobject.com/en/ortronics/product/vwmsd-4ru-42-b:
+     Updated vwmsd-4ru-42-b
+
+   mm6e810 --> https://www.bimobject.com/en/ortronics/product/mm6e810:
+     Updated qvmd806
+     Error: No more image mm6e810
+     Updated mm6e810
+
+   vwmsd-8ru-42-b --> https://www.bimobject.com/en/ortronics/product/vwmsd-8ru-42-b:
+     Updated vwmsd-8ru-42-b
+
+   ortronics-1065 --> https://www.bimobject.com/en/ortronics/product/ortronics-1065:
+     Error: No more image ortronics-1065
+     Updated ortronics-1065
+
+   swm18rupd-26-26 --> https://www.bimobject.com/en/ortronics/product/swm18rupd-26-26:
+     Updated swm18rupd-26-26
+
+   swm18rusd-26-26 --> https://www.bimobject.com/en/ortronics/product/swm18rusd-26-26:
+     Updated swm18rusd-26-26
+
+   ortronics-1046 --> https://www.bimobject.com/en/ortronics/product/ortronics-1046:
+     Error: No more image ortronics-1046
+     Updated ortronics-1046
+
+   ortronics-1064 --> https://www.bimobject.com/en/ortronics/product/ortronics-1064:
+     Error: No more image ortronics-1064
+     Updated ortronics-1064
+
+   mighty-mo-20-adjustable-4-post-rack-36d-adjustable-7h-45-ru-tapped-rails-black --> https://www.bimobject.com/en/ortronics/product/mighty-mo-20-adjustable-4-post-rack-36d-adjustable-7h-45-ru-tapped-rails-black:
+     Error: No prop mighty-mo-20-adjustable-4-post-rack-36d-adjustable-7h-45-ru-tapped-rails-black
+     Error: No more image mighty-mo-20-adjustable-4-post-rack-36d-adjustable-7h-45-ru-tapped-rails-black
+
+   ortronics-1055 --> https://www.bimobject.com/en/ortronics/product/ortronics-1055:
+     Error: No more image ortronics-1055
+     Updated ortronics-1055
+
+   ortronics-1019 --> https://www.bimobject.com/en/ortronics/product/ortronics-1019:
+     Error: No more image ortronics-1019
+     Updated ortronics-1019
+
+   network-evolution-one-solutions-six-module-dc-power-supply-unit-psu6 --> https://www.bimobject.com/en/corningoptical/product/network-evolution-one-solutions-six-module-dc-power-supply-unit-psu6:
+     Error: No prop network-evolution-one-solutions-six-module-dc-power-supply-unit-psu6
+     Error: No more image network-evolution-one-solutions-six-module-dc-power-supply-unit-psu6
+
+   ortronics-1081 --> https://www.bimobject.com/en/ortronics/product/ortronics-1081:
+     Error: No more image ortronics-1081
+     Updated ortronics-1081
+
+   vwmfd-8ru-36-b --> https://www.bimobject.com/en/ortronics/product/vwmfd-8ru-36-b:
+     Updated vwmfd-8ru-36-b
+
+   vwmsd-4ru-36-b --> https://www.bimobject.com/en/ortronics/product/vwmsd-4ru-36-b:
+     Updated vwmsd-4ru-36-b
+
+   swm12rusd-26-26 --> https://www.bimobject.com/en/ortronics/product/swm12rusd-26-26:
+     Updated swm12rusd-26-26
+
+   qvmd712 --> https://www.bimobject.com/en/ortronics/product/qvmd712:
+     Updated qvmd712
+
+   compact-edge-cabinet-4-ru-plexiglass-door-black --> https://www.bimobject.com/en/ortronics/product/compact-edge-cabinet-4-ru-plexiglass-door-black:
+     Error: No prop compact-edge-cabinet-4-ru-plexiglass-door-black
+     Error: No more image compact-edge-cabinet-4-ru-plexiglass-door-black
+
+   ortronics-1004 --> https://www.bimobject.com/en/ortronics/product/ortronics-1004:
+     Error: No more image ortronics-1004
+     Updated ortronics-1004
+
+   ortronics-1024 --> https://www.bimobject.com/en/ortronics/product/ortronics-1024:
+     Error: No more image ortronics-1024
+     Updated ortronics-1024
+
+   ortronics-1068 --> https://www.bimobject.com/en/ortronics/product/ortronics-1068:
+     Error: No more image ortronics-1068
+     Updated ortronics-1068
+
+   ortronics-1039 --> https://www.bimobject.com/en/ortronics/product/ortronics-1039:
+     Error: No more image ortronics-1039
+     Updated ortronics-1039
+
+   everon-power-supply-unit-psu-cip-16 --> https://www.bimobject.com/en/corningoptical/product/everon-power-supply-unit-psu-cip-16:
+     Error: No prop everon-power-supply-unit-psu-cip-16
+     Error: No more image everon-power-supply-unit-psu-cip-16
+
+   12-36_distribution-module --> https://www.bimobject.com/en/rathcommunications/product/12-36_distribution-module:
+     Error: No prop 12-36_distribution-module
+     Error: No more image 12-36_distribution-module
+
+   everon-power-supply-unit-psu-cip-32 --> https://www.bimobject.com/en/corningoptical/product/everon-power-supply-unit-psu-cip-32:
+     Error: No prop everon-power-supply-unit-psu-cip-32
+     Error: No more image everon-power-supply-unit-psu-cip-32
+
+   lutron-athena-alpd --> https://www.bimobject.com/en/lutronelectronics/product/lutron-athena-alpd:
+     Error: No prop lutron-athena-alpd
+     Updated lutron-athena-alpd
+
+   crestron-tt-100_tt-101_tt-110_tt-111 --> https://www.bimobject.com/en/crestronelectronics/product/crestron-tt-100_tt-101_tt-110_tt-111:
+     Updated crestron-tt-100_tt-101_tt-110_tt-111
+
+   aosmith-tjh --> https://www.bimobject.com/en/aosmith/product/aosmith-tjh:
+     Error: No more image aosmith-tjh
+     Updated aosmith-tjh
+
+   infinium_fiber_enclosure_m4 --> https://www.bimobject.com/en/ortronics/product/infinium_fiber_enclosure_m4:
+     Error: No prop infinium_fiber_enclosure_m4
+     Updated infinium_fiber_enclosure_m4
+
+   comfortline-incoming-boxes --> https://www.bimobject.com/en/abb/product/comfortline-incoming-boxes:
+     Error: No prop comfortline-incoming-boxes
+     Error: No more image comfortline-incoming-boxes
+
+   aosmith-hd-tanks --> https://www.bimobject.com/en/aosmith/product/aosmith-hd-tanks:
+     Error: No more image aosmith-hd-tanks
+     Updated aosmith-hd-tanks
+
+   aosmith-t-tanks --> https://www.bimobject.com/en/aosmith/product/aosmith-t-tanks:
+     Error: No more image aosmith-t-tanks
+     Updated aosmith-t-tanks
+
+   multidoor-acoustic-door --> https://www.bimobject.com/en/multidoor/product/multidoor-acoustic-door:
+     Error: No prop multidoor-acoustic-door
+     Error: No more image multidoor-acoustic-door
+
+   acoustic-doors --> https://www.bimobject.com/en/vicaima/product/acoustic-doors:
+     Updated acoustic-doors
+
+   nanawall-nw-acoustical-545-wood-framed-generation-4-folding-glass-wall-for-interior-acoustical-separation --> https://www.bimobject.com/en/nanawallsystems/product/nanawall-nw-acoustical-545-wood-framed-generation-4-folding-glass-wall-for-interior-acoustical-separation:
+     Error: No prop nanawall-nw-acoustical-545-wood-framed-generation-4-folding-glass-wall-for-interior-acoustical-separation
+     Error: No more image nanawall-nw-acoustical-545-wood-framed-generation-4-folding-glass-wall-for-interior-acoustical-separation
+
+   tria-h1c-45 --> https://www.bimobject.com/en/tria-servicos-materiais-e-equipamentos/product/tria-h1c-45:
+     Error: No prop tria-h1c-45
+     Updated tria-h1c-45
+
+   aosmith-tjv --> https://www.bimobject.com/en/aosmith/product/aosmith-tjv:
+     Error: No more image aosmith-tjv
+     Updated aosmith-tjv
+
+   aosmith-tjvm --> https://www.bimobject.com/en/aosmith/product/aosmith-tjvm:
+     Error: No more image aosmith-tjvm
+     Updated aosmith-tjvm
+
+   nanawall-nw-acoustical-645 --> https://www.bimobject.com/en/nanawallsystems/product/nanawall-nw-acoustical-645:
+     Error: No prop nanawall-nw-acoustical-645
+     Error: No more image nanawall-nw-acoustical-645
+
+   jlg3614rs --> https://www.bimobject.com/en/cramo-service-ab/product/jlg3614rs:
+     Error: No prop jlg3614rs
+     Error: No more image jlg3614rs
+
+   htl-5210 --> https://www.bimobject.com/en/haulotte/product/htl-5210:
+     Error: No prop htl-5210
+     Error: No more image htl-5210
+
+   manitoumt733easy --> https://www.bimobject.com/en/cramo-service-ab/product/manitoumt733easy:
+     Error: No prop manitoumt733easy
+     Updated manitoumt733easy
+
+   woodfold-4100 --> https://www.bimobject.com/en/woodfold-mfg/product/woodfold-4100:
+     Error: No prop woodfold-4100
+     Updated woodfold-4100
+
+   hufcor-accordion-partition-3100-4100 --> https://www.bimobject.com/en/woodfold-mfg/product/hufcor-accordion-partition-3100-4100:
+     Error: No prop hufcor-accordion-partition-3100-4100
+     Updated hufcor-accordion-partition-3100-4100
+
+   htl-4017 --> https://www.bimobject.com/en/haulotte/product/htl-4017:
+     Error: No prop htl-4017
+     Updated htl-4017
+
+   manitoumt625 --> https://www.bimobject.com/en/cramo-service-ab/product/manitoumt625:
+     Error: No prop manitoumt625
+     Error: No more image manitoumt625
+
+   htl-3210 --> https://www.bimobject.com/en/haulotte/product/htl-3210:
+     Error: No prop htl-3210
+     Error: No more image htl-3210
+
+   haulottehtl4017 --> https://www.bimobject.com/en/cramo-service-ab/product/haulottehtl4017:
+     Error: No prop haulottehtl4017
+     Updated haulottehtl4017
+
+   manitoumt1033easyst5 --> https://www.bimobject.com/en/cramo-service-ab/product/manitoumt1033easyst5:
+     Error: No prop manitoumt1033easyst5
+     Error: No more image manitoumt1033easyst5
+
+   manitoumt1440 --> https://www.bimobject.com/en/cramo-service-ab/product/manitoumt1440:
+     Error: No prop manitoumt1440
+     Error: No more image manitoumt1440
+
+   htl-3510 --> https://www.bimobject.com/en/haulotte/product/htl-3510:
+     Error: No prop htl-3510
+     Error: No more image htl-3510
+
+   manitoumt1840 --> https://www.bimobject.com/en/cramo-service-ab/product/manitoumt1840:
+     Error: No prop manitoumt1840
+     Updated manitoumt1840
+
+   manitoumt933easyst5 --> https://www.bimobject.com/en/cramo-service-ab/product/manitoumt933easyst5:
+     Error: No prop manitoumt933easyst5
+     Updated manitoumt933easyst5
+
+   manitoumrt2660st5 --> https://www.bimobject.com/en/cramo-service-ab/product/manitoumrt2660st5:
+     Error: No prop manitoumrt2660st5
+     Error: No more image manitoumrt2660st5
+
+   jcb52560 --> https://www.bimobject.com/en/cramo-service-ab/product/jcb52560:
+     Error: No prop jcb52560
+     Error: No more image jcb52560
+
+   htl-3617 --> https://www.bimobject.com/en/haulotte/product/htl-3617:
+     Error: No prop htl-3617
+     Error: No more image htl-3617
+
+   htl-3207 --> https://www.bimobject.com/en/haulotte/product/htl-3207:
+     Error: No prop htl-3207
+     Error: No more image htl-3207

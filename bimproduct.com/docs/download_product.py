@@ -6,12 +6,12 @@ from os import makedirs, listdir, startfile
 from os.path import exists, realpath
 from multiprocessing import Process
 from shutil import rmtree
-from docs.check_functions import fix_state, check_all
-from docs.mongo_connection import MongoConnection
+from check_functions import fix_state, check_all
+from mongo_connection import MongoConnection
 try:
-    from var import DOWNLOAD_FOLDER, MULTIQUEUE_NUMBER, SLEEP_BREAK
+    from var import DOWNLOAD_FOLDER, MULTIQUEUE_NUMBER, SLEEP_BREAK, MAX_NUMBER_AT_A_TIME
 except:
-    from docs.var import DOWNLOAD_FOLDER, MULTIQUEUE_NUMBER, SLEEP_BREAK
+    from docs.var import DOWNLOAD_FOLDER, MULTIQUEUE_NUMBER, SLEEP_BREAK, MAX_NUMBER_AT_A_TIME
 class DownloadItem():
     def __init__(self, url, id, driver=None) -> None:
         if driver == None:
@@ -135,18 +135,28 @@ def download(directory, url, id):
                 print(f"Download Error: {id}")
         else:
             print(f"Login Failed: {id}")
-    except: 
-        print(f"Not Downloaded: {id}")
+        driver.quit()
+    except Exception as error: 
+        print(f"Not Downloaded: {id} --> {error}")
 
 def start_download(folder, state = '0'):
     if state.isdigit() and int(state.replace('-', '')) == 0:
         connection = MongoConnection()
-        result = connection.find_all()
-        state_data = result[2] 
-        id_data = result[1]
-        url_data = result[0]               
+        print("Getting data...")
+        result = connection.connection.find({'download_state':0})
+        state_data = []
+        id_data = []
+        url_data = []
+        for res in result[:MAX_NUMBER_AT_A_TIME]:
+            state_data.append(res['download_state'])
+            id_data.append(res['p_id'])
+            url_data.append(res['url'])
+        print(len(id_data))
         processQueue = []
-        check_all()
+        print("Starting Checking...")
+        check_all(0)
+        print("Checked")
+        print("Download Starting...")
         for index in range(len(state_data)):
             if state_data[index] != 1:
                 if not exists(folder):
@@ -248,5 +258,8 @@ def download_control(id):
         return 0
     
 if __name__ == '__main__':
-    state = input("select[id] or all[0] : ")
-    start_download(DOWNLOAD_FOLDER, state) # "1400-87-887"
+    # state = input("select[id] or all[0] : ")
+    state = '0'
+    if state == '0':
+        for _ in range(250):
+            start_download(DOWNLOAD_FOLDER, state) # "1400-87-887"
