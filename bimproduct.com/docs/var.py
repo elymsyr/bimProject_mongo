@@ -1,7 +1,7 @@
 #DATABASE SETTINGS
 DATABASE = 'bim'
 COLLECTION = 'bim-new'
-
+CLUSTER = '' # MongoDB Connection String
 SELECTORS = ['p_id', 'name', 'category', 'subcategory', 'url', 'images', 'direct_link', 'brand', 'votes', 'rating', 'tech-spec', 'specification', 'description', 'related', 'classification','properties']
 
 #FOLDER PATHS
