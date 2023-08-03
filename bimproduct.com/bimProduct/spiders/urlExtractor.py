@@ -9,7 +9,7 @@ from docs.var import FOR_MAIN_DATAS, SECOND_DATAS
 # scrapy crawl urlExtract
 
 class UrlproductextractSpider(CrawlSpider):
-    name = "UrlProductExtract"
+    name = "urlExtract"
     allowed_domains = ["bimobject.com"]
     crawled = []
     urls = []
