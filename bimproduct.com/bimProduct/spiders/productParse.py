@@ -16,6 +16,7 @@ class ProductparseSpider(scrapy.Spider):
     merge_url = []
     crawled = []
     used_ids = []
+    print("Getting data... This might take a copule of minutes...")
     connection = MongoConnection()
     results = connection.find_all()
     url_data = results[0]
