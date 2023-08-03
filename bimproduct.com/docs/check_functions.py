@@ -12,14 +12,14 @@ try:
 except:
     from mongo_connection import MongoConnection
 try:
-    from var import MAIN_DATAS, LIST_SCOPE, DOWNLOAD_FOLDER, DOWNLOAD_LOG
+    from var import MAIN_DATAS, LIST_SCOPE, DOWNLOAD_FOLDER, DOWNLOAD_LOG, FOR_MAIN_DATAS
 except:
-    from docs.var import MAIN_DATAS, LIST_SCOPE, DOWNLOAD_FOLDER, DOWNLOAD_LOG
+    from docs.var import MAIN_DATAS, LIST_SCOPE, DOWNLOAD_FOLDER, DOWNLOAD_LOG, FOR_MAIN_DATAS
 
 def main_check():
     urls = []
     deleted = 0
-    with open(MAIN_DATAS, 'r', "utf-8") as f:
+    with open(FOR_MAIN_DATAS, 'r', "utf-8") as f:
         for url in f.readlines():
             urls.append(url.strip())
     print(f"Total Number : {len(urls)}\n")
@@ -34,11 +34,11 @@ def main_check():
             deleted += 1
             i += 1
             print(f"{i+1} - {urls[i]} - {urls.count(urls[i])}")
-    with open(MAIN_DATAS, 'w', "utf-8") as f:
+    with open(FOR_MAIN_DATAS, 'w', "utf-8") as f:
         f.write("")
         f.close()
     print(f"\n Deleted : {deleted}\n")
-    with open(MAIN_DATAS, 'a+', "utf-8") as f:
+    with open(FOR_MAIN_DATAS, 'a+', "utf-8") as f:
         for url in urls:
             f.write(f"{url}\n")
             
@@ -166,5 +166,6 @@ def check_all(state = None):
         check_hunted()
 
 if __name__ == '__main__':
-    check_all(0)
+    # check_all(0)
+    main_check()
     

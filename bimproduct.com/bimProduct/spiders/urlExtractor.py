@@ -9,22 +9,22 @@ from docs.var import FOR_MAIN_DATAS, SECOND_DATAS
 # scrapy crawl urlExtract
 
 class UrlproductextractSpider(CrawlSpider):
-    name = "UrlProductExtract"
+    name = "urlExtract"
     allowed_domains = ["bimobject.com"]
     crawled = []
     urls = []
     categories = []
     sub_categories = []
-    # with open(f"{SECOND_DATAS}", 'r+') as f:
-    #     for url in f.readlines():
-    #         urls.append(url.strip())
-    #         crawled.append(url.strip())
-    # with open(f"{FOR_MAIN_DATAS}", 'r', "utf-8") as f:
-    #     for url in f.readlines():
-    #         crawled.append(url.strip())
-    # with open(f"{SECOND_DATAS}", 'w+') as f:
-    #     f.write('')
-    #     f.close()
+    with open(f"{SECOND_DATAS}", 'r+') as f:
+        for url in f.readlines():
+            urls.append(url.strip())
+            crawled.append(url.strip())
+    with open(f"{FOR_MAIN_DATAS}", 'r', "utf-8") as f:
+        for url in f.readlines():
+            crawled.append(url.strip())
+    with open(f"{SECOND_DATAS}", 'w+') as f:
+        f.write('')
+        f.close()
     start_urls = urls
     rules = [(Rule(LinkExtractor(allow='bimobject'), callback="parse_from_categories", follow= False)),]
 
