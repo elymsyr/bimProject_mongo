@@ -4,3 +4,5 @@ LOG 2023-08-03 - 12:57:47
 LOG 2023-08-03 - 12:58:21
 
 LOG 2023-08-03 - 12:59:54
+
+Elapsed time during the whole program in seconds: 17 minutes, 3 seconds
