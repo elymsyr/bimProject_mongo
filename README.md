@@ -12,7 +12,7 @@ Crawling product data from 'bimObject.com' by using selenium and scrapy.
 
 ### Installing
 
-* Only fork this repository.
+* Only fork this repository. Remember to change DOWNLOAD_FOLDER, CLUSTER and DB Settings in [var.py](bimproduct.com/docs/var.py)
 
 ### Executing program
 
