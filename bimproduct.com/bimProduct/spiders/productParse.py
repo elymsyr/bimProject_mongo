@@ -16,10 +16,6 @@ class ProductparseSpider(scrapy.Spider):
     merge_url = []
     crawled = []
     used_ids = []
-    chrome_options = ChromeOptions()
-    chrome_options.add_argument('--headless=new')
-    driver = Chrome(options=chrome_options)
-    driver.implicitly_wait(3)
     connection = MongoConnection()
     results = connection.find_all()
     url_data = results[0]
@@ -60,13 +56,6 @@ class ProductparseSpider(scrapy.Spider):
     list_product = len(start_urls) + 1
     
     def start_requests(self):
-        if self.id_adding_number % RESET_DRIVE_EVERY_ == 0:
-            self.driver.quit
-            self.chrome_options = ChromeOptions()
-            self.chrome_options.add_argument('--headless=new')
-            self.driver = Chrome(options=self.chrome_options)
-            self.driver.implicitly_wait(2)
-            print(f"\n\n------------------------------------------------\nDriver Updated\n-----------------------------------------------\n                                                    {self.id_adding_number}\n")
         for url in self.start_urls:
             if url[8:] in self.crawled:
                 print(f"Already crawledd.")
